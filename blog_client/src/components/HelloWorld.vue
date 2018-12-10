@@ -90,6 +90,19 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  mounted:function (){
+    console.log("asd");
+    //创建异步对象
+    var ajax = new XMLHttpRequest();
+    ajax.open('post','/node/test');
+    ajax.send(`username=asd&password=asd`);
+    ajax.onreadystatechange = function () {
+        if (ajax.readyState==4 &&ajax.status==200) {
+            var data = ajax.responseText;
+            console.log(data);
+        }
+    }
   }
 }
 </script>
