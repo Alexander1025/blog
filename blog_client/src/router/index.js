@@ -7,7 +7,7 @@ import Router from 'vue-router'
 // 导入相应的子组件
 // import Hello from './../components/Hello'
 // import index from './../views/index/index.vue';
-import HelloWorld from '@/components/HelloWorld'
+import index from '@/views/index/index.vue'
 
 
 
@@ -21,7 +21,7 @@ var router = new Router({
     routes: [
         {
             path: '/',
-            component: HelloWorld
+            component: index
         },
         // {
         //     path: '/login',
