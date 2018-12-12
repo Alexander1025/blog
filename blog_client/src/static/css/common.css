@@ -1,5 +1,25 @@
-*{
-    margin: 0;
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+ul, li{
+    list-style: none;
 }
 .indextop{
     background-color: #17b4d2;
@@ -22,14 +42,69 @@
 .logoimg{
     height: 100%;
 }
+.mainhead{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+.headtag{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    transition: all .3s ease-out;
+    overflow: hidden;
+    z-index: 10;
+}
+.headtag > li{
+    height: 100%;
+    line-height: 60px;
+    padding: 0 20px;
+    color: white;
+}
+.headtag > li.active:after, .headtag > li:hover:after{
+    height: 5px;
+}
+.headtag > li:after{
+    content: " ";
+    height: 0;
+    width: calc(100% + 40px);
+    display: block;
+    background-color: #ff2f2f;
+    transform: translate(-20px, -100%);
+    transition: all .2s ease-out;
+    border-radius: 3px;
+}
+.headtoggle{
+    height: 60px;
+    display: none;
+}
+.headtagphone-enter-active, .headtagphone-leave-active{
+    transition: opacity .5s;
+}
+.headtagphone-enter, .headtagphone-leave-to{
+    opacity: 0;
+}
+.headtoggle img{
+    height: 100%;
+}
+.tagwrap{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
 @media screen and (min-width: 1280px){
     .indextop{
-        background-color: #17b4d2;
-        background-image: linear-gradient(90deg, #17b4d2 19%, #a53dd8 85%);
+        background-color: #a6c0fe;
+        background-image: linear-gradient(270deg,#3c298e,#2a5bbe 59%,#21a5e5);
     }
     .commonhead{
-        background-color: #17b4d2;
-        background-image: linear-gradient(90deg, #17b4d2 19%, #a53dd8 85%);
+        background-color: #a6c0fe;
+        background-image: linear-gradient(270deg,#3c298e,#2a5bbe 59%,#21a5e5);
     }
     .mainwrap{
         margin: auto;
@@ -53,15 +128,22 @@
 @media screen and (min-width: 737px) and (max-width: 980px) {
     .indextop{
         background-color: #08AEEA;
-        background-image: linear-gradient(90deg, #2AF598 0%, #08AEEA 100%);
+        background-image: linear-gradient(90deg, #bac8e0 0%,#6a85b6 100%);
     }
     .commonhead{
         background-color: #08AEEA;
-        background-image: linear-gradient(90deg, #2AF598 0%, #08AEEA 100%);
+        background-image: linear-gradient(90deg, #bac8e0 0%, #6a85b6 100%);
     }
     .mainwrap{
         margin: auto;
         width: 670px;
+    }
+    .headtag > li{
+        padding: 0 10px;
+    }
+    .headtag > li:after{
+        width: calc(100% + 20px);
+        transform: translate(-10px, -100%);
     }
 }
 @media screen and (min-width: 481px) and (max-width: 736px) {
@@ -74,23 +156,71 @@
         background-image: linear-gradient(90deg, #fbc2eb 0%, #a6c1ee 100%);
         height: 50px;
     }
+    .headtag{
+        display: none;
+    }
     .mainwrap{
         margin: auto;
         width: 90%;
     }
+    .headtagphone{
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        background-color: rgba(101, 101, 101, 0.75);
+    }
+    .headtagphone > li{
+        line-height: 50px;
+    }
+    .headtagphone > li.active:after, .headtagphone > li:after, .headtagphone > li:hover:after{
+        height: 1px;
+        background-color: rgba(80, 80, 80, 0.80);
+        transform: translate(-20px, 0%);
+    }
+    .headtoggle{
+        height: 50px;
+        display: block;
+    }
 }
 @media screen and (max-width: 480px) {
     .indextop{
-        background-color: #a6c0fe;
-        background-image: linear-gradient(270deg,#3c298e,#2a5bbe 59%,#21a5e5);
+        background-color: #17b4d2;
+        background-image: linear-gradient(90deg, #c2e9fb 0%, #a1c4fd 100%);
     }
     .commonhead{
-        background-color: #a6c0fe;
-        background-image: linear-gradient(270deg,#3c298e,#2a5bbe 59%,#21a5e5);
+        background-color: #17b4d2;
+        background-image: linear-gradient(90deg, #c2e9fb 0%, #a1c4fd 100%);
         height: 40px;
+    }
+    .headtag{
+        display: none;
     }
     .mainwrap{
         margin: auto;
         width: 100%;
+    }
+    .headtagphone{
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        background-color: rgba(101, 101, 101, 0.75);
+    }
+    .headtagphone > li{
+        line-height: 40px;
+    }
+    .headtagphone > li.active:after, .headtagphone > li:after, .headtagphone > li:hover:after{
+        height: 1px;
+        background-color: rgba(80, 80, 80, 0.80);
+        transform: translate(-20px, 0%);
+    }
+    .headtoggle{
+        height: 40px;
+        display: block;
     }
 }

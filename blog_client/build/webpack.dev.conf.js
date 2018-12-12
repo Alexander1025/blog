@@ -28,7 +28,13 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         { from: /.*/, to: path.posix.join(config.dev.assetsPublicPath, 'index.html') },
       ],
     },
-    hot: true,
+
+
+    inline: false,  //关闭热更新，原因:会导致编辑器卡顿
+    hot: false,     //关闭热更新，原因:会导致编辑器卡顿
+
+
+    // hot: true,  //热更新
     contentBase: false, // since we use CopyWebpackPlugin.
     compress: true,
     host: HOST || config.dev.host,
