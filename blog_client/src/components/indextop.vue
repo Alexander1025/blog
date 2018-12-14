@@ -1,13 +1,20 @@
 <template>
     <div class="indexwrap indextop">
         <div class="mainwrap">
-            <!-- <h1>机智僧 - 技术分享网欢迎您</h1>
-            <p><em>Thank you for your welcome</em></p> -->
+            <div class="featured">
+                <commonarticle></commonarticle>
+            </div>
+            <div class="recommend">
+                <commonarticle></commonarticle>
+                <commonarticle></commonarticle>
+                <commonarticle></commonarticle>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
+import commonarticle from '@/components/commonarticle.vue';
 
 export default {
     data () {
@@ -16,7 +23,7 @@ export default {
         }
     },
     components:{
-
+        commonarticle
     },
     mounted:function (){
 
