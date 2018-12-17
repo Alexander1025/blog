@@ -1,24 +1,33 @@
 <template>
     <div class="commonarticle">
         <div class="article_img">
-            <img src="./../static/images/common/logo.png" alt="">
+            <img :src="'./../static/images/upload/'+img" alt="">
         </div>
         <div class="article_cont">
             <div class="article_title">
-                欢迎来到机智僧的博客
+                {{title}}
             </div>
             <div class="article_desc">
-                这里是机智僧的博客,欢迎大家常来博客打卡 ^_^
+                {{desc}}
             </div>
             <div class="article_bottom">
                 <div class="article_author">
-                    机智僧
+                    <img src="./../static/images/icon/figure_white.png" alt="">
+                    <span>
+                        {{author}}
+                    </span>
                 </div>
                 <div class="article_date">
-                    2018-10-1
+                    <img src="./../static/images/icon/time_white.png" alt="">
+                    <span>
+                        {{date}}
+                    </span>
                 </div>
                 <div class="article_quantity">
-                    168
+                    <img src="./../static/images/icon/footprint_white.png" alt="">
+                    <span>
+                        {{quantity}}
+                    </span>
                 </div>
             </div>
 
@@ -34,6 +43,7 @@ export default {
             message: ''
         }
     },
+    props:['id','tag','title','desc','author','date','quantity','img'],
     components:{
 
     },

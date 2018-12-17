@@ -1,10 +1,10 @@
 1. 本地开发指南:
-    开启nginx，设置代理， "location / " 指向前端热替换express服务，端口8080(暂时), "location / node " 指node，端口5000(暂时)
-    Vue热替换服务: `npm run dev`
+    开启nginx，设置代理， "location / " 指向前端热替换express服务，端口8080(暂时), "location / node " 指node，端口5000(暂时)<br>
+    Vue热替换服务: `npm run dev`<br>
     node服务: `run node`
 2. 生产环境开发指南:
-    开启nginx，设置代理， "location / " 指向前端打包文件, "location / node " 指node，端口5000(暂时)
-    build前端代码: `npm run build`
+    开启nginx，设置代理， "location / " 指向前端打包文件, "location / node " 指node，端口5000(暂时)<br>
+    build前端代码: `npm run build`<br>
     node服务: `run node`
 
 

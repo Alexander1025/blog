@@ -242,6 +242,7 @@ ul, li{
 .featured{
     width: 100%;
     color: white;
+    padding: 30px 0px 30px;
 }
 .recommend{
     width: 100%;
@@ -250,10 +251,40 @@ ul, li{
     justify-content: space-between;
     align-items: center;
     color: white;
+    padding: 0 0 30px;
 }
+
+
+
+.featured .commonarticle{
+	display: flex;
+	flex-flow: row-reverse nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.featured .article_img{
+	width: 50%;
+}
+.featured .article_img img{
+	width: 100%;
+}
+.featured .article_cont{
+	width: 50%;
+}
+.featured .article_title{
+	font-size: 24px;
+}
+.featured .article_desc{
+	font-size: 18px;
+}
+.featured .article_bottom{
+	width: 60%;
+	font-size: 16px;
+}
+
+
 .recommend .commonarticle{
-    /* width: 33.33333333%; */
-    /* flex: 0 1 33.33333333%; */
     flex-grow: 0;
     flex-shrink: 1;
     width: 33.333333%;
@@ -276,11 +307,7 @@ ul, li{
     white-space: nowrap;
 }
 .recommend .article_bottom{
-    width: 100%;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center;
+    width: 80%;
 }
 
 
@@ -299,6 +326,17 @@ ul, li{
 .article_bottom{
     font-size: 12px;
     color: rgba(255, 255, 255, 0.6);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+.article_author, .article_date, .article_quantity{
+	margin-right: 8px;
+}
+.article_author span, .article_date span, .article_quantity span, .article_author img, .article_date img, .article_quantity img{
+	height: 14px;
+	vertical-align: middle;
 }
 
 
@@ -312,18 +350,51 @@ ul, li{
 
 }
 @media screen and (min-width: 481px) and (max-width: 736px) {
-    .recommend{
+    .featured .commonarticle, .recommend{
         flex-flow: column nowrap;
     }
-    .recommend .commonarticle{
+    .featured .article_img, .featured .article_cont, .featured .article_bottom, .recommend .commonarticle, .recommend .article_bottom{
         width: 100%;
     }
+    .featured .article_title{
+		font-size: 18px;
+	}
+	.featured .article_desc{
+		font-size: 14px;
+	}
+	.featured .article_bottom{
+		font-size: 12px;
+	}
+	.featured{
+		padding: 0px;
+	}
 }
 @media screen and (max-width: 480px) {
-    .recommend{
+    .featured .commonarticle, .recommend{
         flex-flow: column nowrap;
     }
-    .recommend .commonarticle{
+    .featured .article_img, .featured .article_cont, .featured .article_bottom, .recommend .commonarticle, .recommend .article_bottom{
         width: 100%;
     }
+    .featured .article_title{
+		font-size: 18px;
+	}
+	.featured .article_desc{
+		font-size: 14px;
+	}
+	.featured .article_bottom{
+		font-size: 12px;
+	}
+	.featured{
+		padding: 0px;
+	}
+	.featured, .recommend{
+		color: #4c4c4c;
+	}
+	.article_desc{
+		color: #757575;
+	}
+	.article_bottom{
+
+	}
 }
