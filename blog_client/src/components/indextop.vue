@@ -24,6 +24,7 @@
                     :date="item.date"
                     :quantity="item.quantity"
                     :img="item.img"
+                    :key="item.id"
                 />
             </div>
         </div>
@@ -40,43 +41,43 @@ export default {
                 {
                     'id':"1",
                     'tag':"10",
-                    'title':"'欢迎来到机智僧的博客'",
-                    'desc':"'这里是机智僧的博客,欢迎大家常来博客打卡 ^_^'",
-                    'author':"'机智僧'",
-                    'date':"'2018-10-1'",
-                    'quantity':"'168'",
+                    'title':"欢迎来到机智僧的博客",
+                    'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
+                    'author':"机智僧",
+                    'date':"2018-10-1",
+                    'quantity':"168",
                     'img':"./../static/images/upload/indextop.jpg",
                 }
             ],
             recommend:[
                 {
-                    'id':"1",
+                    'id':"2",
                     'tag':"10",
-                    'title':"'欢迎来到机智僧的博客'",
-                    'desc':"'这里是机智僧的博客,欢迎大家常来博客打卡 ^_^'",
-                    'author':"'机智僧'",
-                    'date':"'2018-10-1'",
-                    'quantity':"'168'",
+                    'title':"欢迎来到机智僧的博客",
+                    'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
+                    'author':"机智僧",
+                    'date':"2018-10-1",
+                    'quantity':"168",
                     'img':"./../static/images/upload/indextop.jpg",
                 },
                 {
-                    'id':"1",
+                    'id':"3",
                     'tag':"10",
-                    'title':"'欢迎来到机智僧的博客'",
-                    'desc':"'这里是机智僧的博客,欢迎大家常来博客打卡 ^_^'",
-                    'author':"'机智僧'",
-                    'date':"'2018-10-1'",
-                    'quantity':"'168'",
+                    'title':"欢迎来到机智僧的博客",
+                    'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
+                    'author':"机智僧",
+                    'date':"2018-10-1",
+                    'quantity':"168",
                     'img':"./../static/images/upload/indextop.jpg",
                 },
                 {
-                    'id':"1",
+                    'id':"4",
                     'tag':"10",
-                    'title':"'欢迎来到机智僧的博客'",
-                    'desc':"'这里是机智僧的博客,欢迎大家常来博客打卡 ^_^'",
-                    'author':"'机智僧'",
-                    'date':"'2018-10-1'",
-                    'quantity':"'168'",
+                    'title':"欢迎来到机智僧的博客",
+                    'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
+                    'author':"机智僧",
+                    'date':"2018-10-1",
+                    'quantity':"168",
                     'img':"./../static/images/upload/indextop.jpg",
                 },
             ]

@@ -254,8 +254,6 @@ ul, li{
     padding: 0 0 30px;
 }
 
-
-
 .featured .commonarticle{
 	display: flex;
 	flex-flow: row-reverse nowrap;
@@ -283,7 +281,6 @@ ul, li{
 	font-size: 16px;
 }
 
-
 .recommend .commonarticle{
     flex-grow: 0;
     flex-shrink: 1;
@@ -309,7 +306,6 @@ ul, li{
 .recommend .article_bottom{
     width: 80%;
 }
-
 
 .article_title{
     font-size: 18px;
@@ -338,7 +334,6 @@ ul, li{
 	height: 14px;
 	vertical-align: middle;
 }
-
 
 @media screen and (min-width: 1280px){
 
@@ -400,4 +395,26 @@ ul, li{
 	.article_desc{
 		color: #757575;
 	}
+}
+
+
+
+
+
+
+/* 这里是底部通用样式 */
+.commonfoot{
+    background-color: #1b1c1f;
+}
+.copyright{
+    font-size: 13px;
+    padding: 18px 0;
+    text-align: center;
+}
+.copyrighttext{
+    color: #878c8e;
+}
+.copyrighttext a{
+    color: white;
+    text-decoration: none;
 }
