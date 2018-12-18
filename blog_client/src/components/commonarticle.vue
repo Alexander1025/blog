@@ -1,7 +1,7 @@
 <template>
     <div class="commonarticle">
         <div class="article_img">
-            <img :src="'./../static/images/upload/'+img" alt="">
+            <img :src="img" alt="">
         </div>
         <div class="article_cont">
             <div class="article_title">

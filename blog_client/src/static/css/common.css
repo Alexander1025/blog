@@ -177,7 +177,7 @@ ul, li{
         left: 0;
         width: 100%;
         height: auto;
-        background-color: rgba(101, 101, 101, 0.75);
+        background-color: rgba(101, 101, 101, 0.9);
     }
     .headtagphone > li{
         line-height: 50px;
@@ -216,7 +216,7 @@ ul, li{
         left: 0;
         width: 100%;
         height: auto;
-        background-color: rgba(101, 101, 101, 0.75);
+        background-color: rgba(101, 101, 101, 0.9);
     }
     .headtagphone > li{
         line-height: 40px;
@@ -279,7 +279,7 @@ ul, li{
 	font-size: 18px;
 }
 .featured .article_bottom{
-	width: 60%;
+	width: 100%;
 	font-size: 16px;
 }
 
@@ -368,6 +368,12 @@ ul, li{
 	.featured{
 		padding: 0px;
 	}
+	.featured, .recommend{
+		color: #4c4c4c;
+	}
+	.article_desc{
+		color: #757575;
+	}
 }
 @media screen and (max-width: 480px) {
     .featured .commonarticle, .recommend{
@@ -393,8 +399,5 @@ ul, li{
 	}
 	.article_desc{
 		color: #757575;
-	}
-	.article_bottom{
-
 	}
 }
