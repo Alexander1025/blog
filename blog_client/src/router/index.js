@@ -10,6 +10,8 @@ import Router from 'vue-router'
 import index from '@/views/index/index.vue'
 
 
+import article from '@/views/index/article.vue'
+
 
 import NotFoundComponent from './../views/404/404.vue';
 
@@ -22,6 +24,10 @@ var router = new Router({
         {
             path: '/',
             component: index
+        },
+        {
+            path: '/article',
+            component: article
         },
         // {
         //     path: '/login',

@@ -6,7 +6,7 @@
             </a>
         </div>
         <div class="article_cont">
-            <a href="###">
+            <a href="/article">
                 <div class="article_title">
                     {{title}}
                 </div>
