@@ -11,6 +11,7 @@
                     :date="featured[0].date"
                     :quantity="featured[0].quantity"
                     :img="featured[0].img"
+                    :color="featured[0].color"
                 />
             </div>
             <div class="recommend">
@@ -25,6 +26,7 @@
                     :quantity="item.quantity"
                     :img="item.img"
                     :key="item.id"
+                    :color="item.color"
                 />
             </div>
         </div>
@@ -47,6 +49,7 @@ export default {
                     'date':"2018-10-1",
                     'quantity':"168",
                     'img':"./../static/images/upload/indextop.jpg",
+                    'color':"white",
                 }
             ],
             recommend:[
@@ -59,6 +62,7 @@ export default {
                     'date':"2018-10-1",
                     'quantity':"168",
                     'img':"./../static/images/upload/indextop.jpg",
+                    'color':"white",
                 },
                 {
                     'id':"3",
@@ -69,6 +73,7 @@ export default {
                     'date':"2018-10-1",
                     'quantity':"168",
                     'img':"./../static/images/upload/indextop.jpg",
+                    'color':"white",
                 },
                 {
                     'id':"4",
@@ -79,6 +84,7 @@ export default {
                     'date':"2018-10-1",
                     'quantity':"168",
                     'img':"./../static/images/upload/indextop.jpg",
+                    'color':"white",
                 },
             ]
         }

@@ -1,14 +1,20 @@
 <template>
     <div class="indexwrap commonfoot">
         <div class="mainwrap mainfoot">
-            asdas
-            
+            <div class="introduce">
+                <img src="./../static/images/common/logo.png" alt="机智僧">
+            </div>
+            <div class="friendship">
+                友情链接:
+                <br><br>
+                <a href="http://www.zhoujizhi.com" target="_blank">机智僧技术分享网</a>
+            </div>
         </div>
         <div class="mainwrap copyright">
             <div class="copyrighttext">
                 © 2018. All Rights Reserved. Made By
                 <a href="http://www.zhoujizhi.com">
-                    周机智
+                    &nbsp;周机智
                 </a>
             </div>
         </div>

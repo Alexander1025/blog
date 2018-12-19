@@ -253,6 +253,9 @@ ul, li{
     color: white;
     padding: 0 0 30px;
 }
+.commonarticle a{
+    text-decoration: none;
+}
 
 .featured .commonarticle{
 	display: flex;
@@ -272,6 +275,7 @@ ul, li{
 }
 .featured .article_title{
 	font-size: 24px;
+    color: white;
 }
 .featured .article_desc{
 	font-size: 18px;
@@ -298,6 +302,7 @@ ul, li{
 .recommend .article_title{
     text-overflow: ellipsis;
     white-space: nowrap;
+    color: white;
 }
 .recommend .article_desc{
     text-overflow: ellipsis;
@@ -363,10 +368,10 @@ ul, li{
 	.featured{
 		padding: 0px;
 	}
-	.featured, .recommend{
+	.featured .article_title, .recommend .article_title{
 		color: #4c4c4c;
 	}
-	.article_desc{
+	.featured .article_desc, .recommend .article_desc{
 		color: #757575;
 	}
 }
@@ -389,12 +394,12 @@ ul, li{
 	.featured{
 		padding: 0px;
 	}
-	.featured, .recommend{
-		color: #4c4c4c;
-	}
-	.article_desc{
-		color: #757575;
-	}
+	.featured .article_title, .recommend .article_title{
+        color: #4c4c4c;
+    }
+	.featured .article_desc, .recommend .article_desc{
+        color: #757575;
+    }
 }
 
 
@@ -404,7 +409,7 @@ ul, li{
 
 /* 这里是底部通用样式 */
 .commonfoot{
-    background-color: #1b1c1f;
+    background-image: linear-gradient(0deg, #003492 50px, #2f69d4 50%);
 }
 .copyright{
     font-size: 13px;
@@ -417,4 +422,244 @@ ul, li{
 .copyrighttext a{
     color: white;
     text-decoration: none;
+}
+.mainfoot{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.introduce, .friendship{
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 1;
+    width: 50%;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 10px;
+}
+.friendship{
+    color: white;
+    font-size: 14px;
+}
+.friendship a{
+    display: inline-block;
+    color: white;
+    font-size: 12px;
+    text-decoration: none;
+    line-height: 20px;
+    padding: 6px 0 10px;
+    border-bottom: 1px solid rgba(121, 121, 121, 0.5);
+}
+.introduce img{
+    display: block;
+    margin: auto;
+    max-height: 140px;
+    max-width: 100%;
+}
+.commonfoothead{
+    background-color: #ccc;
+}
+@media screen and (min-width: 1280px){
+
+}
+@media screen and (min-width: 981px) and (max-width: 1280px) {
+
+}
+@media screen and (min-width: 737px) and (max-width: 980px) {
+
+}
+@media screen and (min-width: 481px) and (max-width: 736px) {
+    .mainfoot{
+        flex-direction: column;
+    }
+    .introduce, .friendship{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 480px) {
+    .mainfoot{
+        flex-direction: column;
+    }
+    .introduce, .friendship{
+        width: 100%;
+    }
+}
+
+
+
+/* 这里是中部通用样式--内容、侧栏 */
+.mainbody{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+.bodypart{
+    overflow: hidden;
+    width: calc(100% - 290px);
+}
+.bodyside{
+    width: 290px;
+}
+@media screen and (min-width: 1280px){
+
+}
+@media screen and (min-width: 981px) and (max-width: 1280px) {
+    .bodypart{
+        width: calc(100% - 260px);
+    }
+    .bodyside{
+        width: 260px;
+    }
+}
+@media screen and (min-width: 737px) and (max-width: 980px) {
+    .mainbody{
+        flex-direction: column;
+    }
+    .bodypart, .bodyside{
+        width: 100%;
+    }
+}
+@media screen and (min-width: 481px) and (max-width: 736px) {
+    .mainbody{
+        flex-direction: column;
+    }
+    .bodypart, .bodyside{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 480px) {
+    .mainbody{
+        flex-direction: column;
+    }
+    .bodypart, .bodyside{
+        width: 100%;
+    }
+}
+
+
+
+/* 这里是分隔线通用样式 */
+.cutline{
+    width: 94%;
+    height: 40px;
+    padding: 10px 0 5px;
+    overflow: hidden;
+    margin: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.cutlineimg{
+    height: 40px;
+    vertical-align: middle;
+}
+.cutline span{
+    line-height: 40px;
+    height: 40px;
+    vertical-align: middle;
+    white-space: nowrap;
+    display: inline-block;
+    padding: 0 5px;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: rgba(51, 51, 51, 0.8);
+}
+.cutline:after{
+    width: 100%;
+    content: '';
+    border-top: 2px solid rgba(0,0,0,.05);
+}
+
+
+
+
+/* 这里是首页通用文章块样式 */
+.articlearea{
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    color: white;
+    padding: 0 0 30px;
+}
+.articlearea .commonarticle{
+    flex-grow: 0;
+    flex-shrink: 1;
+    width: 33.333333%;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 10px 10px 30px 10px;
+}
+.articlearea .article_img, .articlearea .article_img img{
+    width: 100%;
+}
+.articlearea .article_cont{
+    width: 100%;
+}
+.articlearea .article_title{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #000;
+}
+.articlearea .article_desc{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.articlearea .article_title{
+    font-size: 18px;
+    font-weight: 500;
+    overflow: hidden;
+    line-height: 32px;
+}
+.articlearea .article_desc{
+    font-size: 14px;
+    overflow: hidden;
+    line-height: 28px;
+    color: rgba(0, 0, 0, 0.8);
+}
+.articlearea .article_bottom{
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+.articlearea .article_author, .articlearea .article_date, .articlearea .article_quantity{
+    margin-right: 8px;
+}
+.articlearea .article_author span, .articlearea .article_date span, .articlearea .article_quantity span, .articlearea .article_author img, .articlearea .article_date img, .articlearea .article_quantity img{
+    height: 14px;
+    vertical-align: middle;
+}
+
+@media screen and (min-width: 1280px){
+
+}
+@media screen and (min-width: 981px) and (max-width: 1280px) {
+    .articlearea .commonarticle, .articlearea .article_bottom{
+        width: 50%;
+    }
+}
+@media screen and (min-width: 737px) and (max-width: 980px) {
+    .articlearea .commonarticle, .articlearea .article_bottom{
+        width: 50%;
+    }
+}
+@media screen and (min-width: 481px) and (max-width: 736px) {
+    .articlearea .commonarticle, .articlearea .article_bottom{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 480px) {
+    .articlearea .commonarticle, .articlearea .article_bottom{
+        width: 100%;
+    }
 }

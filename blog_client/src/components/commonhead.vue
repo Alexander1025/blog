@@ -1,7 +1,9 @@
 <template>
     <div class="indexwrap commonhead">
         <div class="mainwrap mainhead">
-            <img class="logoimg" src="./../static/images/common/logo.png" alt="机智僧">
+            <a href="http://www.zhoujizhi.com">
+                <img class="logoimg" src="./../static/images/common/logo.png" alt="机智僧">
+            </a>
                 <ul class="headtag" v-if="!isshowheadtag">
                     <li v-for="(item, index) in headtagarr" :class="[item.isactive?'active':'']">
                         {{item.cont}}
