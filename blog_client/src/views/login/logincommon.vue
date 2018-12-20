@@ -6,7 +6,7 @@
             </router-link>
         </div>
         <div class="center">
-            <img class="img" src="./../../static/images/common/logo.png" alt="">
+            <img class="img" src="./../../static/images/common/littlelogo.png" alt="">
         </div>
         <router-view></router-view>
     </div>
@@ -51,6 +51,18 @@ export default {
     .centerwrap .img{
         padding: 20px 0 20px;
         width: 70%;
+    }
+    .centerwrap{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .verticalbetween{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
     }
     .logininput{
         border: none;
