@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import '@/static/css/login.css';
 
 export default {
     data () {
@@ -38,77 +39,5 @@ export default {
 </script>
 
 <style>
-    .center .img{
-        margin: auto;
-    }
-    .center{
-        text-align: center;
-    }
-    .loginwrap{
-        background-color: white;
-        height: 100vh;
-    }
-    .centerwrap .img{
-        padding: 20px 0 20px;
-        width: 70%;
-    }
-    .centerwrap{
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .verticalbetween{
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .logininput{
-        border: none;
-        border-bottom: 1px solid #e2e2e2;
-        width: 80%;
-        line-height: 50px;
-        margin: 10px 0;
-        font-size: 16px;
-        color: #a98604;
-    }
-    .logininput::-webkit-input-placeholder {
-        color: #62a7ca;
-    }
-    .logininput:-moz-placeholder {
-        color: #62a7ca;
-    }
-    .logininput::-moz-placeholder {
-        color: #62a7ca;
-    }
-    .logininput:-ms-input-placeholder {
-        color: #62a7ca;
-    }
-    .loginbtn{
-        display: block;
-        width: 80%;
-        line-height: 42px;
-        background-color: #0084c6;
-        color: white;
-        text-align: center;
-        text-decoration: none;
-        margin: 15px 0 0;
-        border-radius: 3px;
-    }
-    .topleft{
-        padding: 15px 5% 15px;
-    }
-    .topleft img{
-        width: 8%;
-    }
-    .logingray{
-        margin: 15px 0 0;
-        width: 80%;
-    }
-    .logingray a{
-        color: #a0a0a0;
-        text-decoration: none;
-        font-size: 14px;
-    }
+
 </style>

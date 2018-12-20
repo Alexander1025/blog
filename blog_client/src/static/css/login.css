@@ -1,6 +1,8 @@
 .loginwrap{
     background-color: white;
     height: 100vh;
+    max-width: 760px;
+    margin: auto;
 }
 .centerwrap .img{
     padding: 20px 0 0;
@@ -44,10 +46,15 @@
 }
 .topleft img{
     width: 8%;
+    max-width: 40px;
 }
 .logingray{
     margin: 15px 0 0;
     width: 80%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
 }
 .logingray a{
     color: #a0a0a0;
@@ -94,74 +101,11 @@
 .center{
     text-align: center;
 }
-.loginwrap{
-    background-color: white;
-    height: 100vh;
-}
-.centerwrap .img{
-    padding: 20px 0 20px;
-    width: 70%;
-}
 .centerwrap{
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
     align-items: center;
-}
-.logininput{
-    border: none;
-    border-bottom: 1px solid #e2e2e2;
-    width: 100%;
-    line-height: 50px;
-    margin: 10px 0;
-    font-size: 16px;
-    color: #a98604;
-}
-.logininput::-webkit-input-placeholder {
-    color: #62a7ca;
-}
-.logininput:-moz-placeholder {
-    color: #62a7ca;
-}
-.logininput::-moz-placeholder {
-    color: #62a7ca;
-}
-.logininput:-ms-input-placeholder {
-    color: #62a7ca;
-}
-.loginbtn{
-    display: block;
-    width: 80%;
-    line-height: 42px;
-    background-color: #0084c6;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    margin: 15px 0 0;
-    border-radius: 3px;
-}
-.topleft{
-    padding: 15px 5% 15px;
-}
-.topleft img{
-    width: 8%;
-}
-.logingray{
-    margin: 15px 0 0;
-    width: 80%;
-}
-.logingray a{
-    color: #a0a0a0;
-    text-decoration: none;
-    font-size: 14px;
-}
-.loginwrap{
-    background-color: white;
-    height: 100vh;
-}
-.centerwrap .img{
-    padding: 20px 0 0;
-    width: 70%;
 }
 .centerwrap .logininputregister{
     border: none;
@@ -217,38 +161,4 @@
     top: 50%;
     left: 0;
     background-color: #39c163;
-}
-.usernamewrap, .passwordwrap{
-    width: 80%;
-    position: relative;
-}
-.showpassword, .notshowpassword, .succeed, .failure{
-    content: " ";
-    position: absolute;
-    display: block;
-    width: 20px;
-    height: 20px;
-    top: 50%;
-    right: 0;
-    transform: translate(0, -50%);
-}
-.showpassword{
-    /* tick.png */
-    /* cross.png */
-    /* show.png */
-    /* hide.png */
-    background: url('./../../static/images/icon/hide.png');
-    background-size: 20px 20px;
-}
-.notshowpassword{
-    background: url('./../../static/images/icon/show.png');
-    background-size: 20px 20px;
-}
-.succeed{
-    background: url('./../../static/images/icon/tick.png');
-    background-size: 20px 20px;
-}
-.failure{
-    background: url('./../../static/images/icon/cross.png');
-    background-size: 20px 20px;
 }
