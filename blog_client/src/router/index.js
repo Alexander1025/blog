@@ -13,6 +13,10 @@ import index from '@/views/index/index.vue'
 import article from '@/views/index/article.vue'
 
 
+import logincommon from '@/views/login/logincommon.vue';
+import login from '@/views/login/login.vue';
+import register from '@/views/login/register.vue';
+
 import NotFoundComponent from './../views/404/404.vue';
 
 
@@ -28,6 +32,14 @@ var router = new Router({
         {
             path: '/article',
             component: article
+        },
+        {
+            path: '/login',
+            component: logincommon,
+            children: [
+                { path: '', component: login },
+                { path: 'register', component: register },
+            ]
         },
         // {
         //     path: '/login',

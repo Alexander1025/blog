@@ -81,7 +81,6 @@ export default {
     },
     methods:{
         headtoggle:function(){
-            console.log("asd");
             this.isshowheadtag = !this.isshowheadtag;
         }
     }
