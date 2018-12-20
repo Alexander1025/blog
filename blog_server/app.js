@@ -6,6 +6,8 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var loginRouter = require('./routes/login');
+
 
 var app = express();
 
@@ -19,8 +21,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+
+
+app.use('/node/', indexRouter);
+app.use('/node/users', usersRouter);
+app.use('/node/login', loginRouter);
 
 
 
@@ -28,11 +33,6 @@ app.post('/node/test', function (req, res) {
   res.send("访问成功");
   res.end();
 });
-
-
-
-
-
 
 
 // catch 404 and forward to error handler

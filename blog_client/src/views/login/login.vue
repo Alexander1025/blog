@@ -51,14 +51,14 @@ export default {
     },
     mounted: function (){
 
-        // var ajax2 = new XMLHttpRequest();
-        // ajax2.open('post','/result');
-        // ajax2.send();
-        // ajax2.onreadystatechange = function () {
-        //     if (ajax2.readyState==4 &&ajax2.status==200) {
-        // 　　　　console.log(ajax2.responseText);//输入相应的内容
-        //   　　}
-        // }
+        var ajax2 = new XMLHttpRequest();
+        ajax2.open('post','/node/login/test');
+        ajax2.send();
+        ajax2.onreadystatechange = function () {
+            if (ajax2.readyState==4 &&ajax2.status==200) {
+        　　　　console.log(ajax2.responseText);//输入相应的内容
+          　　}
+        }
     },
     methods:{
         togglepassword:function (){
