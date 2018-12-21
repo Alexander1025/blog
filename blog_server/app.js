@@ -27,7 +27,7 @@ app.use('/node/', indexRouter);
 app.use('/node/users', usersRouter);
 app.use('/node/login', loginRouter);
 
-
+ 
 
 app.post('/node/test', function (req, res) {
   res.send("访问成功");
@@ -38,7 +38,7 @@ app.post('/node/test', function (req, res) {
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
-});
+}); 
 
 // error handler
 app.use(function(err, req, res, next) {

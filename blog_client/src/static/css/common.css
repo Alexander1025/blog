@@ -644,22 +644,22 @@ ul, li{
 
 }
 @media screen and (min-width: 981px) and (max-width: 1280px) {
-    .articlearea .commonarticle, .articlearea .article_bottom{
+    .articlearea .commonarticle{
         width: 50%;
     }
 }
 @media screen and (min-width: 737px) and (max-width: 980px) {
-    .articlearea .commonarticle, .articlearea .article_bottom{
+    .articlearea .commonarticle{
         width: 50%;
     }
 }
 @media screen and (min-width: 481px) and (max-width: 736px) {
-    .articlearea .commonarticle, .articlearea .article_bottom{
+    .articlearea .commonarticle{
         width: 100%;
     }
 }
 @media screen and (max-width: 480px) {
-    .articlearea .commonarticle, .articlearea .article_bottom{
+    .articlearea .commonarticle{
         width: 100%;
     }
 }
