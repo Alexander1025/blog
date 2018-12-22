@@ -22,7 +22,7 @@
                 v-model="password"
                 @keyup="keyup"
             >
-            <div :class="[showpassword?'showpassword':'notshowpassword']" @click="togglepassword();"></div>
+            <div :class="[showpassword?'notshowpassword':'showpassword']" @click="togglepassword();"></div>
         </div>
 
         <a @click="savename" class="loginbtn loginbtnregister" href="javascript:void(0);">注册</a>
@@ -69,40 +69,45 @@ export default {
     },
     methods:{
         getusername:function (){
+            if(this.username.trim() == ""){
+                this.showusernamestatus = false;
+                this.succeed = false;
+                this.failure = false;
+                return false;
+            }
+            var that = this;
+            var ajaxargument = "";
+            ajaxargument = `username=${this.username}`;
 
-            // var that = this;
-            // var ajaxargument = "";
-            // ajaxargument = `username=${this.username}`;
+            // console.log(ajaxargument);
 
-            // // console.log(ajaxargument);
-
-            // var ajax = new XMLHttpRequest();
-            // ajax.open('post','/node/haveUserName');
-            // ajax.send(ajaxargument);
-            // ajax.onreadystatechange = function () {
-            //     if (ajax.readyState==4 &&ajax.status==200) {
-            //         var data = ajax.responseText;
-            //         data = myparse(data);
-            //         console.log(data);//输入相应的内容
-            //         if(data.status == 1){
-            //             console.log(data.data.length);
-            //             if(that.username.length >= 1){
-            //                 that.showusernamestatus = true;
-            //                 if(data.data.length == 0){
-            //                     that.succeed = true;
-            //                     that.failure = false;
-            //                 }else{
-            //                     that.succeed = false;
-            //                     that.failure = true;
-            //                 }
-            //             }else if(that.username.length == 0){
-            //                 that.showusernamestatus = false;
-            //                 that.succeed = false;
-            //                 that.failure = false;
-            //             }
-            //         }
-            //     }
-            // }
+            var ajax = new XMLHttpRequest();
+            ajax.open('post','/node/login/haveUserName');
+            ajax.send(ajaxargument);
+            ajax.onreadystatechange = function () {
+                if (ajax.readyState==4 &&ajax.status==200) {
+                    var data = ajax.responseText;
+                    data = myparse(data);
+                    console.log(data);//输入相应的内容
+                    if(data.status == 1){
+                        console.log(data.data.length);
+                        // if(that.username.length >= 1){
+                            that.showusernamestatus = true;
+                            if(data.data.length == 0){
+                                that.succeed = true;
+                                that.failure = false;
+                            }else{
+                                that.succeed = false;
+                                that.failure = true;
+                            }
+                        // }else if(that.username.length == 0){
+                        //     that.showusernamestatus = false;
+                        //     that.succeed = false;
+                        //     that.failure = false;
+                        // }
+                    }
+                }
+            }
         },
         togglepassword:function (){
             this.showpassword = !this.showpassword;
@@ -132,30 +137,30 @@ export default {
                 });
                 return false;
             }
-            // var that = this;
-            // var ajaxargument = "";
-            // ajaxargument = `username=${this.username}&password=${this.password}`;
+            var that = this;
+            var ajaxargument = "";
+            ajaxargument = `username=${this.username}&password=${this.password}`;
 
-            // var ajax = new XMLHttpRequest();
-            // ajax.open('post','/node/savename');
-            // ajax.send(ajaxargument);
-            // ajax.onreadystatechange = function () {
-            //     if (ajax.readyState==4 &&ajax.status==200) {
-            //         var data = ajax.responseText;
-            //         data = myparse(data);
-            //         console.log(data);//输入相应的内容
-            //         if(data.status == 1){
-            //             layer.open({
-            //                 content: "注册成功",
-            //                 skin: 'msg',
-            //                 time: 2,
-            //             });
-            //             var time = setTimeout(()=>{
-            //                 that.$router.push({path: '/login'});
-            //             },2000);
-            //         }
-            //     }
-            // }
+            var ajax = new XMLHttpRequest();
+            ajax.open('post','/node/login/savename');
+            ajax.send(ajaxargument);
+            ajax.onreadystatechange = function () {
+                if (ajax.readyState==4 &&ajax.status==200) {
+                    var data = ajax.responseText;
+                    data = myparse(data);
+                    console.log(data);//输入相应的内容
+                    if(data.status == 1){
+                        layer.open({
+                            content: "注册成功",
+                            skin: 'msg',
+                            time: 2,
+                        });
+                        var time = setTimeout(()=>{
+                            that.$router.push({path: '/login'});
+                        },2000);
+                    }
+                }
+            }
         },
         keyup:function (e){
             if(e.keyCode == 13){

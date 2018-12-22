@@ -5,6 +5,9 @@
 </template>
 
 <script>
+import layer from '@/static/js/layer.js'
+
+import '@/static/css/layer.css';
 import '@/static/css/common.css';
 
 export default {

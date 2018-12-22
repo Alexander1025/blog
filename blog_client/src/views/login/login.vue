@@ -82,37 +82,37 @@ export default {
             }
 
 
-            // var that = this;
-            // var ajaxargument = "";
-            // ajaxargument = `username=${this.username}&password=${this.password}`;
+            var that = this;
+            var ajaxargument = "";
+            ajaxargument = `username=${this.username}&password=${this.password}`;
 
-            // var ajax = new XMLHttpRequest();
-            // ajax.open('post','/node/login');
-            // ajax.send(ajaxargument);
-            // ajax.onreadystatechange = function () {
-            //     if (ajax.readyState==4 &&ajax.status==200) {
-            //         var data = ajax.responseText;
-            //         data = myparse(data);
-            //         console.log(data);//输入相应的内容
-            //         if(data.status == 1){
-            //             layer.open({
-            //                 content: `${data.data[0].username},欢迎回来`,
-            //                 skin: 'msg',
-            //                 time: 2,
-            //             });
-            //             var time = setTimeout(()=>{
-            //                 that.$router.push({path: '/'});
-            //             },2000);
-            //         }else{
-            //             that.password = "";
-            //             layer.open({
-            //                 content: `账号或密码错误，请重新输入`,
-            //                 skin: 'msg',
-            //                 time: 2,
-            //             });
-            //         }
-            //     }
-            // }
+            var ajax = new XMLHttpRequest();
+            ajax.open('post','/node/login/login');
+            ajax.send(ajaxargument);
+            ajax.onreadystatechange = function () {
+                if (ajax.readyState==4 &&ajax.status==200) {
+                    var data = ajax.responseText;
+                    data = myparse(data);
+                    console.log(data);//输入相应的内容
+                    if(data.status == 1){
+                        layer.open({
+                            content: `${data.data[0].username},欢迎回来`,
+                            skin: 'msg',
+                            time: 2,
+                        });
+                        var time = setTimeout(()=>{
+                            that.$router.push({path: '/'});
+                        },2000);
+                    }else{
+                        that.password = "";
+                        layer.open({
+                            content: `账号或密码错误，请重新输入`,
+                            skin: 'msg',
+                            time: 2,
+                        });
+                    }
+                }
+            }
         },
         keyup:function (e){
             if(e.keyCode == 13){
