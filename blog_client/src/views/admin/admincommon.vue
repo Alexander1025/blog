@@ -1,16 +1,58 @@
 <template>
     <div class="adminwrap">
-        <router-view></router-view>
+        <div class="admintop">
+            <img class="logoimg" src="./../../static/images/common/logo.png" alt="机智僧">
+            <span>机智僧博客后台</span>
+        </div>
+        <div class="adminmain">
+            <div class="adminmenu">
+                <ul>
+                    <li
+                        v-for="(item, index) in activelist"
+                        :class="[item.isactive? 'active': '']"
+                        @click="lihref(item.href,index)"
+                    >
+                        {{item.text}}
+                    </li>
+                </ul>
+            </div>
+            <div class="admincompile">
+                <router-view></router-view>
+            </div>
+        </div>
+
     </div>
 </template>
 
 <script>
+import router from './../../router';
 import '@/static/css/admin.css';
 
 export default {
     data () {
         return {
-            message: ''
+            activelist:[
+                {
+                    'href': "/admin/article",
+                    'text': "文章",
+                    'isactive': true,
+                },
+                {
+                    'href': "/admin/addarticle",
+                    'text': "添加文章",
+                    'isactive': false,
+                },
+                {
+                    'href': "/admin/category",
+                    'text': "文章分类",
+                    'isactive': false,
+                },
+                {
+                    'href': "/admin/addcategory",
+                    'text': "添加文章分类",
+                    'isactive': false,
+                }
+            ]
         }
     },
     components:{
@@ -18,6 +60,15 @@ export default {
     },
     mounted: function (){
 
+    },
+    methods:{
+        lihref: function (href,index){
+            for(var i in this.activelist){
+                this.activelist[i].isactive = false;
+            }
+            this.activelist[index].isactive = true;
+            router.push({ path: href });
+        }
     }
 }
 </script>

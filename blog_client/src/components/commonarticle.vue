@@ -1,12 +1,12 @@
 <template>
     <div class="commonarticle">
         <div class="article_img">
-            <a href="###">
+            <router-link to="/###">
                 <img :src="img" alt="">
-            </a>
+            </router-link>
         </div>
         <div class="article_cont">
-            <a href="/article">
+            <router-link to="/article">
                 <div class="article_title">
                     {{title}}
                 </div>
@@ -33,7 +33,7 @@
                         </span>
                     </div>
                 </div>
-            </a>
+            </router-link>
         </div>
     </div>
 </template>

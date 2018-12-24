@@ -7,13 +7,17 @@ import Router from 'vue-router'
 // 导入相应的子组件
 // import Hello from './../components/Hello'
 // import index from './../views/index/index.vue';
-import index from '@/views/index/index.vue'
+import index from '@/views/index/index.vue';
 
 
-import article from '@/views/index/article.vue'
+import article from '@/views/index/article.vue';
 
 
 import admincommon from '@/views/admin/admincommon.vue';
+import article_admin from '@/views/admin/article.vue';
+import category_admin from '@/views/admin/category.vue';
+import add_article_admin from '@/views/admin/articleadd.vue';
+import add_category_admin from '@/views/admin/categoryadd.vue';
 
 
 import logincommon from '@/views/login/logincommon.vue';
@@ -48,6 +52,13 @@ var router = new Router({
         {
             path: '/admin',
             component: admincommon,
+            children: [
+                { path: '/', component: article_admin },
+                { path: 'article', component: article_admin },
+                { path: 'category', component: category_admin },
+                { path: 'addarticle', component: add_article_admin },
+                { path: 'addcategory', component: add_category_admin },
+            ]
         },
         // {
         //     path: '/login',

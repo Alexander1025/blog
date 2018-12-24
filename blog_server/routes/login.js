@@ -2,11 +2,11 @@ var express = require('express');
 var router = express.Router();
 var querystring = require("querystring");
 
-var indexmodel = require("./../model/loginmodel.js");
-// var test = indexmodel.test;
-var login = indexmodel.login;
-var havethisname = indexmodel.havethisname;
-var savename = indexmodel.savename;
+var loginmodel = require("./../model/loginmodel.js");
+// var test = loginmodel.test;
+var login = loginmodel.login;
+var havethisname = loginmodel.havethisname;
+var savename = loginmodel.savename;
 
 
 
