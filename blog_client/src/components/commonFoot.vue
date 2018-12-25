@@ -12,7 +12,7 @@
         </div>
         <div class="mainwrap copyright">
             <div class="copyrighttext">
-                © 2018. All Rights Reserved. Made By
+                粤ICP备18158752号 . All Rights Reserved. ©Copyright 2018 by
                 <a href="http://www.zhoujizhi.com">
                     &nbsp;周机智
                 </a>

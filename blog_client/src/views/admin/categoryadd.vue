@@ -16,6 +16,7 @@
                     <input v-model="describe" type="text" placeholder="描述">
                 </li>
                 <li>
+                    <input type="file" @change="changefile" ref="file">
                     <input type="text" placeholder="图标">
                 </li>
                 <li>
@@ -68,9 +69,40 @@ export default {
 
     },
     methods:{
+        changefile: function (e){
+            console.log(e);
+            console.log(this.$refs.file.value);
+            console.log(this.$refs.file.files[0]);
+            var _this = this;
+            var reader = new FileReader();//新建一个FileReader
+            reader.readAsDataURL(this.$refs.file.files[0]);
+            reader.onload = function(){
+                console.log(reader.result);
+                var that = this;
+                var ajaxargument = "";
+                var ajax = new XMLHttpRequest();
+                ajax.open('post','/node/admin/uploadfile');
+                ajax.send(ajaxargument);
+                ajax.onreadystatechange = function () {
+                    if (ajax.readyState==4 &&ajax.status==200) {
+                        var data = ajax.responseText;
+                        data = myparse(data);
+                        console.log(data);
+                    }
+                };
+            }
+        },
         submitform: function (){
             console.log(this.name,this.describe,this.status);
 
+            if(!this.name && !this.describe && !this.status){
+                layer.open({
+                    content: `请填写完整`,
+                    skin: 'msg',
+                    time: 2,
+                });
+                return false;
+            }
 
             var that = this;
             var ajaxargument = "";
