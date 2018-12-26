@@ -186,7 +186,7 @@ router.post('/uploadfile', function (req, res, next) {
         // console.log("body:",body);
 
         
-        var imgdirname = `${__dirname}\\..\\upload`;
+        var imgdirname = `${__dirname}\/..\/upload`;
         var base64Data = body.img.replace(/^data:image\/\w+;base64,/, "");
         var base64Data1 = base64Data.replace(/\s/g, "+");
         var dataBuffer = Buffer.from(base64Data1, 'base64');
