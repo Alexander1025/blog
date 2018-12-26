@@ -197,7 +197,13 @@ router.post('/uploadfile', function (req, res, next) {
         console.log("文件名称:"+filename);
         console.log("文件路径:"+imgdirname);
 
-        fs.writeFile(`${imgdirname}\\${filename}`, dataBuffer , function(err) {
+        var filefinalname;
+        if(process.env.NODE_ENV ==  'production'){
+            filefinalname = `${imgdirname}\/${filename}`;
+        }else{
+            filefinalname = `${imgdirname}\\${filename}`;
+        }
+        fs.writeFile(`${filefinalname}`, dataBuffer , function(err) {
             if (err) {
                 resdata['data'] = body;
                 resdata['status'] = 0;
