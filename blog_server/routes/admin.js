@@ -185,8 +185,8 @@ router.post('/uploadfile', function (req, res, next) {
         body = querystring.parse(body);  //将一个字符串反序列化为一个对象
         // console.log("body:",body);
 
-        
-        var imgdirname = `${__dirname}\/..\/upload`;
+        var mydirname = __dirname.replace("\\routes","");
+        var imgdirname = `${mydirname}\/upload`;
         var base64Data = body.img.replace(/^data:image\/\w+;base64,/, "");
         var base64Data1 = base64Data.replace(/\s/g, "+");
         var dataBuffer = Buffer.from(base64Data1, 'base64');
