@@ -5,7 +5,7 @@ if(process.env.NODE_ENV ==  'production'){
         user     : 'root',
         password : '061b0a84afeb2b00.',   //记得最后有点！！！
         port     : '3306',
-        database : 'mytodo',
+        database : 'blog',
     }
 }else{
     config = {
