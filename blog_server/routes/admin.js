@@ -193,27 +193,22 @@ router.post('/uploadfile', function (req, res, next) {
         var date =  new Date();
         var filename = `${date.getFullYear()}${(date.getMonth()+1)}${date.getDate()}-${Date.now()}.${body.imgtype}`;
 
-
         console.log("文件名称:"+filename);
         console.log("文件路径:"+imgdirname);
-        resdata['data'] = filename;
-        resdata['status'] = 1;
-        res.send(resdata);
-        res.end();
 
-        // fs.writeFile(`${imgdirname}\\${filename}`, dataBuffer , function(err) {
-        //     if (err) {
-        //         resdata['data'] = body;
-        //         resdata['status'] = 0;
-        //         res.send(resdata);
-        //         res.end();
-        //         return console.error(err);
-        //     }
-        //     resdata['data'] = filename;
-        //     resdata['status'] = 1;
-        //     res.send(resdata);
-        //     res.end();
-        // });
+        fs.writeFile(`${imgdirname}\\${filename}`, dataBuffer , function(err) {
+            if (err) {
+                resdata['data'] = body;
+                resdata['status'] = 0;
+                res.send(resdata);
+                res.end();
+                return console.error(err);
+            }
+            resdata['data'] = filename;
+            resdata['status'] = 1;
+            res.send(resdata);
+            res.end();
+        });
 
 
         // 业务开始
