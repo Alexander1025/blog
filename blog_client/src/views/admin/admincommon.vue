@@ -60,6 +60,7 @@ export default {
     },
     mounted: function (){
         console.log(location.href);
+
         for(var i = 0 ; i <= this.activelist.length-1 ; i++){
             this.activelist[i].isactive = false;
             if(location.href.includes(this.activelist[i].href)){

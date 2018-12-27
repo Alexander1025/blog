@@ -43,7 +43,13 @@ router.post('/categoryadd', function (req, res) {
         // 解析参数
         body = querystring.parse(body);  //将一个字符串反序列化为一个对象
         console.log("body:",body);
-
+        if(!req.cookies['userid'] || req.cookies['userid'] == ""){
+            resdata['data'] = "请登录";
+            resdata['status'] = -1;
+            res.send(resdata);
+            res.end();
+            return false;
+        }
         // 业务开始
         categoryadd(body).then(function (data){
             console.log(data);
@@ -91,6 +97,13 @@ router.post('/categorygetmod', function (req, res) {
         // 解析参数
         body = querystring.parse(body);  //将一个字符串反序列化为一个对象
         console.log("body:",body);
+        if(!req.cookies['userid'] || req.cookies['userid'] == ""){
+            resdata['data'] = "请登录";
+            resdata['status'] = -1;
+            res.send(resdata);
+            res.end();
+            return false;
+        }
 
         // 业务开始
         categorygetmod(body).then(function (data){
@@ -138,6 +151,13 @@ router.post('/categorysetmod', function (req, res) {
         // 解析参数
         body = querystring.parse(body);  //将一个字符串反序列化为一个对象
         console.log("body:",body);
+        if(!req.cookies['userid'] || req.cookies['userid'] == ""){
+            resdata['data'] = "请登录";
+            resdata['status'] = -1;
+            res.send(resdata);
+            res.end();
+            return false;
+        }
 
         // 业务开始
         categorysetmod(body).then(function (data){
@@ -184,6 +204,13 @@ router.post('/uploadfile', function (req, res, next) {
         // 解析参数
         body = querystring.parse(body);  //将一个字符串反序列化为一个对象
         // console.log("body:",body);
+        if(!req.cookies['userid'] || req.cookies['userid'] == ""){
+            resdata['data'] = "请登录";
+            resdata['status'] = -1;
+            res.send(resdata);
+            res.end();
+            return false;
+        }
 
         var mydirname = __dirname.replace("\\routes","");
         var mydirname1 = mydirname.replace("\/routes","");
@@ -245,7 +272,7 @@ router.post('/uploadfile', function (req, res, next) {
 
 /**
  *
- 用于添加文章分类
+ 用于获取文章分类
  *
  @method categoryget
  *
@@ -269,6 +296,14 @@ router.post('/categoryget', function (req, res) {
         // 解析参数
         body = querystring.parse(body);  //将一个字符串反序列化为一个对象
         console.log("body:",body);
+        console.log('userid: ', req.cookies['userid']);
+        if(!req.cookies['userid'] || req.cookies['userid'] == ""){
+            resdata['data'] = "请登录";
+            resdata['status'] = -1;
+            res.send(resdata);
+            res.end();
+            return false;
+        }
 
         // 业务开始
         categoryget(body).then(function (data){

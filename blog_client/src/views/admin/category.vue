@@ -79,6 +79,17 @@ export default {
                 console.log(data);//输入相应的内容
                 if(data.status == 1){
                     that.categorylist = data.data;
+                }else if(data.status == -1){
+                    layer.open({
+                        content: `${data.data}`,
+                        skin: 'msg',
+                        time: 2,
+                    });
+                    var time = setTimeout(()=>{
+                        that.$router.push({
+                            path: '/login',
+                        });
+                    },2000);
                 }else{
                     layer.open({
                         content: `获取分类失败`,
