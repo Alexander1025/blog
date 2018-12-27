@@ -1,14 +1,12 @@
 <template>
     <div class="indexwrap commonhead">
         <div class="mainwrap mainhead">
-            <a href="http://www.zhoujizhi.com">
-                <img class="logoimg" src="./../static/images/common/logo.png" alt="机智僧">
-            </a>
-                <ul class="headtag" v-if="!isshowheadtag">
-                    <li v-for="(item, index) in headtagarr" :class="[item.isactive?'active':'']">
-                        {{item.cont}}
-                    </li>
-                </ul>
+            <img @click="href("/")" class="logoimg" src="./../static/images/common/logo.png" alt="机智僧">
+            <ul class="headtag" v-if="!isshowheadtag">
+                <li v-for="(item, index) in headtagarr" :class="[item.isactive?'active':'']">
+                    {{item.cont}}
+                </li>
+            </ul>
             <div class="headtoggle" @click="headtoggle">
                 <img src="./../static/images/icon/Hamburger_white.png" alt="汉堡包">
             </div>
@@ -82,6 +80,9 @@ export default {
     methods:{
         headtoggle:function(){
             this.isshowheadtag = !this.isshowheadtag;
+        },
+        href: function (){
+            this.$router.push({path: '/'});
         }
     }
 }
