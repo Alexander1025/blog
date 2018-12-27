@@ -59,7 +59,16 @@ export default {
 
     },
     mounted: function (){
-
+        console.log(location.href);
+        for(var i = 0 ; i <= this.activelist.length-1 ; i++){
+            this.activelist[i].isactive = false;
+            if(location.href.includes(this.activelist[i].href)){
+                this.activelist[i].isactive = true;
+            }
+        }
+        if(/\/admin$/.test(location.href)){
+            this.activelist[0].isactive = true;
+        }
     },
     methods:{
         lihref: function (href,index){

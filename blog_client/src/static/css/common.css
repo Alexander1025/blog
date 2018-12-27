@@ -48,6 +48,7 @@ ul, li{
 }
 .logoimg{
     height: 100%;
+    cursor: pointer;
 }
 .mainhead{
     display: flex;
@@ -69,6 +70,7 @@ ul, li{
     line-height: 60px;
     padding: 0 20px;
     color: white;
+    cursor: pointer;
 }
 .headtag > li.active:after, .headtag > li:hover:after{
     height: 5px;
