@@ -665,3 +665,21 @@ ul, li{
         width: 100%;
     }
 }
+
+
+/* 这里是侧边文章分类样式 */
+.categorylist{
+    width: 90%;
+    margin: auto;
+}
+.categorylist a{
+    display: inline-block;
+    padding: 4px 6px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 24px;
+    margin: 8px 8px;
+    background-color: #2778ce;
+    color: white;
+    border-radius: 4px;
+}

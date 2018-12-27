@@ -48,6 +48,7 @@
                 </div>
                 <div class="areawrap">
                     <cutline :title="'分类目录'" :logo="'littlelogo.png'"></cutline>
+                    <categorylist></categorylist>
                 </div>
             </div>
         </div>
@@ -58,6 +59,7 @@
 
 import cutline from '@/components/cutline.vue';
 import commonarticle from '@/components/commonarticle.vue';
+import categorylist from '@/components/categorylist.vue';
 
 
 export default {
@@ -160,6 +162,7 @@ export default {
     components:{
         cutline,
         commonarticle,
+        categorylist,
     },
     mounted:function (){
 

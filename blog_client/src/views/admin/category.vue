@@ -95,8 +95,6 @@ export default {
                 path: '/admin/addcategory',
                 query: {
                     id: id,
-                    test: 'test',
-                    test1: 'test1'
                 }
             });
         }
