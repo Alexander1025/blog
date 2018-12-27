@@ -1,7 +1,7 @@
 <template>
     <div class="indexwrap commonhead">
         <div class="mainwrap mainhead">
-            <img @click="href("/")" class="logoimg" src="./../static/images/common/logo.png" alt="机智僧">
+            <img @click="href('/')" class="logoimg" src="./../static/images/common/logo.png" alt="机智僧">
             <ul class="headtag" v-if="!isshowheadtag">
                 <li v-for="(item, index) in headtagarr" :class="[item.isactive?'active':'']">
                     {{item.cont}}
@@ -81,8 +81,8 @@ export default {
         headtoggle:function(){
             this.isshowheadtag = !this.isshowheadtag;
         },
-        href: function (){
-            this.$router.push({path: '/'});
+        href: function (url){
+            this.$router.push({path: url});
         }
     }
 }
