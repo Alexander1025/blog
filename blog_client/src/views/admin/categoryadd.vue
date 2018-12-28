@@ -70,10 +70,13 @@ export default {
             ]
         }
     },
+    props:["getindex"],
     components:{
         adminTop
     },
     mounted: function (){
+        this.getindex();
+
         var url = location.search;
         url = url.replace("?","");
         var query = url.split("&");
@@ -81,7 +84,7 @@ export default {
             var parameter = query[i].split("=")[0];
             if(parameter == "id"){
                 this.categoryid = query[i].split("=")[1];
-                console.log(this.categoryid);
+                // console.log(this.categoryid);
                 // var that = this;
                 var ajaxargument = "";
                 ajaxargument = `id=${this.categoryid}`;
@@ -213,7 +216,7 @@ export default {
         submitform: function (){
             console.log(this.name,this.describe,this.status);
 
-            if(!this.name && !this.describe && !this.status && !this.icon){
+            if(!this.name || !this.describe || !this.status || !this.icon){
                 layer.open({
                     content: `请填写完整`,
                     skin: 'msg',
@@ -267,7 +270,7 @@ export default {
         modform: function (){
             console.log(this.name,this.describe,this.status);
 
-            if(!this.name && !this.describe && !this.status && !this.icon){
+            if(!this.name || !this.describe || !this.status || !this.icon){
                 layer.open({
                     content: `请填写完整`,
                     skin: 'msg',

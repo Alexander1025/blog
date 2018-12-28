@@ -7,10 +7,18 @@ const Buffer = require('buffer').Buffer;
 
 var adminmodel = require("./../model/adminmodel.js");
 
+// 文章分类操作
 var categoryadd = adminmodel.categoryadd;
 var categoryget = adminmodel.categoryget;
 var categorygetmod = adminmodel.categorygetmod;
 var categorysetmod = adminmodel.categorysetmod;
+
+// 文章操作
+var articleadd = adminmodel.articleadd;
+var articleget = adminmodel.articleget;
+var articlegetmod = adminmodel.articlegetmod;
+var articlesetmod = adminmodel.articlesetmod;
+
 
 
 
@@ -66,6 +74,57 @@ router.post('/categoryadd', function (req, res) {
     });
 });
 
+
+/**
+ *
+ 用于获取文章分类
+ *
+ @method categoryget
+ *
+ @param { } 参数名 参数说明
+ *
+ *      {
+            status:0=>'失败',1=>'成功',
+            data:查询的category信息,
+        }
+*/
+
+router.post('/categoryget', function (req, res) {
+    var body = "";
+    req.on('data', function (chunk) {
+        body += chunk;  //一定要使用+=，如果body=chunk，因为请求favicon.ico，body会等于{}
+        // console.log("chunk:",chunk);
+    });
+    req.on('end', function () {
+        // 生成返回格式对象
+        let resdata = {};
+        // 解析参数
+        body = querystring.parse(body);  //将一个字符串反序列化为一个对象
+        console.log("body:",body);
+        console.log('userid: ', req.cookies['userid']);
+        if(!req.cookies['userid'] || req.cookies['userid'] == ""){
+            resdata['data'] = "请登录";
+            resdata['status'] = -1;
+            res.send(resdata);
+            res.end();
+            return false;
+        }
+
+        // 业务开始
+        categoryget(body).then(function (data){
+            console.log(data);
+            resdata['data'] = data;
+            resdata['status'] = 1;
+            res.send(resdata);
+            res.end();
+        },function (res){
+            resdata['data'] = res;
+            resdata['status'] = 0;
+            res.send(resdata);
+            res.end();
+        });
+    });
+});
 
 
 
@@ -181,6 +240,242 @@ router.post('/categorysetmod', function (req, res) {
 
 /**
  *
+ 用于添加文章
+ *
+ @method articleadd
+ *
+ @param { } 参数名 参数说明
+ *
+ *      {
+            status:0=>'失败',1=>'成功',
+            data:查询的category信息,
+        }
+*/
+
+router.post('/articleadd', function (req, res) {
+    var body = "";
+    req.on('data', function (chunk) {
+        body += chunk;  //一定要使用+=，如果body=chunk，因为请求favicon.ico，body会等于{}
+        // console.log("chunk:",chunk);
+    });
+    req.on('end', function () {
+        // 生成返回格式对象
+        let resdata = {};
+        // 解析参数
+        body = querystring.parse(body);  //将一个字符串反序列化为一个对象
+        console.log("body:",body);
+        if(!req.cookies['userid'] || req.cookies['userid'] == ""){
+            resdata['data'] = "请登录";
+            resdata['status'] = -1;
+            res.send(resdata);
+            res.end();
+            return false;
+        }
+        // 业务开始
+        articleadd(body).then(function (data){
+            console.log(data);
+            resdata['data'] = data;
+            resdata['status'] = 1;
+            res.send(resdata);
+            res.end();
+        },function (res){
+            resdata['data'] = res;
+            resdata['status'] = 0;
+            res.send(resdata);
+            res.end();
+        });
+    });
+});
+
+
+
+
+/**
+ *
+ 用于获取修改的文章信息
+ *
+ @method articleget
+ *
+ @param { } 参数名 参数说明
+ *
+ *      {
+            status:0=>'失败',1=>'成功',
+            data:查询的category信息,
+        }
+*/
+
+router.post('/articleget', function (req, res) {
+    var body = "";
+    req.on('data', function (chunk) {
+        body += chunk;  //一定要使用+=，如果body=chunk，因为请求favicon.ico，body会等于{}
+        // console.log("chunk:",chunk);
+    });
+    req.on('end', function () {
+        // 生成返回格式对象
+        let resdata = {};
+        // 解析参数
+        body = querystring.parse(body);  //将一个字符串反序列化为一个对象
+        console.log("body:",body);
+        if(!req.cookies['userid'] || req.cookies['userid'] == ""){
+            resdata['data'] = "请登录";
+            resdata['status'] = -1;
+            res.send(resdata);
+            res.end();
+            return false;
+        }
+        // 业务开始
+        articleget(body).then(function (data){
+            console.log(data);
+            resdata['data'] = data;
+            resdata['status'] = 1;
+            res.send(resdata);
+            res.end();
+        },function (res){
+            resdata['data'] = res;
+            resdata['status'] = 0;
+            res.send(resdata);
+            res.end();
+        });
+    });
+});
+
+
+
+/**
+ *
+ 用于获取修改的文章信息
+ *
+ @method articlegetmod
+ *
+ @param { } 参数名 参数说明
+ *
+ *      {
+            status:0=>'失败',1=>'成功',
+            data:查询的category信息,
+        }
+*/
+
+router.post('/articlegetmod', function (req, res) {
+    var body = "";
+    req.on('data', function (chunk) {
+        body += chunk;  //一定要使用+=，如果body=chunk，因为请求favicon.ico，body会等于{}
+        // console.log("chunk:",chunk);
+    });
+    req.on('end', function () {
+        // 生成返回格式对象
+        let resdata = {};
+        // 解析参数
+        body = querystring.parse(body);  //将一个字符串反序列化为一个对象
+        console.log("body:",body);
+        if(!req.cookies['userid'] || req.cookies['userid'] == ""){
+            resdata['data'] = "请登录";
+            resdata['status'] = -1;
+            res.send(resdata);
+            res.end();
+            return false;
+        }
+
+        // 业务开始
+        articlegetmod(body).then(function (data){
+            console.log(data);
+            resdata['data'] = data;
+            resdata['status'] = 1;
+            res.send(resdata);
+            res.end();
+        },function (res){
+            resdata['data'] = res;
+            resdata['status'] = 0;
+            res.send(resdata);
+            res.end();
+        });
+    });
+});
+
+
+
+/**
+ *
+ 用于修改的文章信息
+ *
+ @method articlesetmod
+ *
+ @param { } 参数名 参数说明
+ *
+ *      {
+            status:0=>'失败',1=>'成功',
+            data:查询的category信息,
+        }
+*/
+
+router.post('/articlesetmod', function (req, res) {
+    var body = "";
+    req.on('data', function (chunk) {
+        body += chunk;  //一定要使用+=，如果body=chunk，因为请求favicon.ico，body会等于{}
+        // console.log("chunk:",chunk);
+    });
+    req.on('end', function () {
+        // 生成返回格式对象
+        let resdata = {};
+        // 解析参数
+        body = querystring.parse(body);  //将一个字符串反序列化为一个对象
+        console.log("body:",body);
+        if(!req.cookies['userid'] || req.cookies['userid'] == ""){
+            resdata['data'] = "请登录";
+            resdata['status'] = -1;
+            res.send(resdata);
+            res.end();
+            return false;
+        }
+
+        // 业务开始
+        articlesetmod(body).then(function (data){
+            console.log(data);
+            resdata['data'] = data;
+            resdata['status'] = 1;
+            res.send(resdata);
+            res.end();
+        },function (res){
+            resdata['data'] = res;
+            resdata['status'] = 0;
+            res.send(resdata);
+            res.end();
+        });
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ *
  用于上传文件
  *
  @method uploadfile
@@ -267,59 +562,6 @@ router.post('/uploadfile', function (req, res, next) {
         // });
     });
 })
-
-
-
-/**
- *
- 用于获取文章分类
- *
- @method categoryget
- *
- @param { } 参数名 参数说明
- *
- *      {
-            status:0=>'失败',1=>'成功',
-            data:查询的category信息,
-        }
-*/
-
-router.post('/categoryget', function (req, res) {
-    var body = "";
-    req.on('data', function (chunk) {
-        body += chunk;  //一定要使用+=，如果body=chunk，因为请求favicon.ico，body会等于{}
-        // console.log("chunk:",chunk);
-    });
-    req.on('end', function () {
-        // 生成返回格式对象
-        let resdata = {};
-        // 解析参数
-        body = querystring.parse(body);  //将一个字符串反序列化为一个对象
-        console.log("body:",body);
-        console.log('userid: ', req.cookies['userid']);
-        if(!req.cookies['userid'] || req.cookies['userid'] == ""){
-            resdata['data'] = "请登录";
-            resdata['status'] = -1;
-            res.send(resdata);
-            res.end();
-            return false;
-        }
-
-        // 业务开始
-        categoryget(body).then(function (data){
-            console.log(data);
-            resdata['data'] = data;
-            resdata['status'] = 1;
-            res.send(resdata);
-            res.end();
-        },function (res){
-            resdata['data'] = res;
-            resdata['status'] = 0;
-            res.send(resdata);
-            res.end();
-        });
-    });
-});
 
 
 

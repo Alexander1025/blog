@@ -62,10 +62,13 @@ export default {
             ]
         }
     },
+    props:["getindex"],
     components:{
         adminTop
     },
     mounted: function (){
+        this.getindex();
+
         var that = this;
         var ajaxargument = "";
 

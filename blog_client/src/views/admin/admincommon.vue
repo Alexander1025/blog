@@ -17,7 +17,9 @@
                 </ul>
             </div>
             <div class="admincompile">
-                <router-view></router-view>
+                <router-view
+                    :getindex="getindex"
+                ></router-view>
             </div>
         </div>
 
@@ -59,17 +61,7 @@ export default {
 
     },
     mounted: function (){
-        console.log(location.href);
-
-        for(var i = 0 ; i <= this.activelist.length-1 ; i++){
-            this.activelist[i].isactive = false;
-            if(location.href.includes(this.activelist[i].href)){
-                this.activelist[i].isactive = true;
-            }
-        }
-        if(/\/admin$/.test(location.href)){
-            this.activelist[0].isactive = true;
-        }
+        this.getindex();
     },
     methods:{
         lihref: function (href,index){
@@ -78,6 +70,19 @@ export default {
             }
             this.activelist[index].isactive = true;
             router.push({ path: href });
+        },
+        getindex: function (){
+
+            for(var i = 0 ; i <= this.activelist.length-1 ; i++){
+                this.activelist[i].isactive = false;
+                if(location.href.includes(this.activelist[i].href)){
+                    this.activelist[i].isactive = true;
+                }
+            }
+            if(/\/admin$/.test(location.href)){
+                this.activelist[0].isactive = true;
+            }
+
         }
     }
 }
