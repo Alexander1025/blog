@@ -1,22 +1,7 @@
 <template>
     <div class="categorylist">
-        <a href="javascript:void(0);">
-            前端
-        </a>
-        <a href="javascript:void(0);">
-            node
-        </a>
-        <a href="javascript:void(0);">
-            nginx
-        </a>
-        <a href="javascript:void(0);">
-            前端框架
-        </a>
-        <a href="javascript:void(0);">
-            安全
-        </a>
-        <a href="javascript:void(0);">
-            跨域
+        <a href="javascript:void(0);" v-for="(item, index) in categorylistarr">
+            {{item.text}}
         </a>
     </div>
 </template>
@@ -30,7 +15,7 @@ export default {
 
         }
     },
-    props:[ ],
+    props:["categorylistarr"],
     mounted:function (){
 
     }

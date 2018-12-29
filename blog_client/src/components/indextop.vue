@@ -39,56 +39,10 @@ import commonarticle from '@/components/commonarticle.vue';
 export default {
     data () {
         return {
-            featured:[
-                {
-                    'id':"1",
-                    'tag':"10",
-                    'title':"欢迎来到机智僧的博客",
-                    'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
-                    'author':"机智僧",
-                    'date':"2018-10-1",
-                    'quantity':"168",
-                    'img':"./../static/images/upload/indextop.jpg",
-                    'color':"white",
-                }
-            ],
-            recommend:[
-                {
-                    'id':"2",
-                    'tag':"10",
-                    'title':"欢迎来到机智僧的博客",
-                    'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
-                    'author':"机智僧",
-                    'date':"2018-10-1",
-                    'quantity':"168",
-                    'img':"./../static/images/upload/indextop.jpg",
-                    'color':"white",
-                },
-                {
-                    'id':"3",
-                    'tag':"10",
-                    'title':"欢迎来到机智僧的博客",
-                    'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
-                    'author':"机智僧",
-                    'date':"2018-10-1",
-                    'quantity':"168",
-                    'img':"./../static/images/upload/indextop.jpg",
-                    'color':"white",
-                },
-                {
-                    'id':"4",
-                    'tag':"10",
-                    'title':"欢迎来到机智僧的博客",
-                    'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
-                    'author':"机智僧",
-                    'date':"2018-10-1",
-                    'quantity':"168",
-                    'img':"./../static/images/upload/indextop.jpg",
-                    'color':"white",
-                },
-            ]
+
         }
     },
+    props:["featured","recommend"],
     components:{
         commonarticle
     },

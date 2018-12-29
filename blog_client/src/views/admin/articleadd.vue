@@ -57,11 +57,14 @@
                     <input v-model="flow" type="text" placeholder="浏览量">
                 </li>
                 <li>
-
+                    <input v-model="place" type="text" placeholder="位置">
                 </li>
             </ul>
+            <br>
+            <editor :content="content" @changecont="changecont"></editor>
+            <br>
             <ul class="flextable flexright">
-                <li>
+                <li v-if="!isadded">
                     <div v-if="isadd" @click="submitform" class="add">添加</div>
                     <div v-if="!isadd" @click="modform" class="add">修改</div>
                 </li>
@@ -74,6 +77,8 @@
 import {trim,myparse} from './../../static/js/common.js';
 
 import adminTop from '@/components/admintop.vue';
+import editor from '@/components/editor.vue';
+
 
 export default {
     data () {
@@ -89,7 +94,10 @@ export default {
             img:"indextop.jpg",
             flow:"",
             categorylist:"",
+            content:"",
+            place:"",
             isadd:true,
+            isadded:false,
             titlelist: [
                 {
                     'text':"编号"
@@ -129,14 +137,15 @@ export default {
                     'text':"浏览量"
                 },
                 {
-                    'text':" "
+                    'text':"位置(默认0,1是头部大图片,2是小图片)"
                 },
             ]
         }
     },
     props:["getindex"],
     components:{
-        adminTop
+        adminTop,
+        editor,
     },
     mounted: function (){
         this.getindex();
@@ -218,12 +227,15 @@ export default {
                             that.title=data.data[0].title;
                             that.describe=data.data[0].describe;
                             that.category_id=data.data[0].category_id;
-                            that.creat_time=data.data[0].creat_time;
+                            that.creat_time=data.data[0].creat_time.split("T")[0];
+                            // that.creat_time=data.data[0].creat_time;
                             that.author=data.data[0].author;
                             that.authorid=data.data[0].authorid;
                             that.status=data.data[0].status;
-                            that.img=data.data[0].img,
+                            that.img=data.data[0].img;
+                            that.content=data.data[0].content;
                             that.flow=data.data[0].flow;
+                            that.place=data.data[0].place;
                             that.isadd = false;
                         }else if(data.status == -1){
                             layer.open({
@@ -260,7 +272,7 @@ export default {
             // status :
             // img :
             // flow :
-            if(!this.title || !this.describe || !this.category_id || !this.creat_time || !this.author || !this.authorid || !this.status || !this.img || !this.flow){
+            if(!this.title || !this.describe || !this.category_id || !this.creat_time || !this.author || !this.authorid || !this.status || !this.img || !this.flow ||!this.content){
                 layer.open({
                     content: `请填写完整`,
                     skin: 'msg',
@@ -270,7 +282,7 @@ export default {
             }
             var that = this;
             var ajaxargument = "";
-            ajaxargument = `title=${this.title}&describe=${this.describe}&category_id=${this.category_id}&creat_time=${this.creat_time}&author=${this.author}&authorid=${this.authorid}&status=${this.status}&img=${this.img}&flow=${this.flow}`;
+            ajaxargument = `title=${this.title}&describe=${this.describe}&category_id=${this.category_id}&creat_time=${this.creat_time}&author=${this.author}&authorid=${this.authorid}&status=${this.status}&img=${this.img}&flow=${this.flow}&content=${this.content}&place=${this.place}`;
 
             var ajax = new XMLHttpRequest();
             ajax.open('post','/node/admin/articleadd');
@@ -286,6 +298,7 @@ export default {
                             skin: 'msg',
                             time: 2,
                         });
+                        that.isadded = true;
                         // var time = setTimeout(()=>{
                         //     that.$router.push({path: '/admin/category'});
                         // },2000);
@@ -311,9 +324,8 @@ export default {
             }
         },
         modform: function (){
-            console.log(this.name,this.describe,this.status);
 
-            if(!this.title || !this.describe || !this.category_id || !this.creat_time || !this.author || !this.authorid || !this.status || !this.img || !this.flow){
+            if(!this.title || !this.describe || !this.category_id || !this.creat_time || !this.author || !this.authorid || !this.status || !this.img || !this.flow || !this.content){
                 layer.open({
                     content: `请填写完整`,
                     skin: 'msg',
@@ -324,7 +336,7 @@ export default {
 
             var that = this;
             var ajaxargument = "";
-            ajaxargument = `id=${this.id}&title=${this.title}&describe=${this.describe}&category_id=${this.category_id}&creat_time=${this.creat_time}&author=${this.author}&authorid=${this.authorid}&status=${this.status}&img=${this.img}&flow=${this.flow}`;
+            ajaxargument = `id=${this.id}&title=${this.title}&describe=${this.describe}&category_id=${this.category_id}&creat_time=${this.creat_time}&author=${this.author}&authorid=${this.authorid}&status=${this.status}&img=${this.img}&flow=${this.flow}&content=${this.content}&place=${this.place}`;
 
             var ajax = new XMLHttpRequest();
             ajax.open('post','/node/admin/articlesetmod');
@@ -364,7 +376,10 @@ export default {
                 }
             }
         },
-    }
+        changecont:function (content){
+            this.content = content;
+        }
+    },
 }
 </script>
 

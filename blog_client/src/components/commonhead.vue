@@ -3,7 +3,7 @@
         <div class="mainwrap mainhead">
             <img @click="href('/')" class="logoimg" src="./../static/images/common/logo.png" alt="机智僧">
             <ul class="headtag" v-if="!isshowheadtag">
-                <li v-for="(item, index) in headtagarr" @click="href(item.url)" :class="[item.isactive?'active':'']">
+                <li v-for="(item, index) in $store.state.headtagarr" @click="href(item.url)" :class="[item.isactive?'active':'']">
                     {{item.cont}}
                 </li>
             </ul>
@@ -12,7 +12,7 @@
             </div>
             <transition name="headtagphone">
                 <ul class="headtagphone headtag" v-if="isshowheadtag">
-                    <li v-for="(item, index) in headtagarr" @click="href(item.url)" :class="[item.isactive?'active':'']">
+                    <li v-for="(item, index) in $store.state.headtagarr" @click="href(item.url)" :class="[item.isactive?'active':'']">
                         {{item.cont}}
                     </li>
                 </ul>
@@ -28,57 +28,6 @@ export default {
     data () {
         return {
             isshowheadtag: false,
-            headtagarr: [
-                {
-                    isactive: true,
-                    cont: "首页",
-                    url: "/",
-                },
-                {
-                    isactive: false,
-                    cont: "前端",
-                    url: "/",
-                },
-                {
-                    isactive: false,
-                    cont: "应用",
-                    url: "/",
-                },
-                {
-                    isactive: false,
-                    cont: "标签",
-                    url: "/",
-                },
-                {
-                    isactive: false,
-                    cont: "杂谈",
-                    url: "/",
-                },
-                {
-                    isactive: false,
-                    cont: "留言",
-                    url: "/",
-                },
-                {
-                    isactive: false,
-                    cont: "音乐",
-                    url: "/",
-                },
-                {
-                    isactive: false,
-                    cont: "关于",
-                    url: "/",
-                },
-                {
-                    isactive: false,
-                    cont: "后台管理",
-                    url: "/admin/addcategory"
-                },
-                // {
-                //     isactive: false,
-                //     cont: this.$store.state.test
-                // }
-            ],
         }
     },
     components:{

@@ -89,7 +89,7 @@ router.post('/login', function (req, res) {
             if(data.length > 0){
                 resdata['data'] = data;
                 resdata['status'] = 1;
-                res.cookie('userid', data[0]['userid'], { expires: new Date(Date.now() + 3600000), httpOnly: true });
+                res.cookie('userid', data[0]['userid'], { expires: new Date(Date.now() + 86400000), httpOnly: true });
                 res.send(resdata);
                 res.end();
             }else{

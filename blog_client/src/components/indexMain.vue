@@ -3,40 +3,21 @@
         <div class="mainwrap mainbody">
             <div class="bodypart">
 
-                <div class="areawrap">
-                    <cutline :title="'推荐文章'" :logo="'logo.png'"></cutline>
+                <div class="areawrap" v-for="(item, index) in articlemodule">
+                    <cutline :title="item.title" :logo="'logo.png'"></cutline>
                     <div class="articlearea">
                         <commonarticle
-                            v-for="(item, index) in article"
-                            :id="item.id"
-                            :tag="item.tag"
-                            :title="item.title"
-                            :desc="item.desc"
-                            :author="item.author"
-                            :date="item.date"
-                            :quantity="item.quantity"
-                            :img="item.img"
-                            :key="item.id"
-                            :color="item.color"
-                        />
-                    </div>
-                </div>
-
-                <div class="areawrap">
-                    <cutline :title="'JAVASCRIPT'" :logo="'logo.png'"></cutline>
-                    <div class="articlearea">
-                        <commonarticle
-                            v-for="(item, index) in article2"
-                            :id="item.id"
-                            :tag="item.tag"
-                            :title="item.title"
-                            :desc="item.desc"
-                            :author="item.author"
-                            :date="item.date"
-                            :quantity="item.quantity"
-                            :img="item.img"
-                            :key="item.id"
-                            :color="item.color"
+                            v-for="(item1, index1) in item.article"
+                            :id="item1.id"
+                            :tag="item1.tag"
+                            :title="item1.title"
+                            :desc="item1.desc"
+                            :author="item1.author"
+                            :date="item1.date"
+                            :quantity="item1.quantity"
+                            :img="item1.img"
+                            :key="item1.id"
+                            :color="item1.color"
                         />
                     </div>
                 </div>
@@ -48,7 +29,9 @@
                 </div>
                 <div class="areawrap">
                     <cutline :title="'分类目录'" :logo="'littlelogo.png'"></cutline>
-                    <categorylist></categorylist>
+                    <categorylist
+                        :categorylistarr="categorylistarr"
+                    ></categorylist>
                 </div>
             </div>
         </div>
@@ -65,100 +48,10 @@ import categorylist from '@/components/categorylist.vue';
 export default {
     data () {
         return {
-            article:[
-                {
-                    'id':"2",
-                    'tag':"10",
-                    'title':"欢迎来到机智僧的博客",
-                    'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
-                    'author':"机智僧",
-                    'date':"2018-10-1",
-                    'quantity':"168",
-                    'img':"./../static/images/upload/indextop.jpg",
-                    'color':"gray",
-                },
-                {
-                    'id':"3",
-                    'tag':"10",
-                    'title':"欢迎来到机智僧的博客",
-                    'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
-                    'author':"机智僧",
-                    'date':"2018-10-1",
-                    'quantity':"168",
-                    'img':"./../static/images/upload/indextop.jpg",
-                    'color':"gray",
-                },
-                {
-                    'id':"4",
-                    'tag':"10",
-                    'title':"欢迎来到机智僧的博客",
-                    'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
-                    'author':"机智僧",
-                    'date':"2018-10-1",
-                    'quantity':"168",
-                    'img':"./../static/images/upload/indextop.jpg",
-                    'color':"gray",
-                },
-            ],
-            article2:[
-                {
-                    'id':"2",
-                    'tag':"10",
-                    'title':"欢迎来到机智僧的博客",
-                    'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
-                    'author':"机智僧",
-                    'date':"2018-10-1",
-                    'quantity':"168",
-                    'img':"./../static/images/upload/indextop.jpg",
-                    'color':"gray",
-                },
-                {
-                    'id':"3",
-                    'tag':"10",
-                    'title':"欢迎来到机智僧的博客",
-                    'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
-                    'author':"机智僧",
-                    'date':"2018-10-1",
-                    'quantity':"168",
-                    'img':"./../static/images/upload/indextop.jpg",
-                    'color':"gray",
-                },
-                {
-                    'id':"4",
-                    'tag':"10",
-                    'title':"欢迎来到机智僧的博客",
-                    'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
-                    'author':"机智僧",
-                    'date':"2018-10-1",
-                    'quantity':"168",
-                    'img':"./../static/images/upload/indextop.jpg",
-                    'color':"gray",
-                },
-                {
-                    'id':"5",
-                    'tag':"10",
-                    'title':"欢迎来到机智僧的博客",
-                    'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
-                    'author':"机智僧",
-                    'date':"2018-10-1",
-                    'quantity':"168",
-                    'img':"./../static/images/upload/indextop.jpg",
-                    'color':"gray",
-                },
-                {
-                    'id':"6",
-                    'tag':"10",
-                    'title':"欢迎来到机智僧的博客",
-                    'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
-                    'author':"机智僧",
-                    'date':"2018-10-1",
-                    'quantity':"168",
-                    'img':"./../static/images/upload/indextop.jpg",
-                    'color':"gray",
-                },
-            ]
+
         }
     },
+    props:["articlemodule","categorylistarr"],
     components:{
         cutline,
         commonarticle,
