@@ -1,6 +1,6 @@
 <template>
     <div class="centerwrap">
-        <adminTop :title="'添加文章分类'" :logo="'littlelogo.png'"></adminTop>
+        <adminTop :title="htmltitle" :logo="'littlelogo.png'"></adminTop>
         <div class="admindetail">
             <ul class="flextable">
                 <li v-for="(item, index) in titlelist">{{item.text}}</li>
@@ -51,6 +51,7 @@ export default {
             isupload:true,
             categoryid:"",
             isadd:true,
+            htmltitle:"添加文章分类",
             titlelist: [
                 {
                     'text':"编号"
@@ -114,6 +115,7 @@ export default {
                             that.iconimg = "/blog_server/upload/"+data.data[0].icon;
                             that.isupload = false;
                             that.isadd = false;
+                            that.htmltitle = "修改文章分类";
                         }else if(data.status == -1){
                             layer.open({
                                 content: `${data.data}`,

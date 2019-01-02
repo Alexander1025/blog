@@ -1,6 +1,6 @@
 <template>
     <div class="centerwrap">
-        <adminTop :title="'添加文章'" :logo="'littlelogo.png'"></adminTop>
+        <adminTop :title="htmltitle" :logo="'littlelogo.png'"></adminTop>
         <div class="admindetail">
             <ul class="flextable">
                 <li v-for="(item, index) in titlelist">{{item.text}}</li>
@@ -98,6 +98,7 @@ export default {
             place:"",
             isadd:true,
             isadded:false,
+            htmltitle:"添加文章",
             titlelist: [
                 {
                     'text':"编号"
@@ -237,6 +238,7 @@ export default {
                             that.flow=data.data[0].flow;
                             that.place=data.data[0].place;
                             that.isadd = false;
+                            that.htmltitle = "修改文章";
                         }else if(data.status == -1){
                             layer.open({
                                 content: `${data.data}`,
