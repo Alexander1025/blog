@@ -27,7 +27,25 @@ export default {
         commonFoot,
     },
     mounted:function (){
+        // if(this.$store.state.articlecategorymodule.length == 0){
 
+
+        //     var url = location.search;
+        //     url = url.replace("?","");
+        //     var query = url.split("&");
+        //     for(var i = 0 ; i <= query.length-1 ; i++){
+        //         var parameter = query[i].split("=")[0];
+        //         if(parameter == "categoryid"){
+        //             for(var j = 0 ; j <= this.$store.state.articlemodule.length-1 ; j++){
+        //                 if(this.$store.state.articlemodule[j]['category'] == query[i].split("=")[1]){
+        //                     console.log("asdasd");
+        //                     console.log(this.$store.state.articlemodule[j]);
+        //                     this.$store.commit('setState',{attr:'articlecategorymodule',field:this.$store.state.articlemodule[j]});
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
     }
 }
 </script>

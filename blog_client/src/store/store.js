@@ -192,6 +192,9 @@ const store = new Vuex.Store({
             //     ],
             // }
         ],
+        articlecategorymodule:[
+
+        ],
         categorylistarr:[
             // {
             //     text:"前端",
