@@ -3,15 +3,16 @@
         <div class="mainwrap">
             <div class="featured">
                 <commonarticle
-                    :id="featured[0].id"
-                    :tag="featured[0].tag"
-                    :title="featured[0].title"
-                    :desc="featured[0].desc"
-                    :author="featured[0].author"
-                    :date="featured[0].date"
-                    :quantity="featured[0].quantity"
-                    :img="featured[0].img"
-                    :color="featured[0].color"
+                    v-for="(item, index) in featured"
+                    :id="item.id"
+                    :tag="item.tag"
+                    :title="item.title"
+                    :desc="item.desc"
+                    :author="item.author"
+                    :date="item.date"
+                    :quantity="item.quantity"
+                    :img="item.img"
+                    :color="item.color"
                 />
             </div>
             <div class="recommend">

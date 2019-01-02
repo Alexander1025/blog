@@ -228,7 +228,7 @@ export default {
                             that.title=data.data[0].title;
                             that.describe=data.data[0].describe;
                             that.category_id=data.data[0].category_id;
-                            that.creat_time=data.data[0].creat_time.split("T")[0];
+                            that.creat_time=data.data[0].creat_time;
                             // that.creat_time=data.data[0].creat_time;
                             that.author=data.data[0].author;
                             that.authorid=data.data[0].authorid;

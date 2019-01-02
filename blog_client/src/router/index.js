@@ -11,6 +11,7 @@ import index from '@/views/index/index.vue';
 
 
 import article from '@/views/index/article.vue';
+import category from '@/views/index/category.vue';
 
 
 import admincommon from '@/views/admin/admincommon.vue';
@@ -40,6 +41,11 @@ var router = new Router({
         {
             path: '/article',
             component: article
+        },
+        {
+            path: '/category',
+            name: 'category',
+            component: category
         },
         {
             path: '/login',

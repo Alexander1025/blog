@@ -1,7 +1,11 @@
 <template>
     <div class="categorylist">
-        <a href="javascript:void(0);" v-for="(item, index) in categorylistarr">
-            {{item.text}}
+        <a
+            v-for="(item, index) in categorylistarr"
+            @click="skip(item.id)"
+            href="javascript:void(0);"
+        >
+            {{item.name}}
         </a>
     </div>
 </template>
@@ -18,6 +22,16 @@ export default {
     props:["categorylistarr"],
     mounted:function (){
 
+    },
+    methods:{
+        skip: function (id){
+            this.$router.push({
+                path: '/category',
+                query: {
+                    categoryid: id,
+                }
+            });
+        }
     }
 }
 </script>

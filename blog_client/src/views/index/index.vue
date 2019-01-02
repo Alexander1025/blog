@@ -2,18 +2,22 @@
     <div class="indexwrap">
         <commonHead></commonHead>
         <indexTop
-            :featured="featured"
-            :recommend="recommend"
+            :featured="$store.state.featured"
+            :recommend="$store.state.recommend"
         ></indexTop>
+        {{$store.state.test}}
         <indexMain
-            :articlemodule="articlemodule"
-            :categorylistarr="categorylistarr"
+            :articlemodule="$store.state.articlemodule"
+            :categorylistarr="$store.state.categorylistarr"
         ></indexMain>
         <commonFoot></commonFoot>
     </div>
 </template>
 
 <script>
+import {trim,myparse} from './../../static/js/common.js';
+
+
 import indexTop from '@/components/indextop.vue';
 import commonHead from '@/components/commonhead.vue';
 import indexMain from '@/components/indexMain.vue';
@@ -24,142 +28,6 @@ export default {
     data () {
         return {
             message: '',
-            featured:[
-                {
-                    'id':"1",
-                    'tag':"10",
-                    'title':"欢迎来到机智僧的博客",
-                    'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
-                    'author':"机智僧",
-                    'date':"2018-10-1",
-                    'quantity':"168",
-                    'img':"./../static/images/upload/indextop.jpg",
-                    'color':"white",
-                }
-            ],
-            recommend:[
-                {
-                    'id':"2",
-                    'tag':"10",
-                    'title':"欢迎来到机智僧的博客",
-                    'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
-                    'author':"机智僧",
-                    'date':"2018-10-1",
-                    'quantity':"168",
-                    'img':"./../static/images/upload/indextop.jpg",
-                    'color':"white",
-                },
-                {
-                    'id':"3",
-                    'tag':"10",
-                    'title':"欢迎来到机智僧的博客",
-                    'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
-                    'author':"机智僧",
-                    'date':"2018-10-1",
-                    'quantity':"168",
-                    'img':"./../static/images/upload/indextop.jpg",
-                    'color':"white",
-                },
-                {
-                    'id':"4",
-                    'tag':"10",
-                    'title':"欢迎来到机智僧的博客",
-                    'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
-                    'author':"机智僧",
-                    'date':"2018-10-1",
-                    'quantity':"168",
-                    'img':"./../static/images/upload/indextop.jpg",
-                    'color':"white",
-                },
-            ],
-            articlemodule:[
-                {
-                    title:"推荐文章",
-                    article:[
-                        {
-                            'id':"2",
-                            'tag':"10",
-                            'title':"欢迎来到机智僧的博客",
-                            'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
-                            'author':"机智僧",
-                            'date':"2018-10-1",
-                            'quantity':"168",
-                            'img':"./../static/images/upload/indextop.jpg",
-                            'color':"gray",
-                        },
-                        {
-                            'id':"3",
-                            'tag':"10",
-                            'title':"欢迎来到机智僧的博客",
-                            'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
-                            'author':"机智僧",
-                            'date':"2018-10-1",
-                            'quantity':"168",
-                            'img':"./../static/images/upload/indextop.jpg",
-                            'color':"gray",
-                        },
-                        {
-                            'id':"4",
-                            'tag':"10",
-                            'title':"欢迎来到机智僧的博客",
-                            'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
-                            'author':"机智僧",
-                            'date':"2018-10-1",
-                            'quantity':"168",
-                            'img':"./../static/images/upload/indextop.jpg",
-                            'color':"gray",
-                        },
-                    ],
-                },
-                {
-                    title:"JAVASCRIPT",
-                    article:[
-                        {
-                            'id':"2",
-                            'tag':"10",
-                            'title':"欢迎来到机智僧的博客",
-                            'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
-                            'author':"机智僧",
-                            'date':"2018-10-1",
-                            'quantity':"168",
-                            'img':"./../static/images/upload/indextop.jpg",
-                            'color':"gray",
-                        },
-                        {
-                            'id':"3",
-                            'tag':"10",
-                            'title':"欢迎来到机智僧的博客",
-                            'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
-                            'author':"机智僧",
-                            'date':"2018-10-1",
-                            'quantity':"168",
-                            'img':"./../static/images/upload/indextop.jpg",
-                            'color':"gray",
-                        },
-                        {
-                            'id':"4",
-                            'tag':"10",
-                            'title':"欢迎来到机智僧的博客",
-                            'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
-                            'author':"机智僧",
-                            'date':"2018-10-1",
-                            'quantity':"168",
-                            'img':"./../static/images/upload/indextop.jpg",
-                            'color':"gray",
-                        },
-                    ],
-                }
-            ],
-            categorylistarr:[
-                {
-                    text:"前端",
-                    id:1
-                },
-                {
-                    text:"node",
-                    id:2
-                },
-            ],
         }
     },
     components:{
@@ -169,7 +37,89 @@ export default {
         commonFoot,
     },
     mounted:function (){
+        // this.$store.commit('setState',{attr:'test',field:"hello"});
+        if(this.$store.state.featured.length == 0 || this.$store.state.articlemodule.length == 0){
 
+            var that = this;
+
+            // 用于获取文章分类列表信息
+            var ajaxargument = "";
+            var ajax = new XMLHttpRequest();
+            ajax.open('post','/node/index/categorylistget');
+            ajax.send(ajaxargument);
+            ajax.onreadystatechange = function () {
+                if (ajax.readyState==4 &&ajax.status==200) {
+                    var data = ajax.responseText;
+                    data = myparse(data);
+                    // console.log(data);//输入相应的内容
+                    if(data.status == 1){
+                        that.$store.commit('setState',{attr:'categorylistarr',field:data.data.category});
+                    }else{
+                        layer.open({
+                            content: `获取文章分类失败`,
+                            skin: 'msg',
+                            time: 2,
+                        });
+                    }
+                }
+            }
+
+
+
+            // 用于获取头部文章列表信息
+            var ajaxargument1 = "";
+            var ajax1 = new XMLHttpRequest();
+            ajax1.open('post','/node/index/indextoplistget');
+            ajax1.send(ajaxargument1);
+            ajax1.onreadystatechange = function () {
+                if (ajax1.readyState==4 &&ajax1.status==200) {
+                    var data1 = ajax1.responseText;
+                    data1 = myparse(data1);
+                    // console.log(data1);//输入相应的内容
+                    if(data1.status == 1){
+
+                        that.$store.commit('setState',{attr:'featured',field:data1.data.featured});
+                        that.$store.commit('setState',{attr:'recommend',field:data1.data.recommend});
+
+                    }else{
+                        layer.open({
+                            content: `获取文章列表失败`,
+                            skin: 'msg',
+                            time: 2,
+                        });
+                    }
+                }
+            }
+
+
+
+
+            // 用于获取中部文章列表信息
+            var ajaxargument2 = "";
+            var ajax2 = new XMLHttpRequest();
+            ajax2.open('post','/node/index/articlemodule');
+            ajax2.send(ajaxargument2);
+            ajax2.onreadystatechange = function () {
+                if (ajax2.readyState==4 &&ajax2.status==200) {
+                    var data = ajax2.responseText;
+                    data = myparse(data);
+                    // console.log(data);//输入相应的内容
+                    if(data.status == 1){
+                        that.$store.commit('setState',{attr:'articlemodule',field:data.data.article});
+                    }else{
+                        layer.open({
+                            content: `获取文章列表失败`,
+                            skin: 'msg',
+                            time: 2,
+                        });
+                    }
+                }
+            }
+
+
+
+
+        }
     }
 }
 </script>

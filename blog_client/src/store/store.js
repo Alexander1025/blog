@@ -6,13 +6,13 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
     state: {
-        test:"test",
-        datemonth: "",
-        username: "hi",
-        islogin:false,
-        footerindex:1,
-        theme:[0,"",""], //主题, (0-背景颜色, 1-图片), 头部样式， 主体样式
-        setnowdate:new Date(), //设置时间不设置默认当前时间 ，new Date().getTime()+86400000*10
+        // test:"test",
+        // datemonth: "",
+        // username: "hi",
+        // islogin:false,
+        // footerindex:1,
+        // theme:[0,"",""], //主题, (0-背景颜色, 1-图片), 头部样式， 主体样式
+        // setnowdate:new Date(), //设置时间不设置默认当前时间 ，new Date().getTime()+86400000*10
         headtagarr: [
             {
                 isactive: true,
@@ -64,12 +64,146 @@ const store = new Vuex.Store({
             //     cont: this.$store.state.test
             // }
         ],
+        featured:[
+            // {
+            //     'id':"1",
+            //     'tag':"10",
+            //     'title':"欢迎来到机智僧的博客",
+            //     'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
+            //     'author':"机智僧",
+            //     'date':"2018-10-1",
+            //     'quantity':"168",
+            //     'img':"./../static/images/upload/indextop.jpg",
+            //     'color':"white",
+            // }
+        ],
+        recommend:[
+            // {
+            //     'id':"2",
+            //     'tag':"10",
+            //     'title':"欢迎来到机智僧的博客",
+            //     'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
+            //     'author':"机智僧",
+            //     'date':"2018-10-1",
+            //     'quantity':"168",
+            //     'img':"./../static/images/upload/indextop.jpg",
+            //     'color':"white",
+            // },
+            // {
+            //     'id':"3",
+            //     'tag':"10",
+            //     'title':"欢迎来到机智僧的博客",
+            //     'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
+            //     'author':"机智僧",
+            //     'date':"2018-10-1",
+            //     'quantity':"168",
+            //     'img':"./../static/images/upload/indextop.jpg",
+            //     'color':"white",
+            // },
+            // {
+            //     'id':"4",
+            //     'tag':"10",
+            //     'title':"欢迎来到机智僧的博客",
+            //     'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
+            //     'author':"机智僧",
+            //     'date':"2018-10-1",
+            //     'quantity':"168",
+            //     'img':"./../static/images/upload/indextop.jpg",
+            //     'color':"white",
+            // },
+        ],
+        articlemodule:[
+            // {
+            //     title:"推荐文章",
+            //     category:"",
+            //     article:[
+            //         {
+            //             'id':"2",
+            //             'tag':"10",
+            //             'title':"欢迎来到机智僧的博客",
+            //             'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
+            //             'author':"机智僧",
+            //             'date':"2018-10-1",
+            //             'quantity':"168",
+            //             'img':"./../static/images/upload/indextop.jpg",
+            //             'color':"gray",
+            //         },
+            //         {
+            //             'id':"3",
+            //             'tag':"10",
+            //             'title':"欢迎来到机智僧的博客",
+            //             'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
+            //             'author':"机智僧",
+            //             'date':"2018-10-1",
+            //             'quantity':"168",
+            //             'img':"./../static/images/upload/indextop.jpg",
+            //             'color':"gray",
+            //         },
+            //         {
+            //             'id':"4",
+            //             'tag':"10",
+            //             'title':"欢迎来到机智僧的博客",
+            //             'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
+            //             'author':"机智僧",
+            //             'date':"2018-10-1",
+            //             'quantity':"168",
+            //             'img':"./../static/images/upload/indextop.jpg",
+            //             'color':"gray",
+            //         },
+            //     ],
+            // },
+            // {
+            //     title:"JAVASCRIPT",
+            //     category:1,
+            //     article:[
+            //         {
+            //             'id':"2",
+            //             'tag':"10",
+            //             'title':"欢迎来到机智僧的博客",
+            //             'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
+            //             'author':"机智僧",
+            //             'date':"2018-10-1",
+            //             'quantity':"168",
+            //             'img':"./../static/images/upload/indextop.jpg",
+            //             'color':"gray",
+            //         },
+            //         {
+            //             'id':"3",
+            //             'tag':"10",
+            //             'title':"欢迎来到机智僧的博客",
+            //             'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
+            //             'author':"机智僧",
+            //             'date':"2018-10-1",
+            //             'quantity':"168",
+            //             'img':"./../static/images/upload/indextop.jpg",
+            //             'color':"gray",
+            //         },
+            //         {
+            //             'id':"4",
+            //             'tag':"10",
+            //             'title':"欢迎来到机智僧的博客",
+            //             'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
+            //             'author':"机智僧",
+            //             'date':"2018-10-1",
+            //             'quantity':"168",
+            //             'img':"./../static/images/upload/indextop.jpg",
+            //             'color':"gray",
+            //         },
+            //     ],
+            // }
+        ],
+        categorylistarr:[
+            // {
+            //     text:"前端",
+            //     id:1
+            // },
+            // {
+            //     text:"node",
+            //     id:2
+            // },
+        ],
     },
     mutations: {
-        getMonth:function (store,mon){
-            let monarr = ['一','二','三','四','五','六','七','八','九','十','十一','十二',];
-            store.datemonth = monarr[mon];
-        },
         setState:function (store,option){
             store[option.attr] = option.field;
         },
