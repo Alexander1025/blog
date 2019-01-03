@@ -37,6 +37,9 @@ export default {
         commonFoot,
     },
     mounted:function (){
+
+
+        // 这里就是 getarticle，一样的！！！！！！！！！！！！
         // this.$store.commit('setState',{attr:'test',field:"hello"});
         if(this.$store.state.featured.length == 0 || this.$store.state.articlemodule.length == 0){
 

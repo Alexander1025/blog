@@ -12,6 +12,7 @@
                     :date="item.date"
                     :quantity="item.quantity"
                     :img="item.img"
+                    :key="item.id"
                     :color="item.color"
                 />
             </div>

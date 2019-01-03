@@ -25,6 +25,8 @@ export default {
     },
     methods:{
         skip: function (id){
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
             this.$router.push({
                 path: '/category',
                 query: {

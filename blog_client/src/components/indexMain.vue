@@ -25,13 +25,13 @@
             </div>
             <div class="bodyside">
                 <div class="areawrap">
-                    <cutline :title="'快讯'" :logo="'littlelogo.png'"></cutline>
-                </div>
-                <div class="areawrap">
                     <cutline :title="'分类目录'" :logo="'littlelogo.png'"></cutline>
                     <categorylist
                         :categorylistarr="categorylistarr"
                     ></categorylist>
+                </div>
+                <div class="areawrap">
+                    <cutline :title="'快讯'" :logo="'littlelogo.png'"></cutline>
                 </div>
             </div>
         </div>
