@@ -761,6 +761,54 @@ ul, li{
 }
 
 
+/* 这里是文章显示样式 */
 .hidden{
     display: none;
+}
+pre{
+    background-color: #ececec;
+    padding: 10px;
+    border-radius: 5px;
+}
+.left_article{
+    float: left;
+}
+.left_article{
+    float: right;
+}
+.full_article{
+    width: 100%;
+}
+.part1_article{
+    width: calc(100%/12);
+}
+.part2_article{
+    width: calc(100%/12*2);
+}
+.part3_article{
+    width: calc(100%/12*3);
+}
+.part4_article{
+    width: calc(100%/12*4);
+}
+.part5_article{
+    width: calc(100%/12*5);
+}
+.part6_article{
+    width: calc(100%/12*6);
+}
+.part7_article{
+    width: calc(100%/12*7);
+}
+.part8_article{
+    width: calc(100%/12*8);
+}
+.part9_article{
+    width: calc(100%/12*9);
+}
+.part10_article{
+    width: calc(100%/12*10);
+}
+.part11_article{
+    width: calc(100%/12*11);
 }
