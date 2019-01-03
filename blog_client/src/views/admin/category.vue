@@ -93,6 +93,17 @@ export default {
                             path: '/login',
                         });
                     },2000);
+                }else if(data.status == -2){
+                    layer.open({
+                        content: `${data.data}`,
+                        skin: 'msg',
+                        time: 2,
+                    });
+                    var time = setTimeout(()=>{
+                        that.$router.push({
+                            path: '/login',
+                        });
+                    },2000);
                 }else{
                     layer.open({
                         content: `获取分类失败`,

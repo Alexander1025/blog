@@ -193,7 +193,45 @@ const store = new Vuex.Store({
             // }
         ],
         articlecategorymodule:[
-
+            // {
+            //     title:"JAVASCRIPT",
+            //     category:1,
+            //     article:[
+            //         {
+            //             'id':"2",
+            //             'tag':"10",
+            //             'title':"欢迎来到机智僧的博客",
+            //             'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
+            //             'author':"机智僧",
+            //             'date':"2018-10-1",
+            //             'quantity':"168",
+            //             'img':"./../static/images/upload/indextop.jpg",
+            //             'color':"gray",
+            //         },
+            //         {
+            //             'id':"3",
+            //             'tag':"10",
+            //             'title':"欢迎来到机智僧的博客",
+            //             'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
+            //             'author':"机智僧",
+            //             'date':"2018-10-1",
+            //             'quantity':"168",
+            //             'img':"./../static/images/upload/indextop.jpg",
+            //             'color':"gray",
+            //         },
+            //         {
+            //             'id':"4",
+            //             'tag':"10",
+            //             'title':"欢迎来到机智僧的博客",
+            //             'desc':"这里是机智僧的博客,欢迎大家常来博客打卡 ^_^",
+            //             'author':"机智僧",
+            //             'date':"2018-10-1",
+            //             'quantity':"168",
+            //             'img':"./../static/images/upload/indextop.jpg",
+            //             'color':"gray",
+            //         },
+            //     ],
+            // }
         ],
         categorylistarr:[
             // {

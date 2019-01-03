@@ -127,6 +127,17 @@ export default {
                                     path: '/login',
                                 });
                             },2000);
+                        }else if(data.status == -2){
+                            layer.open({
+                                content: `${data.data}`,
+                                skin: 'msg',
+                                time: 2,
+                            });
+                            var time = setTimeout(()=>{
+                                that.$router.push({
+                                    path: '/login',
+                                });
+                            },2000);
                         }else{
                             layer.open({
                                 content: `获取分类失败`,
@@ -204,6 +215,17 @@ export default {
                                     path: '/login',
                                 });
                             },2000);
+                        }else if(data.status == -2){
+                            layer.open({
+                                content: `${data.data}`,
+                                skin: 'msg',
+                                time: 2,
+                            });
+                            var time = setTimeout(()=>{
+                                that.$router.push({
+                                    path: '/login',
+                                });
+                            },2000);
                         }else{
                             layer.open({
                                 content: `上传图片失败`,
@@ -259,6 +281,17 @@ export default {
                                 path: '/login',
                             });
                         },2000);
+                    }else if(data.status == -2){
+                        layer.open({
+                            content: `${data.data}`,
+                            skin: 'msg',
+                            time: 2,
+                        });
+                        var time = setTimeout(()=>{
+                            that.$router.push({
+                                path: '/login',
+                            });
+                        },2000);
                     }else{
                         layer.open({
                             content: `上传分类失败`,
@@ -303,6 +336,17 @@ export default {
                             that.$router.push({path: '/admin/category'});
                         },2000);
                     }else if(data.status == -1){
+                        layer.open({
+                            content: `${data.data}`,
+                            skin: 'msg',
+                            time: 2,
+                        });
+                        var time = setTimeout(()=>{
+                            that.$router.push({
+                                path: '/login',
+                            });
+                        },2000);
+                    }else if(data.status == -2){
                         layer.open({
                             content: `${data.data}`,
                             skin: 'msg',

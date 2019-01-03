@@ -272,7 +272,7 @@ const articlesetmod = function (option){
 
         connection.connect();
 
-        
+
         // title, `describe`, category_id, creat_time, `author`, authorid, status, img, flow
         var sql = "UPDATE article SET title = ?,`describe` = ?,category_id = ?,creat_time = ?,author = ?,authorid = ?,status = ?,img = ?,flow = ?,content = ?, place = ? WHERE Id = ?";
         var modSqlParams = [option.title, option.describe, option.category_id, option.creat_time, option.author, option.authorid, option.status, option.img, option.flow, option.content, option.place, option.id];
@@ -295,6 +295,42 @@ const articlesetmod = function (option){
 
 
 
+
+const verification = function (userid, password){
+    const promise = new Promise(function(resolve, reject){
+        var connection = mysql.createConnection({
+            host     : config.host,
+            user     : config.user,
+            password : config.password,
+            port: config.port,
+            database: config.database,
+        });
+
+        connection.connect();
+
+
+        var  sql = `SELECT * FROM user WHERE userid = ${userid}`;
+        //查
+
+        connection.query(sql,function (err, result) {
+            if(err){
+                console.log('[INSERT ERROR] - ',err.message);
+                reject(err.message);
+            }
+            if(password == result[0].password){
+                resolve();
+            }else{
+                reject();
+            }
+
+
+        });
+
+        connection.end();
+    });
+
+    return promise;
+}
 
 // const categoryadd = function (username){
 //     const promise = new Promise(function(resolve, reject){
@@ -337,6 +373,7 @@ exports.articlegetmod = articlegetmod;
 exports.articlesetmod = articlesetmod;
 
 
-
+// 用于验证登陆
+exports.verification = verification;
 
 // export {havethisname,findname,savename,login}

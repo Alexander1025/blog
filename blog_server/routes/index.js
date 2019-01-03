@@ -10,6 +10,8 @@ var categorylistget = indexmodel.categorylistget;
 var indextoplistget = indexmodel.indextoplistget;
 // 中部文章获取
 var articlemodule = indexmodel.articlemodule;
+// 分类页文章获取
+var articlecategoryget = indexmodel.articlecategoryget;
 
 
 
@@ -221,6 +223,94 @@ router.post('/articlemodule', function(req, res, next) {
     });
 });
 
+
+
+
+
+
+/**
+ *
+ 用于获取分类页文章列表
+ *
+ @method articlecategoryget
+ *
+ @param { } 参数名 参数说明
+ *
+ *      {
+            status:0=>'失败',1=>'成功',
+            data:查询的category信息,
+        }
+*/
+
+router.post('/articlecategoryget', function(req, res, next) {
+        var body = "";
+        req.on('data', function (chunk) {
+            body += chunk;  //一定要使用+=，如果body=chunk，因为请求favicon.ico，body会等于{}
+            // console.log("chunk:",chunk);
+        });
+        req.on('end', function () {
+            // 生成返回格式对象
+            let resdata = {};
+            resdata['data'] = {};
+            // 解析参数
+            body = querystring.parse(body);  //将一个字符串反序列化为一个对象
+            console.log("body:",body);
+
+
+            // 业务开始
+            categorylistget(body).then(function (data){
+                console.log(data);
+                var categoryidarr = [];
+                for(var i = 0 ; i <= data.length-1 ; i++){
+                    categoryidarr.push(data[i].id);
+                }
+                console.log(categoryidarr);
+                articlemodule(categoryidarr).then(function (data1){
+                    console.log(data1);
+                    var articlecategorymodule = [];
+                    for(var o = 0 ; o <= data.length-1 ; o++){
+                        if(body['categoryid'] == data[o]['id']){
+                            var newObj = {};
+                            newObj['title'] = data[o]['name'];
+                            newObj['category'] = data[o]['id'];
+                            newObj['article'] = [];
+                            for(var j = 0 ; j <= data1.length-1 ; j++){
+                                if(data[o]['id'] == data1[j]['category_id']){
+                                    var newObj1 = {};
+                                    newObj1['id'] = data1[j]['id'];
+                                    newObj1['tag'] = data1[j]['category_id'];
+                                    newObj1['title'] = data1[j]['title'];
+                                    newObj1['desc'] = data1[j]['describe'];
+                                    newObj1['author'] = data1[j]['author'];
+                                    newObj1['date'] = data1[j]['creat_time'];
+                                    newObj1['quantity'] = data1[j]['flow'];
+                                    newObj1['img'] = `./../static/images/upload/${data1[j]['img']}`;
+                                    newObj1['color'] = "gray";
+                                    newObj['article'].push(newObj1);
+                                }
+                            }
+                            articlecategorymodule.push(newObj);
+                        }
+                    }
+
+                    resdata['data']['articlecategorymodule'] = articlecategorymodule;
+                    resdata['status'] = 1;
+                    res.send(resdata);
+                    res.end();
+                },function (res){
+                    resdata['data'] = res;
+                    resdata['status'] = 0;
+                    res.send(resdata);
+                    res.end();
+                });
+            },function (res){
+                resdata['data'] = res;
+                resdata['status'] = 0;
+                res.send(resdata);
+                res.end();
+            });
+        });
+    });
 
 
 module.exports = router;

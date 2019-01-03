@@ -1,8 +1,13 @@
 <template>
     <div class="adminwrap">
         <div class="admintop">
-            <img class="logoimg" src="./../../static/images/common/logo.png" alt="机智僧">
+            <a href="/">
+                <img class="logoimg" src="./../../static/images/common/logo.png" alt="机智僧">
+            </a>
             <span>机智僧博客后台</span>
+            <div class="logout" @click="logout()">
+                登出
+            </div>
         </div>
         <div class="adminmain">
             <div class="adminmenu">
@@ -27,6 +32,7 @@
 </template>
 
 <script>
+import {trim,myparse} from './../../static/js/common.js';
 import router from './../../router';
 import '@/static/css/admin.css';
 
@@ -53,7 +59,7 @@ export default {
                     'href': "/admin/addcategory",
                     'text': "添加文章分类",
                     'isactive': false,
-                }
+                },
             ]
         }
     },
@@ -81,6 +87,38 @@ export default {
             }
             if(/\/admin$/.test(location.href)){
                 this.activelist[0].isactive = true;
+            }
+
+        },
+        logout:function (){
+
+            var that = this;
+            var ajaxargument = "";
+            var ajax = new XMLHttpRequest();
+            ajax.open('post','/node/login/logout');
+            ajax.send(ajaxargument);
+            ajax.onreadystatechange = function () {
+                if (ajax.readyState==4 &&ajax.status==200) {
+                    var data = ajax.responseText;
+                    data = myparse(data);
+                    // console.log(data);//输入相应的内容
+                    if(data.status == 1){
+                        layer.open({
+                            content: `登出成功`,
+                            skin: 'msg',
+                            time: 2,
+                        });
+                        var time = setTimeout(()=>{
+                            that.$router.push({path: '/'});
+                        },2000);
+                    }else{
+                        layer.open({
+                            content: `登出失败`,
+                            skin: 'msg',
+                            time: 2,
+                        });
+                    }
+                }
             }
 
         }

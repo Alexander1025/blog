@@ -19,7 +19,8 @@ var articleget = adminmodel.articleget;
 var articlegetmod = adminmodel.articlegetmod;
 var articlesetmod = adminmodel.articlesetmod;
 
-
+// 用于验证登陆
+var verification = adminmodel.verification;
 
 
 
@@ -58,19 +59,34 @@ router.post('/categoryadd', function (req, res) {
             res.end();
             return false;
         }
-        // 业务开始
-        categoryadd(body).then(function (data){
-            console.log(data);
-            resdata['data'] = data;
-            resdata['status'] = 1;
+        verification(req.cookies['userid'], req.cookies['password']).then(function (){
+
+            // 业务开始
+            categoryadd(body).then(function (data){
+                console.log(data);
+                resdata['data'] = data;
+                resdata['status'] = 1;
+                res.send(resdata);
+                res.end();
+            },function (res){
+                resdata['data'] = res;
+                resdata['status'] = 0;
+                res.send(resdata);
+                res.end();
+            });
+
+        }).catch(function (){
+
+            res.clearCookie('userid');
+            res.clearCookie('password');
+            resdata['data'] = "账号不安全，请重新登陆";
+            resdata['status'] = -2;
             res.send(resdata);
             res.end();
-        },function (res){
-            resdata['data'] = res;
-            resdata['status'] = 0;
-            res.send(resdata);
-            res.end();
+
         });
+
+
     });
 });
 
@@ -109,20 +125,34 @@ router.post('/categoryget', function (req, res) {
             res.end();
             return false;
         }
+        verification(req.cookies['userid'], req.cookies['password']).then(function (){
 
-        // 业务开始
-        categoryget(body).then(function (data){
-            console.log(data);
-            resdata['data'] = data;
-            resdata['status'] = 1;
+            // 业务开始
+            categoryget(body).then(function (data){
+                console.log(data);
+                resdata['data'] = data;
+                resdata['status'] = 1;
+                res.send(resdata);
+                res.end();
+            },function (res){
+                resdata['data'] = res;
+                resdata['status'] = 0;
+                res.send(resdata);
+                res.end();
+            });
+
+        }).catch(function (){
+
+            res.clearCookie('userid');
+            res.clearCookie('password');
+            resdata['data'] = "账号不安全，请重新登陆";
+            resdata['status'] = -2;
             res.send(resdata);
             res.end();
-        },function (res){
-            resdata['data'] = res;
-            resdata['status'] = 0;
-            res.send(resdata);
-            res.end();
+
         });
+
+
     });
 });
 
@@ -163,20 +193,34 @@ router.post('/categorygetmod', function (req, res) {
             res.end();
             return false;
         }
+        verification(req.cookies['userid'], req.cookies['password']).then(function (){
 
-        // 业务开始
-        categorygetmod(body).then(function (data){
-            console.log(data);
-            resdata['data'] = data;
-            resdata['status'] = 1;
+            // 业务开始
+            categorygetmod(body).then(function (data){
+                console.log(data);
+                resdata['data'] = data;
+                resdata['status'] = 1;
+                res.send(resdata);
+                res.end();
+            },function (res){
+                resdata['data'] = res;
+                resdata['status'] = 0;
+                res.send(resdata);
+                res.end();
+            });
+
+        }).catch(function (){
+
+            res.clearCookie('userid');
+            res.clearCookie('password');
+            resdata['data'] = "账号不安全，请重新登陆";
+            resdata['status'] = -2;
             res.send(resdata);
             res.end();
-        },function (res){
-            resdata['data'] = res;
-            resdata['status'] = 0;
-            res.send(resdata);
-            res.end();
+
         });
+
+
     });
 });
 
@@ -217,20 +261,34 @@ router.post('/categorysetmod', function (req, res) {
             res.end();
             return false;
         }
+        verification(req.cookies['userid'], req.cookies['password']).then(function (){
 
-        // 业务开始
-        categorysetmod(body).then(function (data){
-            console.log(data);
-            resdata['data'] = data;
-            resdata['status'] = 1;
+            // 业务开始
+            categorysetmod(body).then(function (data){
+                console.log(data);
+                resdata['data'] = data;
+                resdata['status'] = 1;
+                res.send(resdata);
+                res.end();
+            },function (res){
+                resdata['data'] = res;
+                resdata['status'] = 0;
+                res.send(resdata);
+                res.end();
+            });
+
+        }).catch(function (){
+
+            res.clearCookie('userid');
+            res.clearCookie('password');
+            resdata['data'] = "账号不安全，请重新登陆";
+            resdata['status'] = -2;
             res.send(resdata);
             res.end();
-        },function (res){
-            resdata['data'] = res;
-            resdata['status'] = 0;
-            res.send(resdata);
-            res.end();
+
         });
+
+
     });
 });
 
@@ -271,19 +329,33 @@ router.post('/articleadd', function (req, res) {
             res.end();
             return false;
         }
-        // 业务开始
-        articleadd(body).then(function (data){
-            console.log(data);
-            resdata['data'] = data;
-            resdata['status'] = 1;
+        verification(req.cookies['userid'], req.cookies['password']).then(function (){
+
+            // 业务开始
+            articleadd(body).then(function (data){
+                console.log(data);
+                resdata['data'] = data;
+                resdata['status'] = 1;
+                res.send(resdata);
+                res.end();
+            },function (res){
+                resdata['data'] = res;
+                resdata['status'] = 0;
+                res.send(resdata);
+                res.end();
+            });
+
+        }).catch(function (){
+
+            res.clearCookie('userid');
+            res.clearCookie('password');
+            resdata['data'] = "账号不安全，请重新登陆";
+            resdata['status'] = -2;
             res.send(resdata);
             res.end();
-        },function (res){
-            resdata['data'] = res;
-            resdata['status'] = 0;
-            res.send(resdata);
-            res.end();
+
         });
+
     });
 });
 
@@ -323,18 +395,31 @@ router.post('/articleget', function (req, res) {
             res.end();
             return false;
         }
-        // 业务开始
-        articleget(body).then(function (data){
-            console.log(data);
-            resdata['data'] = data;
-            resdata['status'] = 1;
+        verification(req.cookies['userid'], req.cookies['password']).then(function (){
+
+            // 业务开始
+            articleget(body).then(function (data){
+                // console.log(data);
+                resdata['data'] = data;
+                resdata['status'] = 1;
+                res.send(resdata);
+                res.end();
+            },function (res){
+                resdata['data'] = res;
+                resdata['status'] = 0;
+                res.send(resdata);
+                res.end();
+            });
+
+        }).catch(function (){
+
+            res.clearCookie('userid');
+            res.clearCookie('password');
+            resdata['data'] = "账号不安全，请重新登陆";
+            resdata['status'] = -2;
             res.send(resdata);
             res.end();
-        },function (res){
-            resdata['data'] = res;
-            resdata['status'] = 0;
-            res.send(resdata);
-            res.end();
+
         });
     });
 });
@@ -374,20 +459,34 @@ router.post('/articlegetmod', function (req, res) {
             res.end();
             return false;
         }
+        verification(req.cookies['userid'], req.cookies['password']).then(function (){
 
-        // 业务开始
-        articlegetmod(body).then(function (data){
-            console.log(data);
-            resdata['data'] = data;
-            resdata['status'] = 1;
+            // 业务开始
+            articlegetmod(body).then(function (data){
+                console.log(data);
+                resdata['data'] = data;
+                resdata['status'] = 1;
+                res.send(resdata);
+                res.end();
+            },function (res){
+                resdata['data'] = res;
+                resdata['status'] = 0;
+                res.send(resdata);
+                res.end();
+            });
+
+        }).catch(function (){
+
+            res.clearCookie('userid');
+            res.clearCookie('password');
+            resdata['data'] = "账号不安全，请重新登陆";
+            resdata['status'] = -2;
             res.send(resdata);
             res.end();
-        },function (res){
-            resdata['data'] = res;
-            resdata['status'] = 0;
-            res.send(resdata);
-            res.end();
+
         });
+
+
     });
 });
 
@@ -426,20 +525,35 @@ router.post('/articlesetmod', function (req, res) {
             res.end();
             return false;
         }
+        verification(req.cookies['userid'], req.cookies['password']).then(function (){
 
-        // 业务开始
-        articlesetmod(body).then(function (data){
-            console.log(data);
-            resdata['data'] = data;
-            resdata['status'] = 1;
+            // 业务开始
+            articlesetmod(body).then(function (data){
+                console.log(data);
+                resdata['data'] = data;
+                resdata['status'] = 1;
+                res.send(resdata);
+                res.end();
+            },function (res){
+                resdata['data'] = res;
+                resdata['status'] = 0;
+                res.send(resdata);
+                res.end();
+            });
+
+        }).catch(function (){
+
+            res.clearCookie('userid');
+            res.clearCookie('password');
+            resdata['data'] = "账号不安全，请重新登陆";
+            resdata['status'] = -2;
             res.send(resdata);
             res.end();
-        },function (res){
-            resdata['data'] = res;
-            resdata['status'] = 0;
-            res.send(resdata);
-            res.end();
+
         });
+
+
+
     });
 });
 
@@ -624,7 +738,7 @@ router.post('/uploadfile', function (req, res, next) {
 
 //     var body = "";
 //     req.on('data', function (chunk) {
-//         body += chunk; 
+//         body += chunk;
 //     });
 //     req.on('end', function () {
 //         body = querystring.parse(body);
