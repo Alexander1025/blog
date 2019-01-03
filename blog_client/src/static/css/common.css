@@ -267,13 +267,19 @@ ul, li{
     padding: 10px;
 }
 .featured .article_img{
-	width: 50%;
+    width: 50%;
 }
 .featured .article_img img{
 	width: 100%;
 }
+.article_img{
+    cursor: pointer;
+}
 .featured .article_cont{
-	width: 50%;
+    width: 50%;
+}
+.article_cont{
+    cursor: pointer;
 }
 .featured .article_title{
 	font-size: 24px;
@@ -682,4 +688,79 @@ ul, li{
     background-color: #2778ce;
     color: white;
     border-radius: 4px;
+}
+
+
+
+/* 这里是文章页面样式 */
+.article .articleimg{
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+}
+.article .articleimg img{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.article .article_bottom{
+    color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    font-size: 18px;
+    line-height: 30px;
+}
+.article .title{
+    font-size: 36px;
+    text-align: center;
+}
+.article .title span{
+    display: block;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 20px;
+    text-align: center;
+    line-height: 50px;
+}
+.article .article_author span, .article .article_date span, .article .article_quantity span, .article .article_author img, .article .article_date img, .article .article_quantity img{
+    height: 18px;
+}
+.article .article_author, .article .article_date, .article .article_quantity{
+    margin-right: 20px;
+}
+.content{
+    width: 100%;
+    min-height: 600px;
+    padding: 40px 10px;
+    box-sizing: border-box;
+}
+@media screen and (min-width: 1280px){
+    .article .articleimg{
+        height: 600px;
+    }
+}
+@media screen and (min-width: 981px) and (max-width: 1280px) {
+    .article .articleimg{
+        height: 540px;
+    }
+}
+@media screen and (min-width: 737px) and (max-width: 980px) {
+    .article .articleimg{
+        height: 440px;
+    }
+}
+@media screen and (min-width: 481px) and (max-width: 736px) {
+    .article .articleimg{
+        height: 300px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .article .articleimg{
+        height: 190px;
+    }
+}
+
+
+.hidden{
+    display: none;
 }

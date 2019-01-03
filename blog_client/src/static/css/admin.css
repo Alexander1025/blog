@@ -43,7 +43,8 @@
 	text-align: center;
 	color: white;
 	box-sizing: border-box;
-	padding: 0 10px;
+    padding: 0 10px;
+    cursor: pointer;
 }
 .adminmenu li.active{
 	background-color: #9c646f;
@@ -141,13 +142,14 @@
     border-top: 2px solid rgba(0,0,0,.05);
 }
 .logout{
-    line-height: 60px;
+    line-height: 40px;
     float: right;
-    margin-right: 20%;
+    margin: 10px 20%;
     color: #2b58bb;
     background-color: white;
-    padding: 0 20px;
+    padding: 0px 20px;
     text-align: center;
     font-size: 20px;
     border-radius: 5px;
+    cursor: pointer;
 }

@@ -306,6 +306,7 @@ export default {
             }
             var that = this;
             var ajaxargument = "";
+            this.content = escape(this.content);
             ajaxargument = `title=${this.title}&describe=${this.describe}&category_id=${this.category_id}&creat_time=${this.creat_time}&author=${this.author}&authorid=${this.authorid}&status=${this.status}&img=${this.img}&flow=${this.flow}&content=${this.content}&place=${this.place}`;
 
             var ajax = new XMLHttpRequest();
@@ -371,10 +372,12 @@ export default {
 
             var that = this;
             var ajaxargument = "";
+            this.content = escape(this.content);
             ajaxargument = `id=${this.id}&title=${this.title}&describe=${this.describe}&category_id=${this.category_id}&creat_time=${this.creat_time}&author=${this.author}&authorid=${this.authorid}&status=${this.status}&img=${this.img}&flow=${this.flow}&content=${this.content}&place=${this.place}`;
 
             var ajax = new XMLHttpRequest();
             ajax.open('post','/node/admin/articlesetmod');
+            // ajax.setRequestHeader("Content-type","application/json; charset=utf-8");
             ajax.send(ajaxargument);
             ajax.onreadystatechange = function () {
                 if (ajax.readyState==4 &&ajax.status==200) {
@@ -389,7 +392,7 @@ export default {
                         });
                         var time = setTimeout(()=>{
                             that.$router.push({path: '/admin/article'});
-                        },2000);
+                        },300);
                     }else if(data.status == -1){
                         layer.open({
                             content: `${data.data}`,

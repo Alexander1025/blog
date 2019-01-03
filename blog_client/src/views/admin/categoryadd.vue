@@ -334,7 +334,7 @@ export default {
                         });
                         var time = setTimeout(()=>{
                             that.$router.push({path: '/admin/category'});
-                        },2000);
+                        },300);
                     }else if(data.status == -1){
                         layer.open({
                             content: `${data.data}`,

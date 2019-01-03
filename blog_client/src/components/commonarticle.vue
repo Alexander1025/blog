@@ -1,39 +1,41 @@
 <template>
     <div class="commonarticle">
-        <div class="article_img">
-            <router-link to="/###">
-                <img :src="img" alt="">
-            </router-link>
+        <div
+            class="article_img"
+            @click="skip(id)"
+        >
+            <img :src="img" alt="">
         </div>
-        <div class="article_cont">
-            <router-link to="/article">
-                <div class="article_title">
-                    {{title}}
+        <div
+            class="article_cont"
+            @click="skip(id)"
+        >
+            <div class="article_title">
+                {{title}}
+            </div>
+            <div class="article_desc">
+                {{desc}}
+            </div>
+            <div class="article_bottom">
+                <div class="article_author">
+                    <img :src="`./../static/images/icon/figure_${color}.png`" alt="">
+                    <span>
+                        {{author}}
+                    </span>
                 </div>
-                <div class="article_desc">
-                    {{desc}}
+                <div class="article_date">
+                    <img :src="`./../static/images/icon/time_${color}.png`" alt="">
+                    <span>
+                        {{date}}
+                    </span>
                 </div>
-                <div class="article_bottom">
-                    <div class="article_author">
-                        <img :src="`./../static/images/icon/figure_${color}.png`" alt="">
-                        <span>
-                            {{author}}
-                        </span>
-                    </div>
-                    <div class="article_date">
-                        <img :src="`./../static/images/icon/time_${color}.png`" alt="">
-                        <span>
-                            {{date}}
-                        </span>
-                    </div>
-                    <div class="article_quantity">
-                        <img :src="`./../static/images/icon/footprint_${color}.png`" alt="">
-                        <span>
-                            {{quantity}}
-                        </span>
-                    </div>
+                <div class="article_quantity">
+                    <img :src="`./../static/images/icon/footprint_${color}.png`" alt="">
+                    <span>
+                        {{quantity}}
+                    </span>
                 </div>
-            </router-link>
+            </div>
         </div>
     </div>
 </template>
@@ -52,6 +54,18 @@ export default {
     },
     mounted:function (){
 
+    },
+    methods:{
+        skip: function (id){
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+            this.$router.push({
+                path: '/article',
+                query: {
+                    articleid: id,
+                }
+            });
+        }
     }
 }
 </script>

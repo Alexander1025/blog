@@ -235,13 +235,19 @@ const store = new Vuex.Store({
         ],
         categorylistarr:[
             // {
-            //     text:"前端",
-            //     id:1
+            //     "id":1,
+            //     "describe":"前端文章",
+            //     "name":"前端",
+            //     "status":1,
+            //     "icon":"20181227-1545892641180.png"
             // },
             // {
-            //     text:"node",
-            //     id:2
-            // },
+            //     "id":1,
+            //     "describe":"前端文章",
+            //     "name":"前端",
+            //     "status":1,
+            //     "icon":"20181227-1545892641180.png"
+            // }
         ],
     },
     mutations: {

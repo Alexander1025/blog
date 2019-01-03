@@ -331,6 +331,7 @@ router.post('/articleadd', function (req, res) {
         }
         verification(req.cookies['userid'], req.cookies['password']).then(function (){
 
+            body.content = unescape(body.content);
             // 业务开始
             articleadd(body).then(function (data){
                 console.log(data);
@@ -527,6 +528,7 @@ router.post('/articlesetmod', function (req, res) {
         }
         verification(req.cookies['userid'], req.cookies['password']).then(function (){
 
+            body.content = unescape(body.content);
             // 业务开始
             articlesetmod(body).then(function (data){
                 console.log(data);
