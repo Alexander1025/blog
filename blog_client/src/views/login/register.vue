@@ -158,7 +158,7 @@ export default {
                         var time = setTimeout(()=>{
                             that.$router.push({path: '/login'});
                         },2000);
-                    }else if(data.status == 1){
+                    }else if(data.status == 2){
                         layer.open({
                             content: "暂不对外开放注册 ^_^",
                             skin: 'msg',
