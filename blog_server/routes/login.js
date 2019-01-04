@@ -193,18 +193,28 @@ router.post('/savename', function (req, res) {
         body = querystring.parse(body);  //将一个字符串反序列化为一个对象
         // console.log("body:",body);
 
-        // 业务开始
-        savename(body).then(function (data){
-            resdata['data'] = data;
-            resdata['status'] = 1;
+        if(process.env.NODE_ENV ==  'production'){
+            resdata['data'] = "暂不对外开放注册";
+            resdata['status'] = 2;
             res.send(resdata);
             res.end();
-        },function (res){
-            resdata['data'] = res;
-            resdata['status'] = 0;
-            res.send(resdata);
-            res.end();
-        });
+        }else{
+            // 业务开始
+            savename(body).then(function (data){
+                resdata['data'] = data;
+                resdata['status'] = 1;
+                res.send(resdata);
+                res.end();
+            },function (res){
+                resdata['data'] = res;
+                resdata['status'] = 0;
+                res.send(resdata);
+                res.end();
+            });
+        }
+
+
+
     });
 });
 

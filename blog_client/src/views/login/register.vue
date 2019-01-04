@@ -158,6 +158,15 @@ export default {
                         var time = setTimeout(()=>{
                             that.$router.push({path: '/login'});
                         },2000);
+                    }else if(data.status == 1){
+                        layer.open({
+                            content: "暂不对外开放注册 ^_^",
+                            skin: 'msg',
+                            time: 2,
+                        });
+                        var time = setTimeout(()=>{
+                            that.$router.push({path: '/login'});
+                        },2000);
                     }
                 }
             }
