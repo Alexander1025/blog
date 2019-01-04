@@ -812,3 +812,37 @@ pre{
 .part11_article{
     width: calc(100%/12*11);
 }
+.height30_article{
+    height: 30px;
+}
+.height40_article{
+    height: 40px;
+}
+.height50_article{
+    height: 50px;
+}
+.height60_article{
+    height: 60px;
+}
+.height70_article{
+    height: 70px;
+}
+.height80_article{
+    height: 80px;
+}
+.height90_article{
+    height: 90px;
+}
+.height100_article{
+    height: 100px;
+}
+.height130_article{
+    height: 130px;
+}
+.height160_article{
+    height: 160px;
+}
+.height200_article{
+    height: 200px;
+}
+

@@ -81,11 +81,11 @@ router.post('/login', function (req, res) {
         let resdata = {};
         // 解析参数
         body = querystring.parse(body);  //将一个字符串反序列化为一个对象
-        console.log("body:",body);
+        // console.log("body:",body);
 
         // 业务开始
         login(body).then(function (data){
-            console.log(data);
+            // console.log(data);
             if(data.length > 0){
                 resdata['data'] = data;
                 resdata['status'] = 1;
@@ -136,7 +136,7 @@ router.post('/haveUserName', function (req, res) {
         let resdata = {};
         // 解析参数
         body = querystring.parse(body);  //将一个字符串反序列化为一个对象
-        console.log("body:",body);
+        // console.log("body:",body);
         Object.keys(body).forEach((element, index, array) => {
             console.log(element);
             console.log(body.username);
@@ -191,7 +191,7 @@ router.post('/savename', function (req, res) {
         let resdata = {};
         // 解析参数
         body = querystring.parse(body);  //将一个字符串反序列化为一个对象
-        console.log("body:",body);
+        // console.log("body:",body);
 
         // 业务开始
         savename(body).then(function (data){
@@ -233,7 +233,7 @@ router.post('/logout', function (req, res) {
         let resdata = {};
         // 解析参数
         body = querystring.parse(body);  //将一个字符串反序列化为一个对象
-        console.log("body:",body);
+        // console.log("body:",body);
 
 
         res.clearCookie('userid');

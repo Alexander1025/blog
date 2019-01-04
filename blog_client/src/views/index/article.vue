@@ -68,13 +68,13 @@ export default {
         return {
             message: '',
             id: '',
-            title: '欢迎来到机智僧的博客',
-            describe: '这里是机智僧的博客,欢迎大家常来博客打卡 ^_^',
-            author: '机智僧',
-            creat_time: '2018-10-1',
-            flow: '888',
+            title: '',
+            describe: '',
+            author: '',
+            creat_time: '',
+            flow: '',
             img: '',
-            content: '这里是机智僧的博客,欢迎大家常来博客打卡 ^_^',
+            content: '',
 
             authorid: 1,
             category_id: 1,
@@ -117,7 +117,7 @@ export default {
                     if (ajax.readyState==4 &&ajax.status==200) {
                         var data = ajax.responseText;
                         data = myparse(data);
-                        console.log(data);//输入相应的内容
+                        // console.log(data);//输入相应的内容
                         if(data.status == 1){
                             // that.$store.commit('setState',{attr:'categorylistarr',field:data.data.category});
                             that.id = data.data[0]['id'];
@@ -141,6 +141,38 @@ export default {
                         }
                     }
                 }
+
+
+
+
+
+                var that = this;
+
+                // 用于文章埋点
+                var ajaxargument2 = `id=${query[i].split("=")[1]}`;
+                var ajax2 = new XMLHttpRequest();
+                ajax2.open('post','/node/index/count');
+                ajax2.send(ajaxargument2);
+                ajax2.onreadystatechange = function () {
+                    if (ajax2.readyState==4 &&ajax2.status==200) {
+                        var data = ajax2.responseText;
+                        data = myparse(data);
+                        // console.log(data);//输入相应的内容
+                        if(data.status == 1){
+                            // that.$store.commit('setState',{attr:'categorylistarr',field:data.data.category});
+                            that.flow = data.data;
+                        }else{
+                            layer.open({
+                                content: `获取文章分类失败`,
+                                skin: 'msg',
+                                time: 2,
+                            });
+                        }
+                    }
+                }
+
+
+
             }
         }
 
@@ -170,6 +202,11 @@ export default {
                 }
             }
         }
+
+
+
+
+
     },
     methods:{
 

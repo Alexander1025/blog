@@ -135,9 +135,82 @@ const articleget = function (option){
 
 
 
+
+
+
+const count = function (option){
+    console.log(option);
+    const promise = new Promise(function(resolve, reject){
+        var connection = mysql.createConnection({
+            host     : config.host,
+            user     : config.user,
+            password : config.password,
+            port: config.port,
+            database: config.database,
+        });
+
+        connection.connect();
+
+
+        var  sql = `SELECT flow,id FROM article WHERE id = ${option.id}`;
+        //查
+
+        connection.query(sql,function (err, result) {
+            if(err){
+                console.log('[INSERT ERROR] - ',err.message);
+                reject(err.message);
+            }
+            resolve(result);
+
+        });
+
+        connection.end();
+    });
+
+    return promise;
+}
+
+
+
+const addcount = function (flow, id){
+    const promise = new Promise(function(resolve, reject){
+        var connection = mysql.createConnection({
+            host     : config.host,
+            user     : config.user,
+            password : config.password,
+            port: config.port,
+            database: config.database,
+        });
+
+        connection.connect();
+
+
+        var sql = "UPDATE article SET flow = ? WHERE Id = ?";
+        var modSqlParams = [parseInt(flow)+1, id];
+
+
+        //改
+
+        connection.query(sql,modSqlParams ,function (err, result) {
+            if(err){
+                console.log('[INSERT ERROR] - ',err.message);
+                reject(err.message);
+            }
+            resolve(result);
+
+        });
+
+        connection.end();
+    });
+
+    return promise;
+}
+
+
 exports.categorylistget = categorylistget;
 exports.indextoplistget = indextoplistget;
 exports.articlemodule = articlemodule;
 exports.articleget = articleget;
-
+exports.count = count;
+exports.addcount = addcount;
 

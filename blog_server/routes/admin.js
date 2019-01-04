@@ -51,7 +51,7 @@ router.post('/categoryadd', function (req, res) {
         let resdata = {};
         // 解析参数
         body = querystring.parse(body);  //将一个字符串反序列化为一个对象
-        console.log("body:",body);
+        // console.log("body:",body);
         if(!req.cookies['userid'] || req.cookies['userid'] == ""){
             resdata['data'] = "请登录";
             resdata['status'] = -1;
@@ -63,7 +63,7 @@ router.post('/categoryadd', function (req, res) {
 
             // 业务开始
             categoryadd(body).then(function (data){
-                console.log(data);
+                // console.log(data);
                 resdata['data'] = data;
                 resdata['status'] = 1;
                 res.send(resdata);
@@ -116,7 +116,7 @@ router.post('/categoryget', function (req, res) {
         let resdata = {};
         // 解析参数
         body = querystring.parse(body);  //将一个字符串反序列化为一个对象
-        console.log("body:",body);
+        // console.log("body:",body);
         console.log('userid: ', req.cookies['userid']);
         if(!req.cookies['userid'] || req.cookies['userid'] == ""){
             resdata['data'] = "请登录";
@@ -129,7 +129,7 @@ router.post('/categoryget', function (req, res) {
 
             // 业务开始
             categoryget(body).then(function (data){
-                console.log(data);
+                // console.log(data);
                 resdata['data'] = data;
                 resdata['status'] = 1;
                 res.send(resdata);
@@ -185,7 +185,7 @@ router.post('/categorygetmod', function (req, res) {
         let resdata = {};
         // 解析参数
         body = querystring.parse(body);  //将一个字符串反序列化为一个对象
-        console.log("body:",body);
+        // console.log("body:",body);
         if(!req.cookies['userid'] || req.cookies['userid'] == ""){
             resdata['data'] = "请登录";
             resdata['status'] = -1;
@@ -197,7 +197,7 @@ router.post('/categorygetmod', function (req, res) {
 
             // 业务开始
             categorygetmod(body).then(function (data){
-                console.log(data);
+                // console.log(data);
                 resdata['data'] = data;
                 resdata['status'] = 1;
                 res.send(resdata);
@@ -253,7 +253,7 @@ router.post('/categorysetmod', function (req, res) {
         let resdata = {};
         // 解析参数
         body = querystring.parse(body);  //将一个字符串反序列化为一个对象
-        console.log("body:",body);
+        // console.log("body:",body);
         if(!req.cookies['userid'] || req.cookies['userid'] == ""){
             resdata['data'] = "请登录";
             resdata['status'] = -1;
@@ -265,7 +265,7 @@ router.post('/categorysetmod', function (req, res) {
 
             // 业务开始
             categorysetmod(body).then(function (data){
-                console.log(data);
+                // console.log(data);
                 resdata['data'] = data;
                 resdata['status'] = 1;
                 res.send(resdata);
@@ -321,7 +321,7 @@ router.post('/articleadd', function (req, res) {
         let resdata = {};
         // 解析参数
         body = querystring.parse(body);  //将一个字符串反序列化为一个对象
-        console.log("body:",body);
+        // console.log("body:",body);
         if(!req.cookies['userid'] || req.cookies['userid'] == ""){
             resdata['data'] = "请登录";
             resdata['status'] = -1;
@@ -334,7 +334,7 @@ router.post('/articleadd', function (req, res) {
             body.content = unescape(body.content);
             // 业务开始
             articleadd(body).then(function (data){
-                console.log(data);
+                // console.log(data);
                 resdata['data'] = data;
                 resdata['status'] = 1;
                 res.send(resdata);
@@ -388,7 +388,7 @@ router.post('/articleget', function (req, res) {
         let resdata = {};
         // 解析参数
         body = querystring.parse(body);  //将一个字符串反序列化为一个对象
-        console.log("body:",body);
+        // console.log("body:",body);
         if(!req.cookies['userid'] || req.cookies['userid'] == ""){
             resdata['data'] = "请登录";
             resdata['status'] = -1;
@@ -452,7 +452,7 @@ router.post('/articlegetmod', function (req, res) {
         let resdata = {};
         // 解析参数
         body = querystring.parse(body);  //将一个字符串反序列化为一个对象
-        console.log("body:",body);
+        // console.log("body:",body);
         if(!req.cookies['userid'] || req.cookies['userid'] == ""){
             resdata['data'] = "请登录";
             resdata['status'] = -1;
@@ -464,7 +464,7 @@ router.post('/articlegetmod', function (req, res) {
 
             // 业务开始
             articlegetmod(body).then(function (data){
-                console.log(data);
+                // console.log(data);
                 resdata['data'] = data;
                 resdata['status'] = 1;
                 res.send(resdata);
@@ -518,7 +518,7 @@ router.post('/articlesetmod', function (req, res) {
         let resdata = {};
         // 解析参数
         body = querystring.parse(body);  //将一个字符串反序列化为一个对象
-        console.log("body:",body);
+        // console.log("body:",body);
         if(!req.cookies['userid'] || req.cookies['userid'] == ""){
             resdata['data'] = "请登录";
             resdata['status'] = -1;
@@ -531,7 +531,7 @@ router.post('/articlesetmod', function (req, res) {
             body.content = unescape(body.content);
             // 业务开始
             articlesetmod(body).then(function (data){
-                console.log(data);
+                // console.log(data);
                 resdata['data'] = data;
                 resdata['status'] = 1;
                 res.send(resdata);
