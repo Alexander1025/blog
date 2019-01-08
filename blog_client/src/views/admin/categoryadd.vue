@@ -240,7 +240,7 @@ export default {
         submitform: function (){
             console.log(this.name,this.describe,this.status);
 
-            if(!this.name || !this.describe || !this.status || !this.icon){
+            if(!this.name || !this.describe || !this.status){
                 layer.open({
                     content: `请填写完整`,
                     skin: 'msg',
@@ -251,7 +251,12 @@ export default {
 
             var that = this;
             var ajaxargument = "";
-            ajaxargument = `name=${this.name}&describe=${this.describe}&status=${this.status}&icon=${this.icon}`;
+            if(this.icon != ""){
+                ajaxargument = `name=${this.name}&describe=${this.describe}&status=${this.status}&icon=${this.icon}`;
+            }else if(this.icon == ""){
+                ajaxargument = `name=${this.name}&describe=${this.describe}&status=${this.status}`;
+            }
+
 
             var ajax = new XMLHttpRequest();
             ajax.open('post','/node/admin/categoryadd');
