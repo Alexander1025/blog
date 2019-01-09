@@ -10,6 +10,7 @@ yarn-error.log*
 selenium-debug.log
 model/config.js
 
+
 # Editor directories and files
 .idea
 .vscode
