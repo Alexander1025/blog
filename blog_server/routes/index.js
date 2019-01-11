@@ -65,7 +65,8 @@ router.post('/indextoplistget', function(req, res, next) {
                     newObj['author'] = data[i]['author'];
                     newObj['date'] = data[i]['creat_time'];
                     newObj['quantity'] = data[i]['flow'];
-                    newObj['img'] = `./../static/images/upload/${data[i]['img']}`;
+                    // newObj['img'] = `./../static/images/upload/${data[i]['img']}`;
+                    newObj['img'] = `/blog_server/myupload/${data[i]['img']}`;
                     newObj['color'] = "white";
                     featured.push(newObj);
                 }
@@ -78,7 +79,7 @@ router.post('/indextoplistget', function(req, res, next) {
                     newObj['author'] = data[i]['author'];
                     newObj['date'] = data[i]['creat_time'];
                     newObj['quantity'] = data[i]['flow'];
-                    newObj['img'] = `./../static/images/upload/${data[i]['img']}`;
+                    newObj['img'] = `/blog_server/myupload/${data[i]['img']}`;
                     newObj['color'] = "white";
                     recommend.push(newObj);
                 }
@@ -202,7 +203,7 @@ router.post('/articlemodule', function(req, res, next) {
                             newObj1['author'] = data1[j]['author'];
                             newObj1['date'] = data1[j]['creat_time'];
                             newObj1['quantity'] = data1[j]['flow'];
-                            newObj1['img'] = `./../static/images/upload/${data1[j]['img']}`;
+                            newObj1['img'] = `/blog_server/myupload/${data1[j]['img']}`;
                             newObj1['color'] = "gray";
                             newObj['article'].push(newObj1);
                         }
@@ -290,7 +291,7 @@ router.post('/articlecategoryget', function(req, res, next) {
                                 newObj1['author'] = data1[j]['author'];
                                 newObj1['date'] = data1[j]['creat_time'];
                                 newObj1['quantity'] = data1[j]['flow'];
-                                newObj1['img'] = `./../static/images/upload/${data1[j]['img']}`;
+                                newObj1['img'] = `/blog_server/myupload/${data1[j]['img']}`;
                                 newObj1['color'] = "gray";
                                 newObj['article'].push(newObj1);
                             }
