@@ -1,5 +1,6 @@
 .DS_Store
 package-lock.json
+nohup.out
 node_modules/
 upload/
 npm-debug.log*
