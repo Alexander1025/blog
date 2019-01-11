@@ -69,6 +69,7 @@ export default {
 
 
 
+
             // 用于获取头部文章列表信息
             var ajaxargument1 = "";
             var ajax1 = new XMLHttpRequest();
