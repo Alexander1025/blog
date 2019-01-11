@@ -1,5 +1,6 @@
 .DS_Store
 package-lock.json
+nohup.out
 node_modules/
 upload/
 npm-debug.log*
@@ -8,6 +9,8 @@ yarn-error.log*
 /test/unit/coverage/
 /test/e2e/reports/
 selenium-debug.log
+model/config.js
+
 
 # Editor directories and files
 .idea

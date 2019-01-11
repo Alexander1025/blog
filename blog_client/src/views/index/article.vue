@@ -3,7 +3,7 @@
         <commonHead></commonHead>
         <div class="indexwrap indextop">
             <div class="mainwrap articleimg">
-                <img :src="'./../../static/images/upload/'+img" alt="">
+                <img :src="'/blog_server/myupload/'+img" alt="">
             </div>
         </div>
         <div class="indexwrap">
