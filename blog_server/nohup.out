@@ -1,0 +1,484 @@
+
+> blog-server@0.0.0 server /home/ubuntu/blog/blog/blog_server
+> NODE_ENV=production node ./bin/www
+
+node 服务已经开启 , 端口号 :4100
+
+> blog-server@0.0.0 server /home/ubuntu/blog/blog/blog_server
+> NODE_ENV=production node ./bin/www
+
+Port 4100 is already in use
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! blog-server@0.0.0 server: `NODE_ENV=production node ./bin/www`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the blog-server@0.0.0 server script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/ubuntu/.npm/_logs/2019-01-05T02_16_22_632Z-debug.log
+
+> blog-server@0.0.0 server /home/ubuntu/blog/blog/blog_server
+> NODE_ENV=production node ./bin/www
+
+Port 4100 is already in use
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! blog-server@0.0.0 server: `NODE_ENV=production node ./bin/www`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the blog-server@0.0.0 server script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/ubuntu/.npm/_logs/2019-01-05T02_16_31_244Z-debug.log
+[0mPOST /node/index/categorylistget [32m200 [0m97.608 ms - 222[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m27.977 ms - 50[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m33.935 ms - 121[0m
+[0mPOST /node/admin/articleget [32m200 [0m0.874 ms - 32[0m
+[0mPOST /node/index/categorylistget [32m200 [0m7.464 ms - 222[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m6.363 ms - 50[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m10.140 ms - 121[0m
+[0mPOST /node/admin/articleget [32m200 [0m0.403 ms - 32[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m2.574 ms - 50[0m
+[0mPOST /node/index/categorylistget [32m200 [0m5.218 ms - 222[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m6.143 ms - 121[0m
+[0mPOST /node/admin/articleget [32m200 [0m0.366 ms - 32[0m
+[0mPOST /node/index/categorylistget [32m200 [0m4.074 ms - 222[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m5.555 ms - 50[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m8.505 ms - 121[0m
+[0mPOST /node/index/categorylistget [32m200 [0m1.845 ms - 222[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m3.419 ms - 50[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m6.544 ms - 121[0m
+[0mPOST /node/index/categorylistget [32m200 [0m1.967 ms - 222[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m3.058 ms - 50[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m6.263 ms - 121[0m
+[0mPOST /node/index/categorylistget [32m200 [0m5.888 ms - 222[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m5.331 ms - 50[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m7.201 ms - 121[0m
+[0mPOST /node/admin/articleget [32m200 [0m0.388 ms - 32[0m
+[0mPOST /node/index/categorylistget [32m200 [0m2.101 ms - 222[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m3.084 ms - 50[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m5.479 ms - 121[0m
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! blog-server@0.0.0 server: `NODE_ENV=production node ./bin/www`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the blog-server@0.0.0 server script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/ubuntu/.npm/_logs/2019-01-05T02_57_43_036Z-debug.log
+
+> blog-server@0.0.0 server /home/ubuntu/blog/blog/blog_server
+> NODE_ENV=production node ./bin/www
+
+node 服务已经开启 , 端口号 :4100
+[0mPOST /node/index/categorylistget [32m200 [0m98.336 ms - 222[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m27.539 ms - 50[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m30.746 ms - 121[0m
+[0mPOST /node/index/categorylistget [32m200 [0m7.221 ms - 222[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m6.574 ms - 50[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m7.916 ms - 121[0m
+[0mPOST /node/admin/articleget [32m200 [0m0.898 ms - 32[0m
+userid:  undefined
+[0mPOST /node/admin/categoryget [32m200 [0m0.721 ms - 32[0m
+[Object: null prototype] { username: '123', password: '123' }
+[0mPOST /node/login/login [32m200 [0m7.933 ms - 22[0m
+[Object: null prototype] { username: 'adminzzz', password: '123456' }
+[0mPOST /node/login/login [32m200 [0m2.105 ms - 22[0m
+[0mPOST /node/index/categorylistget [32m200 [0m5.131 ms - 222[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m5.398 ms - 50[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m7.638 ms - 121[0m
+[0mPOST /node/admin/articleget [32m200 [0m1.097 ms - 32[0m
+[0mPOST /node/index/categorylistget [32m200 [0m5.880 ms - 222[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m4.822 ms - 50[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m7.481 ms - 121[0m
+[0mPOST /node/admin/articleget [32m200 [0m0.363 ms - 32[0m
+userid:  undefined
+[0mPOST /node/admin/categoryget [32m200 [0m0.488 ms - 32[0m
+[0mPOST /node/index/categorylistget [32m200 [0m2.949 ms - 222[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m3.510 ms - 50[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m6.311 ms - 121[0m
+[0mPOST /node/index/categorylistget [32m200 [0m2.394 ms - 222[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m4.401 ms - 50[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m6.583 ms - 121[0m
+[0mPOST /node/index/categorylistget [32m200 [0m6.210 ms - 222[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m6.696 ms - 50[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m7.774 ms - 121[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m181.151 ms - 50[0m
+[0mPOST /node/index/categorylistget [32m200 [0m225.296 ms - 222[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m205.897 ms - 121[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m6.122 ms - 50[0m
+[0mPOST /node/index/categorylistget [32m200 [0m9.138 ms - 222[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m4.808 ms - 121[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m4.896 ms - 50[0m
+[0mPOST /node/index/categorylistget [32m200 [0m5.052 ms - 222[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m6.725 ms - 121[0m
+[0mPOST /node/index/categorylistget [32m200 [0m4.885 ms - 222[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m4.996 ms - 50[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m63.627 ms - 121[0m
+[0mPOST /node/index/categorylistget [32m200 [0m4.425 ms - 222[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m8.339 ms - 121[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m6.200 ms - 50[0m
+[0mGET /node/index/articlemodule [33m404 [0m1283.453 ms - 160[0m
+[0mGET /node/index/categorylistget [33m404 [0m0.965 ms - 160[0m
+[0mGET /node/index/indextoplistget [33m404 [0m0.833 ms - 160[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m9.422 ms - 50[0m
+[0mPOST /node/index/categorylistget [32m200 [0m19.433 ms - 222[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m8.855 ms - 121[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m3.890 ms - 50[0m
+[0mPOST /node/index/categorylistget [32m200 [0m5.561 ms - 222[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m7.365 ms - 121[0m
+[0mPOST /node/index/categorylistget [32m200 [0m2.575 ms - 222[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m5.828 ms - 50[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m7.712 ms - 121[0m
+[0mPOST /node/index/categorylistget [32m200 [0m3.555 ms - 222[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m1.810 ms - 50[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m3.806 ms - 121[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m2.090 ms - 50[0m
+[0mPOST /node/index/categorylistget [32m200 [0m3.302 ms - 222[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m4.774 ms - 121[0m
+[0mPOST /node/admin/articleget [32m200 [0m0.434 ms - 32[0m
+[0mPOST /node/admin/articleget [32m200 [0m0.473 ms - 32[0m
+[0mPOST /node/index/categorylistget [32m200 [0m2.049 ms - 222[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m1.950 ms - 50[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m3.521 ms - 121[0m
+[0mPOST /node/admin/articleget [32m200 [0m0.473 ms - 32[0m
+[0mPOST /node/index/categorylistget [32m200 [0m50.635 ms - 222[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m9.600 ms - 121[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m2.235 ms - 50[0m
+[0mPOST /node/admin/articleget [32m200 [0m0.514 ms - 32[0m
+[0mGET /node/index/articlemodule [33m404 [0m11.180 ms - 160[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m122.522 ms - 50[0m
+[0mPOST /node/index/categorylistget [32m200 [0m173.172 ms - 222[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m149.421 ms - 121[0m
+[0mPOST /node/admin/articleget [32m200 [0m0.405 ms - 32[0m
+[Object: null prototype] { username: 'adminzzz', password: '123456' }
+[0mPOST /node/login/login [32m200 [0m8.642 ms - 22[0m
+[Object: null prototype] { username: 'adminzzz', password: 'zjz8161773612' }
+[0mPOST /node/login/login [32m200 [0m2.189 ms - 22[0m
+[Object: null prototype] { username: 'adminzzz', password: '81617736' }
+[0mPOST /node/login/login [32m200 [0m3.896 ms - 22[0m
+[Object: null prototype] { username: 'zhoujizhi', password: '321654' }
+[0mPOST /node/login/login [32m200 [0m64.267 ms - 133[0m
+[0mPOST /node/index/categorylistget [32m200 [0m3.972 ms - 222[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m3.222 ms - 50[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m19.941 ms - 121[0m
+[Object: null prototype] {}
+[0mPOST /node/admin/articleget [32m200 [0m7.635 ms - 22[0m
+userid:  1
+[Object: null prototype] {}
+[0mPOST /node/admin/categoryget [32m200 [0m3.922 ms - 209[0m
+userid:  1
+userid:  1
+[0mPOST /node/index/articlemodule [0m- [0m- ms - -[0m
+[0mPOST /node/index/indextoplistget [0m- [0m- ms - -[0m
+[0mPOST /node/index/categorylistget [0m- [0m- ms - -[0m
+[0mPOST /node/admin/articleget [0m- [0m- ms - -[0m
+[0mPOST /node/index/categorylistget [32m200 [0m506.913 ms - 222[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m516.744 ms - 50[0m
+[Object: null prototype] {}
+[Object: null prototype] {}
+[Object: null prototype] {}
+[Object: null prototype] {}
+[0mPOST /node/admin/categoryget [32m200 [0m639.814 ms - 209[0m
+[0mPOST /node/admin/categoryget [32m200 [0m778.901 ms - 209[0m
+[0mPOST /node/admin/articleget [32m200 [0m788.225 ms - 22[0m
+[]
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m795.665 ms - 121[0m
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! blog-server@0.0.0 server: `NODE_ENV=production node ./bin/www`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the blog-server@0.0.0 server script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/ubuntu/.npm/_logs/2019-01-08T02_27_58_528Z-debug.log
+
+> blog-server@0.0.0 server /home/ubuntu/blog/blog/blog_server
+> NODE_ENV=production node ./bin/www
+
+node 服务已经开启 , 端口号 :4100
+[0mPOST /node/index/categorylistget [32m200 [0m372.606 ms - 222[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m142.268 ms - 50[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m146.829 ms - 121[0m
+[0mPOST /node/index/categorylistget [32m200 [0m4.835 ms - 222[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m5.246 ms - 50[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m7.446 ms - 121[0m
+[0mPOST /node/index/categorylistget [32m200 [0m2.074 ms - 222[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m4.197 ms - 50[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m5.888 ms - 121[0m
+[0mPOST /node/index/categorylistget [32m200 [0m7.081 ms - 222[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m9.055 ms - 50[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m11.566 ms - 121[0m
+[Object: null prototype] {}
+[0mPOST /node/admin/articleget [32m200 [0m6.726 ms - 22[0m
+userid:  1
+[Object: null prototype] {}
+[0mPOST /node/admin/categoryget [32m200 [0m4.611 ms - 209[0m
+userid:  1
+[Object: null prototype] {}
+[0mPOST /node/admin/categoryget [32m200 [0m7.579 ms - 209[0m
+userid:  1
+[Object: null prototype] {}
+[0mPOST /node/admin/categoryget [32m200 [0m6.150 ms - 22[0m
+[Object: null prototype] { name: '前端', describe: '前端文章', status: '1' }
+INSERT INTO category(name, status, `describe`, icon) VALUES(?,?,?,?)
+[ '前端', '1', '前端文章', undefined ]
+[0mPOST /node/admin/categoryadd [32m200 [0m9.188 ms - 147[0m
+userid:  1
+[Object: null prototype] {}
+[0mPOST /node/admin/categoryget [32m200 [0m4.001 ms - 95[0m
+userid:  1
+[Object: null prototype] {}
+[0mPOST /node/admin/categoryget [32m200 [0m6.177 ms - 22[0m
+[Object: null prototype] { name: '前端', describe: '前端文章', status: '1' }
+INSERT INTO category(name, status, `describe`, icon) VALUES(?,?,?,?)
+[ '前端', '1', '前端文章', undefined ]
+[0mPOST /node/admin/categoryadd [32m200 [0m4.543 ms - 147[0m
+userid:  1
+[Object: null prototype] {}
+[0mPOST /node/admin/categoryget [32m200 [0m3.911 ms - 95[0m
+[Object: null prototype] { name: 'node', describe: 'node文章', status: '1' }
+INSERT INTO category(name, status, `describe`, icon) VALUES(?,?,?,?)
+[ 'node', '1', 'node文章', undefined ]
+[0mPOST /node/admin/categoryadd [32m200 [0m4.901 ms - 147[0m
+userid:  1
+[Object: null prototype] {}
+[0mPOST /node/admin/categoryget [32m200 [0m4.733 ms - 165[0m
+userid:  1
+[Object: null prototype] {}
+[0mPOST /node/admin/categoryget [32m200 [0m4.124 ms - 165[0m
+[Object: null prototype] { name: 'JS小册', describe: 'JS字母表', status: '1' }
+INSERT INTO category(name, status, `describe`, icon) VALUES(?,?,?,?)
+[ 'JS小册', '1', 'JS字母表', undefined ]
+[0mPOST /node/admin/categoryadd [32m200 [0m3.601 ms - 147[0m
+userid:  1
+[Object: null prototype] {}
+[0mPOST /node/admin/categoryget [32m200 [0m5.159 ms - 240[0m
+[Object: null prototype] { name: 'node小册', describe: 'node字母表', status: '1' }
+INSERT INTO category(name, status, `describe`, icon) VALUES(?,?,?,?)
+[ 'node小册', '1', 'node字母表', undefined ]
+[0mPOST /node/admin/categoryadd [32m200 [0m4.613 ms - 147[0m
+userid:  1
+[Object: null prototype] {}
+[0mPOST /node/admin/categoryget [32m200 [0m4.355 ms - 319[0m
+[Object: null prototype] { name: 'nginx', describe: 'nginx文章', status: '1' }
+INSERT INTO category(name, status, `describe`, icon) VALUES(?,?,?,?)
+[ 'nginx', '1', 'nginx文章', undefined ]
+[0mPOST /node/admin/categoryadd [32m200 [0m5.303 ms - 147[0m
+userid:  1
+[Object: null prototype] {}
+[0mPOST /node/admin/categoryget [32m200 [0m5.850 ms - 391[0m
+[Object: null prototype] { name: 'python', describe: 'python文章', status: '1' }
+INSERT INTO category(name, status, `describe`, icon) VALUES(?,?,?,?)
+[ 'python', '1', 'python文章', undefined ]
+[0mPOST /node/admin/categoryadd [32m200 [0m6.102 ms - 147[0m
+userid:  1
+[Object: null prototype] {}
+[0mPOST /node/admin/categoryget [32m200 [0m3.779 ms - 465[0m
+[Object: null prototype] { name: 'php', describe: 'php文章', status: '1' }
+INSERT INTO category(name, status, `describe`, icon) VALUES(?,?,?,?)
+[ 'php', '1', 'php文章', undefined ]
+[0mPOST /node/admin/categoryadd [32m200 [0m4.507 ms - 147[0m
+userid:  1
+[Object: null prototype] {}
+[0mPOST /node/admin/categoryget [32m200 [0m4.287 ms - 533[0m
+[Object: null prototype] { name: '安全', describe: '安全文章', status: '1' }
+INSERT INTO category(name, status, `describe`, icon) VALUES(?,?,?,?)
+[ '安全', '1', '安全文章', undefined ]
+[0mPOST /node/admin/categoryadd [32m200 [0m4.540 ms - 147[0m
+userid:  1
+[Object: null prototype] {}
+[0mPOST /node/admin/categoryget [32m200 [0m5.722 ms - 607[0m
+[Object: null prototype] { name: 'http', describe: 'http文章', status: '1' }
+INSERT INTO category(name, status, `describe`, icon) VALUES(?,?,?,?)
+[ 'http', '1', 'http文章', undefined ]
+[0mPOST /node/admin/categoryadd [32m200 [0m3.990 ms - 147[0m
+userid:  1
+[Object: null prototype] {}
+[0mPOST /node/admin/categoryget [32m200 [0m4.115 ms - 677[0m
+[Object: null prototype] { name: 'seo', describe: 'seo文章', status: '1' }
+INSERT INTO category(name, status, `describe`, icon) VALUES(?,?,?,?)
+[ 'seo', '1', 'seo文章', undefined ]
+[0mPOST /node/admin/categoryadd [32m200 [0m3.958 ms - 148[0m
+userid:  1
+[Object: null prototype] {}
+[0mPOST /node/admin/categoryget [32m200 [0m3.709 ms - 746[0m
+[Object: null prototype] { name: 'npm', describe: 'npm文章', status: '1' }
+INSERT INTO category(name, status, `describe`, icon) VALUES(?,?,?,?)
+[ 'npm', '1', 'npm文章', undefined ]
+[0mPOST /node/admin/categoryadd [32m200 [0m4.468 ms - 148[0m
+userid:  1
+[Object: null prototype] {}
+[0mPOST /node/admin/categoryget [32m200 [0m3.753 ms - 815[0m
+[Object: null prototype] { name: 'webpack', describe: 'webpack文章', status: '1' }
+INSERT INTO category(name, status, `describe`, icon) VALUES(?,?,?,?)
+[ 'webpack', '1', 'webpack文章', undefined ]
+[0mPOST /node/admin/categoryadd [32m200 [0m7.888 ms - 148[0m
+userid:  1
+[Object: null prototype] {}
+[0mPOST /node/admin/categoryget [32m200 [0m6.127 ms - 892[0m
+[Object: null prototype] { name: 'git', describe: 'git文章', status: '1' }
+INSERT INTO category(name, status, `describe`, icon) VALUES(?,?,?,?)
+[ 'git', '1', 'git文章', undefined ]
+[0mPOST /node/admin/categoryadd [32m200 [0m3.343 ms - 148[0m
+userid:  1
+[Object: null prototype] {}
+[0mPOST /node/admin/categoryget [32m200 [0m5.465 ms - 961[0m
+[Object: null prototype] { name: '第三方库', describe: '第三方库文章', status: '1' }
+INSERT INTO category(name, status, `describe`, icon) VALUES(?,?,?,?)
+[ '第三方库', '1', '第三方库文章', undefined ]
+[0mPOST /node/admin/categoryadd [32m200 [0m4.836 ms - 148[0m
+userid:  1
+[Object: null prototype] {}
+[0mPOST /node/admin/categoryget [32m200 [0m3.958 ms - 1048[0m
+[0mPOST /node/index/categorylistget [32m200 [0m3.357 ms - 1061[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m2.851 ms - 50[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m4.083 ms - 664[0m
+[0mPOST /node/index/categorylistget [32m200 [0m3.970 ms - 1061[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m3.255 ms - 50[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m7.440 ms - 664[0m
+[0mGET /node/admin/categoryadd [33m404 [0m1090.980 ms - 160[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m5.792 ms - 50[0m
+[0mPOST /node/index/categorylistget [32m200 [0m5.138 ms - 1061[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m6.105 ms - 664[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m6.542 ms - 50[0m
+[0mPOST /node/index/categorylistget [32m200 [0m10.756 ms - 1061[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m10.149 ms - 664[0m
+[0mPOST /node/admin/articleget [32m200 [0m0.501 ms - 32[0m
+[0mPOST /node/admin/articleget [32m200 [0m0.475 ms - 32[0m
+[0mPOST /node/admin/articleget [32m200 [0m0.474 ms - 32[0m
+userid:  undefined
+[0mPOST /node/admin/categoryget [32m200 [0m0.440 ms - 32[0m
+userid:  undefined
+[0mPOST /node/admin/categoryget [32m200 [0m0.456 ms - 32[0m
+userid:  undefined
+[0mPOST /node/admin/categoryget [32m200 [0m0.489 ms - 32[0m
+userid:  undefined
+[0mPOST /node/admin/categoryget [32m200 [0m0.396 ms - 32[0m
+userid:  undefined
+[0mPOST /node/admin/categoryget [32m200 [0m0.513 ms - 32[0m
+[0mPOST /node/login/logout [32m200 [0m5.720 ms - 12[0m
+[0mPOST /node/index/categorylistget [32m200 [0m3.583 ms - 1061[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m7.687 ms - 664[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m8.226 ms - 50[0m
+userid:  undefined
+[0mPOST /node/admin/categoryget [32m200 [0m0.438 ms - 32[0m
+userid:  undefined
+[0mPOST /node/admin/categoryget [32m200 [0m0.420 ms - 32[0m
+[0mPOST /node/admin/articleget [32m200 [0m0.324 ms - 32[0m
+[0mPOST /node/admin/articleget [32m200 [0m0.318 ms - 32[0m
+[0mPOST /node/admin/articleget [32m200 [0m0.384 ms - 32[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m1.700 ms - 50[0m
+[0mPOST /node/index/categorylistget [32m200 [0m3.494 ms - 1061[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m7.711 ms - 664[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m149.112 ms - 50[0m
+[0mPOST /node/index/categorylistget [32m200 [0m190.861 ms - 1061[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m125.042 ms - 664[0m
+[0mPOST /node/index/categorylistget [32m200 [0m1.921 ms - 1061[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m1.656 ms - 50[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m3.237 ms - 664[0m
+[0mPOST /node/index/categorylistget [32m200 [0m18.849 ms - 1061[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m2.326 ms - 50[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m3.554 ms - 664[0m
+[0mPOST /node/index/categorylistget [32m200 [0m2.112 ms - 1061[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m2.065 ms - 50[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m4.190 ms - 664[0m
+[0mPOST /node/index/categorylistget [32m200 [0m1.891 ms - 1061[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m8.172 ms - 664[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m1.722 ms - 50[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m2.536 ms - 50[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m3.254 ms - 664[0m
+[0mPOST /node/index/categorylistget [32m200 [0m1.955 ms - 1061[0m
+[0mPOST /node/index/categorylistget [32m200 [0m7.076 ms - 1061[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m3.886 ms - 50[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m4.526 ms - 664[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m7.301 ms - 50[0m
+[0mPOST /node/index/categorylistget [32m200 [0m8.054 ms - 1061[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m6.265 ms - 664[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m133.369 ms - 50[0m
+[0mPOST /node/index/categorylistget [32m200 [0m209.976 ms - 1061[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m168.176 ms - 664[0m
+[0mGET / [33m404 [0m32.275 ms - 160[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m127.750 ms - 50[0m
+[0mPOST /node/index/categorylistget [32m200 [0m164.099 ms - 1061[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m154.125 ms - 664[0m
+[0mPOST /node/admin/articleget [32m200 [0m0.425 ms - 32[0m
+userid:  undefined
+[0mPOST /node/admin/categoryget [32m200 [0m0.422 ms - 32[0m
+[Object: null prototype] { username: 'zhoujizhi', password: '123456' }
+[0mPOST /node/login/login [32m200 [0m43.249 ms - 22[0m
+[Object: null prototype] { username: 'zhoujizhi', password: '401402' }
+[0mPOST /node/login/login [32m200 [0m1.962 ms - 22[0m
+[Object: null prototype] { username: 'zhoujizhi', password: '321456' }
+[0mPOST /node/login/login [32m200 [0m1.754 ms - 22[0m
+[Object: null prototype] { username: 'zhoujizhi', password: '8161773612' }
+[0mPOST /node/login/login [32m200 [0m1.842 ms - 22[0m
+[Object: null prototype] { username: 'zhoujizhi', password: '321654' }
+[0mPOST /node/login/login [32m200 [0m36.364 ms - 133[0m
+[0mPOST /node/index/categorylistget [32m200 [0m4.119 ms - 1061[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m3.950 ms - 50[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m5.365 ms - 664[0m
+[0mPOST /node/index/categorylistget [32m200 [0m1.739 ms - 1061[0m
+[0mPOST /node/index/indextoplistget [32m200 [0m4.775 ms - 50[0m
+[]
+[0mPOST /node/index/articlemodule [32m200 [0m3.108 ms - 664[0m
