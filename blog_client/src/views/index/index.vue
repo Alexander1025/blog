@@ -107,7 +107,7 @@ export default {
                 if (ajax2.readyState==4 &&ajax2.status==200) {
                     var data = ajax2.responseText;
                     data = myparse(data);
-                    // console.log(data);//输入相应的内容
+                    console.log(data);//输入相应的内容
                     if(data.status == 1){
                         that.$store.commit('setState',{attr:'articlemodule',field:data.data.article});
                     }else{

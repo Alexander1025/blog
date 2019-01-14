@@ -130,6 +130,15 @@ router.post('/categorylistget', function(req, res, next) {
 
         // 业务开始
         categorylistget(body).then(function (data){
+            data.sort(function(a,b){
+                if(a["categoryid"]<b["categoryid"]){
+                    return -1;
+                }
+                if(a["categoryid"]>b["categoryid"]){
+                   return 1;
+                }
+                return 0;
+            })
             // console.log(data);
             resdata['data']['category'] = data;
             resdata['status'] = 1;
@@ -180,13 +189,21 @@ router.post('/articlemodule', function(req, res, next) {
         // 业务开始
         categorylistget(body).then(function (data){
             // console.log(data);
+            data.sort(function(a,b){
+                if(a["categoryid"]<b["categoryid"]){
+                    return -1;
+                }
+                if(a["categoryid"]>b["categoryid"]){
+                   return 1;
+                }
+                return 0;
+            })
             var categoryidarr = [];
             for(var i = 0 ; i <= data.length-1 ; i++){
                 categoryidarr.push(data[i].id);
             }
-            // console.log(categoryidarr);
             articlemodule(categoryidarr).then(function (data1){
-                console.log(data1);
+                // console.log(data1);
                 var articlemodule = [];
                 for(var o = 0 ; o <= data.length-1 ; o++){
                     var newObj = {};

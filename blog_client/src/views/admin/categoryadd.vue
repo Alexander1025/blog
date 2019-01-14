@@ -7,7 +7,7 @@
             </ul>
             <ul class="flextable">
                 <li>
-                    <input :value="id" type="text" placeholder="编号" readonly>
+                    <input v-model="categoryid" type="text" placeholder="分类排序categoryid">
                 </li>
                 <li>
                     <input v-model="name" type="text" placeholder="分类名称">
@@ -50,11 +50,12 @@ export default {
             iconimg:"",
             isupload:true,
             categoryid:"",
+            tablecategoryid:"",
             isadd:true,
             htmltitle:"添加文章分类",
             titlelist: [
                 {
-                    'text':"编号"
+                    'text':"分类categoryid"
                 },
                 {
                     'text':"分类名称"
@@ -84,11 +85,11 @@ export default {
         for(var i = 0 ; i <= query.length-1 ; i++){
             var parameter = query[i].split("=")[0];
             if(parameter == "id"){
-                this.categoryid = query[i].split("=")[1];
-                // console.log(this.categoryid);
+                this.tablecategoryid = query[i].split("=")[1];
+                // console.log(this.tablecategoryid);
                 // var that = this;
                 var ajaxargument = "";
-                ajaxargument = `id=${this.categoryid}`;
+                ajaxargument = `id=${this.tablecategoryid}`;
 
                 var that = this;
 
@@ -110,12 +111,14 @@ export default {
                             that.id = data.data[0].id;
                             that.name = data.data[0].name;
                             that.describe = data.data[0].describe;
+                            that.categoryid = data.data[0].categoryid;
                             that.icon = data.data[0].icon;
                             that.status = data.data[0].status;
                             that.iconimg = "/blog_server/upload/"+data.data[0].icon;
                             that.isupload = false;
                             that.isadd = false;
-                            that.htmltitle = "修改文章分类";
+
+                            that.htmltitle = "修改文章分类   "+data.data[0].id;
                         }else if(data.status == -1){
                             layer.open({
                                 content: `${data.data}`,
@@ -238,9 +241,9 @@ export default {
             }
         },
         submitform: function (){
-            console.log(this.name,this.describe,this.status);
+            console.log(this.name,this.describe,this.status,this.categoryid);
 
-            if(!this.name || !this.describe || !this.status){
+            if(!this.name || !this.describe || !this.status || !this.categoryid){
                 layer.open({
                     content: `请填写完整`,
                     skin: 'msg',
@@ -252,9 +255,9 @@ export default {
             var that = this;
             var ajaxargument = "";
             if(this.icon != ""){
-                ajaxargument = `name=${this.name}&describe=${this.describe}&status=${this.status}&icon=${this.icon}`;
+                ajaxargument = `name=${this.name}&categoryid=${this.categoryid}&describe=${this.describe}&status=${this.status}&icon=${this.icon}`;
             }else if(this.icon == ""){
-                ajaxargument = `name=${this.name}&describe=${this.describe}&status=${this.status}`;
+                ajaxargument = `name=${this.name}&categoryid=${this.categoryid}&describe=${this.describe}&status=${this.status}`;
             }
 
 
@@ -310,7 +313,7 @@ export default {
         modform: function (){
             console.log(this.name,this.describe,this.status);
 
-            if(!this.name || !this.describe || !this.status || !this.icon){
+            if(!this.name || !this.describe || !this.status){
                 layer.open({
                     content: `请填写完整`,
                     skin: 'msg',
@@ -321,7 +324,7 @@ export default {
 
             var that = this;
             var ajaxargument = "";
-            ajaxargument = `&id=${this.id}&name=${this.name}&describe=${this.describe}&status=${this.status}&icon=${this.icon}`;
+            ajaxargument = `&id=${this.id}&categoryid=${this.categoryid}&name=${this.name}&describe=${this.describe}&status=${this.status}&icon=${this.icon}`;
 
             var ajax = new XMLHttpRequest();
             ajax.open('post','/node/admin/categorysetmod');

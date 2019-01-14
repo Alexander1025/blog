@@ -16,7 +16,7 @@ const categorylistget = function (){
         });
         connection.connect();
 
-        var sql = `SELECT * FROM category WHERE status = '1'`;
+        var sql = `SELECT * FROM category WHERE status = '1' AND categoryid < 50`;
 
         connection.query(sql,function (err, result) {
             if(err){

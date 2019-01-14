@@ -91,8 +91,8 @@ const categorysetmod = function (option){
 
         connection.connect();
 
-        var sql = "UPDATE category SET name = ?,status = ?,`describe` = ?,icon = ? WHERE Id = ?";
-        var modSqlParams = [option.name, option.status, option.describe, option.icon, option.id];
+        var sql = "UPDATE category SET name = ?,categoryid = ?,status = ?,`describe` = ?,icon = ? WHERE Id = ?";
+        var modSqlParams = [option.name, option.categoryid, option.status, option.describe, option.icon, option.id];
         //改
 
         connection.query(sql,modSqlParams ,function (err, result) {
@@ -127,8 +127,8 @@ const categoryadd = function (option){
 
         connection.connect();
 
-        var addSql = 'INSERT INTO category(name, status, `describe`, icon) VALUES(?,?,?,?)';
-        var addSqlParams = [option.name, option.status, option.describe, option.icon];
+        var addSql = 'INSERT INTO category(name, categoryid, status, `describe`, icon) VALUES(?,?,?,?,?)';
+        var addSqlParams = [option.name, option.categoryid, option.status, option.describe, option.icon];
         //增
 
         connection.query(addSql,addSqlParams,function (err, result) {
