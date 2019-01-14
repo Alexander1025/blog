@@ -7,13 +7,13 @@
             </ul>
             <ul class="flextable" v-for="(item, index) in categorylist">
                 <li>
-                    <input :value="item.id" type="text" placeholder="编号id" readonly>
+                    <input :value="item.categoryid" type="text" placeholder="分类categoryid">
                 </li>
                 <li>
                     <input :value="item.name" type="text" placeholder="分类名称">
                 </li>
                 <li>
-                    <input :value="item.categoryid" type="text" placeholder="分类categoryid">
+                    <input :value="item.id" type="text" placeholder="编号id" readonly>
                 </li>
                 <li>
                     <img :src='"/blog_server/upload/"+item.icon' style="height: 44px;" alt="">
@@ -39,13 +39,13 @@ export default {
         return {
             titlelist: [
                 {
-                    'text':"编号id"
+                    'text':"分类排序categoryid"
                 },
                 {
                     'text':"分类名称"
                 },
                 {
-                    'text':"分类排序categoryid"
+                    'text':"编号id"
                 },
                 {
                     'text':"图标"

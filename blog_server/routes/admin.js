@@ -129,6 +129,15 @@ router.post('/categoryget', function (req, res) {
 
             // 业务开始
             categoryget(body).then(function (data){
+                data.sort(function(a,b){
+                    if(a["categoryid"]<b["categoryid"]){
+                        return -1;
+                    }
+                    if(a["categoryid"]>b["categoryid"]){
+                       return 1;
+                    }
+                    return 0;
+                })
                 // console.log(data);
                 resdata['data'] = data;
                 resdata['status'] = 1;
