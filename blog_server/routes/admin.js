@@ -422,12 +422,31 @@ router.post('/articleget', function (req, res) {
                     }
                     return 0;
                 })
-
                 // console.log(data);
-                resdata['data'] = data;
-                resdata['status'] = 1;
-                res.send(resdata);
-                res.end();
+                categoryget(body).then(function (data1){
+                    // 将获取回来的文章的分类id变成分类name文字
+                    // 优化获取回来的分类信息对象
+                    var newData1 = {};
+                    for(var i = 0 ; i <= data1.length-1 ; i++){
+                        newData1[data1[i]['id']] = data1[i]['name'];
+                    }
+                    for(var j = 0 ; j <= data.length-1 ; j++){
+                        if(!!data[j]['category_id']){
+                            data[j]['category_id'] = newData1[data[j]['category_id']];
+                        }
+                    }
+
+                    resdata['data'] = data;
+                    resdata['status'] = 1;
+                    res.send(resdata);
+                    res.end();
+                },function (){
+                    resdata['data'] = res;
+                    resdata['status'] = 0;
+                    res.send(resdata);
+                    res.end();
+                });
+
             },function (res){
                 resdata['data'] = res;
                 resdata['status'] = 0;
