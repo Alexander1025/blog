@@ -7,7 +7,7 @@
             </ul>
             <ul class="flextable">
                 <li>
-                    <input :value="id" type="text" placeholder="编号" readonly>
+                    <input v-model="article_rank" type="text" placeholder="文章排序">
                 </li>
                 <li>
                     <input v-model="title" type="text" placeholder="文章标题">
@@ -86,6 +86,7 @@ export default {
             id:"",
             title:"",
             describe:"",
+            article_rank:"",
             category_id:"",
             creat_time:"",
             author:"",
@@ -196,8 +197,6 @@ export default {
             }
         }
 
-
-
         var url = location.search;
         url = url.replace("?","");
         var query = url.split("&");
@@ -239,6 +238,7 @@ export default {
                             that.title=data.data[0].title;
                             that.describe=data.data[0].describe;
                             that.category_id=data.data[0].category_id;
+                            that.article_rank=data.data[0].article_rank;
                             that.creat_time=data.data[0].creat_time;
                             // that.creat_time=data.data[0].creat_time;
                             that.author=data.data[0].author;
@@ -249,7 +249,7 @@ export default {
                             that.flow=data.data[0].flow;
                             that.place=data.data[0].place;
                             that.isadd = false;
-                            that.htmltitle = "修改文章";
+                            that.htmltitle = "修改文章"+data.data[0].id;
                         }else if(data.status == -1){
                             layer.open({
                                 content: `${data.data}`,
@@ -307,7 +307,7 @@ export default {
             var that = this;
             var ajaxargument = "";
             this.content = escape(this.content);
-            ajaxargument = `title=${this.title}&describe=${this.describe}&category_id=${this.category_id}&creat_time=${this.creat_time}&author=${this.author}&authorid=${this.authorid}&status=${this.status}&img=${this.img}&flow=${this.flow}&content=${this.content}&place=${this.place}`;
+            ajaxargument = `title=${this.title}&describe=${this.describe}&category_id=${this.category_id}&article_rank=${this.article_rank}&creat_time=${this.creat_time}&author=${this.author}&authorid=${this.authorid}&status=${this.status}&img=${this.img}&flow=${this.flow}&content=${this.content}&place=${this.place}`;
 
             var ajax = new XMLHttpRequest();
             ajax.open('post','/node/admin/articleadd');
@@ -373,7 +373,7 @@ export default {
             var that = this;
             var ajaxargument = "";
             this.content = escape(this.content);
-            ajaxargument = `id=${this.id}&title=${this.title}&describe=${this.describe}&category_id=${this.category_id}&creat_time=${this.creat_time}&author=${this.author}&authorid=${this.authorid}&status=${this.status}&img=${this.img}&flow=${this.flow}&content=${this.content}&place=${this.place}`;
+            ajaxargument = `id=${this.id}&title=${this.title}&describe=${this.describe}&category_id=${this.category_id}&article_rank=${this.article_rank}&creat_time=${this.creat_time}&author=${this.author}&authorid=${this.authorid}&status=${this.status}&img=${this.img}&flow=${this.flow}&content=${this.content}&place=${this.place}`;
 
             var ajax = new XMLHttpRequest();
             ajax.open('post','/node/admin/articlesetmod');

@@ -409,6 +409,20 @@ router.post('/articleget', function (req, res) {
 
             // 业务开始
             articleget(body).then(function (data){
+                data.sort(function(a,b){
+                    if(a["category_id"]<b["category_id"]){
+                        // if(a["article_rank"]<b["article_rank"]){
+                            return -1;
+                        // }
+                    }
+                    if(a["category_id"]>b["category_id"]){
+                        // if(a["article_rank"]>b["article_rank"]){
+                            return 1;
+                        // }
+                    }
+                    return 0;
+                })
+
                 // console.log(data);
                 resdata['data'] = data;
                 resdata['status'] = 1;

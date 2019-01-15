@@ -13,7 +13,10 @@
                     <input :value="item.title" type="text" placeholder="文章名称">
                 </li>
                 <li>
-                    <input :value="item.describe" type="text" placeholder="描述">
+                    <input :value="item.article_rank" type="text" placeholder="文章排序">
+                </li>
+                <li>
+                    <input :value="item.category_id" type="text" placeholder="分类id">
                 </li>
                 <li>
                     <img :src='"/blog_server/myupload/"+item.img' style="height: 44px;" alt="">
@@ -45,7 +48,10 @@ export default {
                     'text':"文章名称"
                 },
                 {
-                    'text':"描述"
+                    'text':"排序"
+                },
+                {
+                    'text':"分类id"
                 },
                 {
                     'text':"封面"
@@ -129,6 +135,6 @@ export default {
 
 <style>
     .flextable li {
-        width: 16.666%;
+        width: 14.285%;
     }
 </style>

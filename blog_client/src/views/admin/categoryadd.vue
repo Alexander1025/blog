@@ -55,7 +55,7 @@ export default {
             htmltitle:"添加文章分类",
             titlelist: [
                 {
-                    'text':"分类categoryid"
+                    'text':"分类排序categoryid"
                 },
                 {
                     'text':"分类名称"

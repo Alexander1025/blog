@@ -163,8 +163,8 @@ const articleadd = function (option){
 
         connection.connect();
 
-        var addSql = 'INSERT INTO article(title, `describe`, category_id, creat_time, `author`, authorid, status, img, flow, `content`, place) VALUES(?,?,?,?,?,?,?,?,?,?,?)';
-        var addSqlParams = [option.title, option.describe, option.category_id, option.creat_time, option.author, option.authorid, option.status, option.img, option.flow, option.content, option.place];
+        var addSql = 'INSERT INTO article(title, `describe`, category_id, article_rank, creat_time, `author`, authorid, status, img, flow, `content`, place) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)';
+        var addSqlParams = [option.title, option.describe, option.category_id, option.article_rank, option.creat_time, option.author, option.authorid, option.status, option.img, option.flow, option.content, option.place];
         //增
 
         connection.query(addSql,addSqlParams,function (err, result) {
@@ -275,8 +275,8 @@ const articlesetmod = function (option){
 
 
         // title, `describe`, category_id, creat_time, `author`, authorid, status, img, flow
-        var sql = "UPDATE article SET title = ?,`describe` = ?,category_id = ?,creat_time = ?,author = ?,authorid = ?,status = ?,img = ?,flow = ?,content = ?, place = ? WHERE Id = ?";
-        var modSqlParams = [option.title, option.describe, option.category_id, option.creat_time, option.author, option.authorid, option.status, option.img, option.flow, option.content, option.place, option.id];
+        var sql = "UPDATE article SET title = ?,`describe` = ?,category_id = ?,article_rank = ?,creat_time = ?,author = ?,authorid = ?,status = ?,img = ?,flow = ?,content = ?, place = ? WHERE Id = ?";
+        var modSqlParams = [option.title, option.describe, option.category_id, option.article_rank, option.creat_time, option.author, option.authorid, option.status, option.img, option.flow, option.content, option.place, option.id];
         //改
 
         connection.query(sql,modSqlParams ,function (err, result) {

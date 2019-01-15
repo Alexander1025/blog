@@ -203,6 +203,15 @@ router.post('/articlemodule', function(req, res, next) {
                 categoryidarr.push(data[i].id);
             }
             articlemodule(categoryidarr).then(function (data1){
+                data1.sort(function(a,b){
+                    if(a["article_rank"]<b["article_rank"]){
+                        return -1;
+                    }
+                    if(a["article_rank"]>b["article_rank"]){
+                       return 1;
+                    }
+                    return 0;
+                })
                 // console.log(data1);
                 var articlemodule = [];
                 for(var o = 0 ; o <= data.length-1 ; o++){
