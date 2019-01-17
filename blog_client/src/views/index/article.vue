@@ -135,7 +135,7 @@ export default {
                             that.status = data.data[0]['status'];
                         }else{
                             layer.open({
-                                content: `获取文章分类失败`,
+                                content: `获取文章失败`,
                                 skin: 'msg',
                                 time: 2,
                             });
@@ -164,7 +164,7 @@ export default {
                             that.flow = data.data;
                         }else{
                             layer.open({
-                                content: `获取文章分类失败`,
+                                content: `浏览量`,
                                 skin: 'msg',
                                 time: 2,
                             });
