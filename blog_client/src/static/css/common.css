@@ -842,33 +842,53 @@ ul, li{
 }
 .ql-indent-1{
     padding-left: 1em;
+    text-indent: 2em;
+    line-height: 30px;
 }
 .ql-indent-2{
     padding-left: 2em;
+    text-indent: 2em;
+    line-height: 30px;
 }
 .ql-indent-3{
     padding-left: 3em;
+    text-indent: 2em;
+    line-height: 30px;
 }
 .ql-indent-4{
     padding-left: 4em;
+    text-indent: 2em;
+    line-height: 30px;
 }
 .ql-indent-5{
     padding-left: 5em;
+    text-indent: 2em;
+    line-height: 30px;
 }
 .ql-indent-6{
     padding-left: 6em;
+    text-indent: 2em;
+    line-height: 30px;
 }
 .ql-indent-7{
     padding-left: 7em;
+    text-indent: 2em;
+    line-height: 30px;
 }
 .ql-indent-8{
     padding-left: 8em;
+    text-indent: 2em;
+    line-height: 30px;
 }
 .ql-indent-9{
     padding-left: 9em;
+    text-indent: 2em;
+    line-height: 30px;
 }
 .ql-indent-10{
     padding-left: 10em;
+    text-indent: 2em;
+    line-height: 30px;
 }
 pre{
     border-left: 6px solid #ccc;
