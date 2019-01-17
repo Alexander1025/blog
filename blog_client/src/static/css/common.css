@@ -765,13 +765,6 @@ ul, li{
 .hidden{
     display: none;
 }
-pre{
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #23241f;
-    color: #f8f8f2;
-    overflow: visible;
-}
 .left_article{
     float: left;
 }
@@ -877,10 +870,20 @@ pre{
 .ql-indent-10{
     padding-left: 10em;
 }
-blockquote{
+pre{
     border-left: 6px solid #ccc;
     margin: 0;
     padding-left: 1.5em;
     font-size: 20px;
     line-height: 40px;
+    color: #23241f;
+}
+blockquote{
+    border-left: 0!important;
+    padding: 10px;
+    padding-left: 1.5em;
+    border-radius: 5px;
+    background-color: #23241f;
+    color: #f8f8f2;
+    overflow: visible;
 }
