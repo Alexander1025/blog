@@ -880,9 +880,10 @@ pre{
 }
 blockquote{
     border-left: 0!important;
-    padding: 10px;
-    padding-left: 1.5em;
-    border-radius: 5px;
+    padding: 3px;
+    margin: 0!important;
+    padding-left: 2.5em;
+    border-radius: 0;
     background-color: #23241f;
     color: #f8f8f2;
     overflow: visible;
