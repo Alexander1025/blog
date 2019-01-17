@@ -54,6 +54,7 @@
 
 <script>
 import {trim,myparse} from './../../static/js/common.js';
+// import './../../static/css/article.css';
 
 import commonHead from '@/components/commonhead.vue';
 import commonFoot from '@/components/commonFoot.vue';
@@ -215,5 +216,5 @@ export default {
 </script>
 
 <style>
-
+    
 </style>
