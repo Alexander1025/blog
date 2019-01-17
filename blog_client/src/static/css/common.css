@@ -891,12 +891,14 @@ ul, li{
     line-height: 30px;
 }
 pre{
-    border-left: 6px solid #ccc;
+    border-left: 6px solid #11bfb9;
     margin: 0;
     padding-left: 1.5em;
-    font-size: 20px;
+    font-size: 25px;
     line-height: 40px;
-    color: #23241f;
+    background-color: #2965c3;
+    color: #ffffff;
+    border-radius: 10px;
 }
 blockquote{
     border-left: 0!important;
