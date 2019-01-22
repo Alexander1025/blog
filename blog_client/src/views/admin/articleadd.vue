@@ -1,5 +1,5 @@
 <template>
-    <div class="centerwrap">
+    <div class="centerwrap articleadd">
         <adminTop :title="htmltitle" :logo="'littlelogo.png'"></adminTop>
         <div class="admindetail">
             <ul class="flextable">
@@ -65,8 +65,11 @@
             <br>
             <ul class="flextable flexright">
                 <li v-if="!isadded">
+                    <div v-if="!isadd" @click="modform" class="add">提交文章全部信息</div>
+                </li>
+                <li v-if="!isadded">
                     <div v-if="isadd" @click="submitform" class="add">添加</div>
-                    <div v-if="!isadd" @click="modform" class="add">修改</div>
+                    <div v-if="!isadd" @click="modificationform" class="add">提交已修改信息</div>
                 </li>
             </ul>
         </div>
@@ -100,6 +103,18 @@ export default {
             isadd:true,
             isadded:false,
             htmltitle:"添加文章",
+            modtitle:"",
+            moddescribe:"",
+            modarticle_rank:"",
+            modcategory_id:"",
+            modcreat_time:"",
+            modauthor:"",
+            modauthorid:"",
+            modstatus:"",
+            modimg:"",
+            modflow:"",
+            modplace:"",
+            modcontent:"",
             titlelist: [
                 {
                     'text':"编号"
@@ -148,6 +163,74 @@ export default {
     components:{
         adminTop,
         editor,
+    },
+    watch:{
+        title:function (){
+            this.modtitle = this.title;
+        },
+        describe:function (){
+            this.moddescribe = this.describe;
+        },
+        category_id:function (){
+            this.modcategory_id = this.category_id;
+        },
+        article_rank:function (){
+            this.modarticle_rank = this.article_rank;
+        },
+        creat_time:function (){
+            this.modcreat_time = this.creat_time;
+        },
+        author:function (){
+            this.modauthor = this.author;
+        },
+        authorid:function (){
+            this.modauthorid = this.authorid;
+        },
+        status:function (){
+            this.modstatus = this.status;
+        },
+        img:function (){
+            this.modimg = this.img;
+        },
+        flow:function (){
+            this.modflow = this.flow;
+        },
+        content:function (){
+            this.modcontent = this.content;
+        },
+        place:function (){
+            this.modplace = this.place;
+        },
+
+
+        // modid:"",
+        // modtitle:"",
+        // moddescribe:"",
+        // modarticle_rank:"",
+        // modcategory_id:"",
+        // modcreat_time:"",
+        // modauthor:"",
+        // modauthorid:"",
+        // modstatus:"",
+        // modimg:"",
+        // modflow:"",
+        // modplace:"",
+        // modcontent:"",
+
+
+        // ajaxargument = `id=${this.id}
+        // &title=${this.title}
+        // &describe=${this.describe}
+        // &category_id=${this.category_id}
+        // &article_rank=${this.article_rank}
+        // &creat_time=${this.creat_time}
+        // &author=${this.author}
+        // &authorid=${this.authorid}
+        // &status=${this.status}
+        // &img=${this.img}
+        // &flow=${this.flow}
+        // &content=${this.content}
+        // &place=${this.place}`;
     },
     mounted: function (){
         this.getindex();
@@ -250,6 +333,10 @@ export default {
                             that.place=data.data[0].place;
                             that.isadd = false;
                             that.htmltitle = "修改文章"+data.data[0].id;
+                            that.$nextTick(function () {
+                                that.initialize();
+                            })
+
                         }else if(data.status == -1){
                             layer.open({
                                 content: `${data.data}`,
@@ -359,6 +446,128 @@ export default {
                 }
             }
         },
+        initialize:function (){
+            this.modtitle = "";
+            this.moddescribe = "";
+            this.modarticle_rank = "";
+            this.modcategory_id = "";
+            this.modcreat_time = "";
+            this.modauthor = "";
+            this.modauthorid = "";
+            this.modstatus = "";
+            this.modimg = "";
+            this.modflow = "";
+            this.modplace = "";
+            this.modcontent = "";
+        },
+        modificationform:function (){
+            // ajaxargument = `id=${this.id}
+            // &title=${this.title}
+            // &describe=${this.describe}
+            // &category_id=${this.category_id}
+            // &article_rank=${this.article_rank}
+            // &creat_time=${this.creat_time}
+            // &author=${this.author}
+            // &authorid=${this.authorid}
+            // &status=${this.status}
+            // &img=${this.img}
+            // &flow=${this.flow}
+            // &content=${this.content}
+            // &place=${this.place}`;
+            var ajaxargument = "";
+            ajaxargument = `id=${this.id}`;
+            if(this.modtitle != ""){
+                ajaxargument += `&title=${this.modtitle}`;
+            }
+            if(this.moddescribe != ""){
+                ajaxargument += `&describe=${this.moddescribe}`;
+            }
+            if(this.modarticle_rank != ""){
+                ajaxargument += `&article_rank=${this.modarticle_rank}`;
+            }
+            if(this.modcategory_id != ""){
+                ajaxargument += `&category_id=${this.modcategory_id}`;
+            }
+            if(this.modcreat_time != ""){
+                ajaxargument += `&creat_time=${this.modcreat_time}`;
+            }
+            if(this.modauthor != ""){
+                ajaxargument += `&author=${this.modauthor}`;
+            }
+            if(this.modauthorid != ""){
+                ajaxargument += `&authorid=${this.modauthorid}`;
+            }
+            if(this.modstatus != ""){
+                ajaxargument += `&status=${this.modstatus}`;
+            }
+            if(this.modimg != ""){
+                ajaxargument += `&img=${this.modimg}`;
+            }
+            if(this.modflow != ""){
+                ajaxargument += `&flow=${this.modflow}`;
+            }
+            if(this.modplace != ""){
+                ajaxargument += `&place=${this.modplace}`;
+            }
+            if(this.modcontent != ""){
+                ajaxargument += `&content=${this.modcontent}`;
+
+            }
+            var that = this;
+            var ajax = new XMLHttpRequest();
+            ajax.open('post','/node/admin/articlesetmodification');
+            // ajax.setRequestHeader("Content-type","application/json; charset=utf-8");
+            ajax.send(ajaxargument);
+            console.log('ajaxargument: ', ajaxargument);
+            ajax.onreadystatechange = function () {
+                if (ajax.readyState==4 &&ajax.status==200) {
+                    var data = ajax.responseText;
+                    data = myparse(data);
+                    console.log(data);//输入相应的内容
+                    if(data.status == 1){
+                        layer.open({
+                            content: `修改文章成功`,
+                            skin: 'msg',
+                            time: 2,
+                        });
+                        var time = setTimeout(()=>{
+                            that.$router.push({path: '/admin/article'});
+                        },300);
+                    }else if(data.status == -1){
+                        layer.open({
+                            content: `${data.data}`,
+                            skin: 'msg',
+                            time: 2,
+                        });
+                        var time = setTimeout(()=>{
+                            that.$router.push({
+                                path: '/login',
+                            });
+                        },2000);
+                    }else if(data.status == -2){
+                        layer.open({
+                            content: `${data.data}`,
+                            skin: 'msg',
+                            time: 2,
+                        });
+                        var time = setTimeout(()=>{
+                            that.$router.push({
+                                path: '/login',
+                            });
+                        },2000);
+                    }else{
+                        layer.open({
+                            content: `修改文章失败`,
+                            skin: 'msg',
+                            time: 2,
+                        });
+                    }
+                }
+            }
+
+
+
+        },
         modform: function (){
 
             if(!this.title || !this.describe || !this.category_id || !this.creat_time || !this.author || !this.authorid || !this.status || !this.img || !this.flow || !this.content){
@@ -433,7 +642,7 @@ export default {
 </script>
 
 <style>
-    .flextable li{
+    .articleadd .flextable li{
         width: 25%;
     }
     .flextable input, .flextable .add{

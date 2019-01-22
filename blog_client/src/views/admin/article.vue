@@ -85,7 +85,7 @@ export default {
             if (ajax.readyState==4 &&ajax.status==200) {
                 var data = ajax.responseText;
                 data = myparse(data);
-                console.log(data);//输入相应的内容
+                // console.log(data);//输入相应的内容
                 if(data.status == 1){
                     that.articlelist = data.data;
                 }else if(data.status == -1){

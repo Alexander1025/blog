@@ -198,7 +198,7 @@ const articleget = function (option){
 
         connection.connect();
 
-        var  sql = 'SELECT * FROM article';
+        var  sql = 'SELECT id,title,article_rank,category_id,img,status FROM article';
         //查
 
         connection.query(sql,function (err, result) {
@@ -257,9 +257,6 @@ const articlegetmod = function (option){
 
 
 
-
-
-
 const articlesetmod = function (option){
     console.log(option);
     const promise = new Promise(function(resolve, reject){
@@ -278,6 +275,64 @@ const articlesetmod = function (option){
         var sql = "UPDATE article SET title = ?,`describe` = ?,category_id = ?,article_rank = ?,creat_time = ?,author = ?,authorid = ?,status = ?,img = ?,flow = ?,content = ?, place = ? WHERE Id = ?";
         var modSqlParams = [option.title, option.describe, option.category_id, option.article_rank, option.creat_time, option.author, option.authorid, option.status, option.img, option.flow, option.content, option.place, option.id];
         //改
+
+        connection.query(sql,modSqlParams ,function (err, result) {
+            if(err){
+                console.log('[INSERT ERROR] - ',err.message);
+                reject(err.message);
+            }
+            resolve(result);
+
+        });
+
+        connection.end();
+    });
+
+    return promise;
+}
+
+
+
+
+
+const articlesetmodification = function (option){
+    console.log(option);
+    const promise = new Promise(function(resolve, reject){
+        var connection = mysql.createConnection({
+            host     : config.host,
+            user     : config.user,
+            password : config.password,
+            port: config.port,
+            database: config.database,
+        });
+
+        connection.connect();
+
+        var count = 0;
+        var sqloption = "";
+        for(var i in option){
+            if(i != "id"){
+                if(count == 0){
+                    sqloption += `${i} = ?`;
+                }else{
+                    sqloption += `, ${i} = ?`;
+                }
+                count++;
+            }
+        }
+        var sql = `UPDATE article SET ${sqloption} WHERE Id = ?`;
+
+        var modSqlParams = [];
+        for(var i in option){
+            if(i != "id"){
+                modSqlParams.push(option[i]);
+            }
+        }
+        modSqlParams.push(option['id']);
+        // title, `describe`, category_id, creat_time, `author`, authorid, status, img, flow
+        // var sql = "UPDATE article SET title = ?,`describe` = ?,category_id = ?,article_rank = ?,creat_time = ?,author = ?,authorid = ?,status = ?,img = ?,flow = ?,content = ?, place = ? WHERE Id = ?";
+        // var modSqlParams = [option.title, option.describe, option.category_id, option.article_rank, option.creat_time, option.author, option.authorid, option.status, option.img, option.flow, option.content, option.place, option.id];
+        // 改
 
         connection.query(sql,modSqlParams ,function (err, result) {
             if(err){
@@ -372,6 +427,7 @@ exports.articleadd = articleadd;
 exports.articleget = articleget;
 exports.articlegetmod = articlegetmod;
 exports.articlesetmod = articlesetmod;
+exports.articlesetmodification = articlesetmodification;
 
 
 // 用于验证登陆
