@@ -71,6 +71,9 @@
                     <div v-if="isadd" @click="submitform" class="add">添加</div>
                     <div v-if="!isadd" @click="modificationform" class="add">提交已修改信息</div>
                 </li>
+                <li>
+                    <div @click="fixation" class="add">编写文章模式</div>
+                </li>
             </ul>
         </div>
     </div>
@@ -637,6 +640,9 @@ export default {
         },
         changecont:function (content){
             this.content = content;
+        },
+        fixation:function (){
+            document.querySelectorAll(".ql-toolbar")[0].style = "position: fixed;background-color: wheat;top: 60px;z-index: 1000;";
         }
     },
 }
