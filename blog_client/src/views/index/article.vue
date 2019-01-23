@@ -6,8 +6,8 @@
                 <img :src="'/blog_server/myupload/'+img" alt="">
             </div>
         </div>
-        <div class="indexwrap">
-            <div class="mainwrap mainbody">
+        <div class="indexwrap" style="background-color: #f6f7f8;">
+            <div class="mainwrap mainbody" style="background-color: white;">
                 <div class="bodypart">
                     <div class="title">
                         {{title}}

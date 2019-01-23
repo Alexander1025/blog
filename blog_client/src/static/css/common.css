@@ -502,8 +502,8 @@ ul, li{
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: flex-start;
-    margin-top: 40px;
-    margin-bottom: 30px;
+    padding-top: 40px;
+    padding-bottom: 30px;
 }
 .bodypart{
     overflow: hidden;
