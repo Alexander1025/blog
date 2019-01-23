@@ -510,6 +510,7 @@ export default {
                 ajaxargument += `&place=${this.modplace}`;
             }
             if(this.modcontent != ""){
+                this.modcontent = escape(this.modcontent);
                 ajaxargument += `&content=${this.modcontent}`;
 
             }
