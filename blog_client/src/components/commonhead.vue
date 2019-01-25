@@ -3,7 +3,7 @@
         <div class="mainwrap mainhead">
             <img @click="href('/')" class="logoimg" src="./../static/images/common/logo.png" alt="机智僧">
             <ul class="headtag" v-if="!isshowheadtag">
-                <li v-for="(item, index) in $store.state.headtagarr" @click="href(item.url ,item.newPage ,item.fullurl)" :class="[item.isactive?'active':'']">
+                <li v-for="(item, index) in $store.state.headtagarr" @click="href(item.url, item.newPage, item.fullurl, index)" :class="[item.isactive?'active':'']">
                     {{item.cont}}
                 </li>
             </ul>
@@ -12,7 +12,7 @@
             </div>
             <transition name="headtagphone">
                 <ul class="headtagphone headtag" v-if="isshowheadtag">
-                    <li v-for="(item, index) in $store.state.headtagarr" @click="href(item.url)" :class="[item.isactive?'active':'']">
+                    <li v-for="(item, index) in $store.state.headtagarr" @click="href(item.url, item.newPage, item.fullurl)" :class="[item.isactive?'active':'']">
                         {{item.cont}}
                     </li>
                 </ul>
@@ -43,7 +43,14 @@ export default {
         headtoggle:function(){
             this.isshowheadtag = !this.isshowheadtag;
         },
-        href: function (url ,newPage ,fullurl){
+        href: function (url, newPage, fullurl, index){
+            if(index != undefined){
+                // active
+                for(var i = 0 ; i <= this.$store.state.headtagarr.length-1 ; i++){
+                    this.$store.state.headtagarr[i]['isactive'] = false;
+                }
+                this.$store.state.headtagarr[index]['isactive'] = true;
+            }
             if(newPage){
                 window.open(url,"_blank");
             }else{
