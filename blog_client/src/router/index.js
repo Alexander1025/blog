@@ -14,16 +14,16 @@ import article from '@/views/index/article.vue';
 import category from '@/views/index/category.vue';
 
 
-import admincommon from '@/views/admin/admincommon.vue';
-import article_admin from '@/views/admin/article.vue';
-import category_admin from '@/views/admin/category.vue';
-import add_article_admin from '@/views/admin/articleadd.vue';
-import add_category_admin from '@/views/admin/categoryadd.vue';
+// import admincommon from '@/views/admin/admincommon.vue';
+// import article_admin from '@/views/admin/article.vue';
+// import category_admin from '@/views/admin/category.vue';
+// import add_article_admin from '@/views/admin/articleadd.vue';
+// import add_category_admin from '@/views/admin/categoryadd.vue';
 
 
-import logincommon from '@/views/login/logincommon.vue';
-import login from '@/views/login/login.vue';
-import register from '@/views/login/register.vue';
+// import logincommon from '@/views/login/logincommon.vue';
+// import login from '@/views/login/login.vue';
+// import register from '@/views/login/register.vue';
 
 
 import NotFoundComponent from './../views/404/404.vue';
@@ -32,39 +32,78 @@ import {trim,myparse} from './../static/js/common.js';
 
 Vue.use(Router)
 
+function loadView(view) {
+    // return () => import(/* webpackChunkName: "view-[request]" */ `@/views/${view}.vue`)
+    return () => import(/* webpackChunkName: "view-[request]" */ `@/views/${view}.vue`)
+
+}
+
 var router = new Router({
     mode: 'history',
     routes: [
         {
             path: '/',
-            component: index
+            component: index,
+            // component: loadView('index/index'),
         },
         {
             path: '/article',
-            component: article
+            component: article,
+            // component: loadView('index/article'),
         },
         {
             path: '/category',
             name: 'category',
-            component: category
+            component: category,
+            // component: loadView('index/category'),
         },
         {
             path: '/login',
-            component: logincommon,
+            // component: logincommon,
+            component: loadView('login/logincommon'),
             children: [
-                { path: '', component: login },
-                { path: 'register', component: register },
+                {
+                    path: '',
+                    // component: login ,
+                    component: loadView('login/login'),
+                },
+                {
+                    path: 'register',
+                    // component: register ,
+                    component: loadView('login/register'),
+                },
             ]
         },
         {
             path: '/admin',
-            component: admincommon,
+            // component: admincommon,
+            component: loadView('admin/admincommon'),
             children: [
-                { path: '/', component: article_admin },
-                { path: 'article', component: article_admin },
-                { path: 'category', component: category_admin },
-                { path: 'addarticle', component: add_article_admin },
-                { path: 'addcategory', component: add_category_admin },
+                {
+                    path: '/',
+                    // component: article_admin ,
+                    component: loadView('admin/article'),
+                },
+                {
+                    path: 'article',
+                    // component: article_admin ,
+                    component: loadView('admin/article'),
+                },
+                {
+                    path: 'category',
+                    // component: category_admin ,
+                    component: loadView('admin/category'),
+                },
+                {
+                    path: 'addarticle',
+                    // component: add_article_admin ,
+                    component: loadView('admin/articleadd'),
+                },
+                {
+                    path: 'addcategory',
+                    // component: add_category_admin ,
+                    component: loadView('admin/categoryadd'),
+                },
             ],
             beforeEnter: function (to, from, next){
                 var that = this;
