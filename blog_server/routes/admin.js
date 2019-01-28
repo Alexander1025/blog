@@ -23,6 +23,58 @@ var articlesetmodification = adminmodel.articlesetmodification;
 
 // 用于验证登陆
 var verification = adminmodel.verification;
+/**
+ *
+ 用于验证登陆
+ *
+ @method verification
+ *
+ @param { } 参数名 参数说明
+ *
+ *      {
+            status:0=>'失败',1=>'成功',
+            data:查询的category信息,
+        }
+*/
+
+router.post('/verification', function (req, res) {
+    var body = "";
+    req.on('data', function (chunk) {
+        body += chunk;  //一定要使用+=，如果body=chunk，因为请求favicon.ico，body会等于{}
+        // console.log("chunk:",chunk);
+    });
+    req.on('end', function () {
+        // 生成返回格式对象
+        let resdata = {};
+        // 解析参数
+        body = querystring.parse(body);  //将一个字符串反序列化为一个对象
+        // console.log("body:",body);
+        console.log('userid: ', req.cookies['userid']);
+        if(!req.cookies['userid'] || req.cookies['userid'] == ""){
+            resdata['data'] = "请登录";
+            resdata['status'] = -1;
+            res.send(resdata);
+            res.end();
+            return false;
+        }
+        verification(req.cookies['userid'], req.cookies['password']).then(function (){
+            resdata['data'] = data;
+            resdata['status'] = 1;
+            res.send(resdata);
+            res.end();
+        }).catch(function (){
+            res.clearCookie('userid');
+            res.clearCookie('password');
+            resdata['data'] = "账号不安全，请重新登陆";
+            resdata['status'] = -2;
+            res.send(resdata);
+            res.end();
+
+        });
+
+
+    });
+});
 
 
 

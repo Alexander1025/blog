@@ -28,6 +28,7 @@ import register from '@/views/login/register.vue';
 
 import NotFoundComponent from './../views/404/404.vue';
 
+import {trim,myparse} from './../static/js/common.js';
 
 Vue.use(Router)
 
@@ -64,7 +65,41 @@ var router = new Router({
                 { path: 'category', component: category_admin },
                 { path: 'addarticle', component: add_article_admin },
                 { path: 'addcategory', component: add_category_admin },
-            ]
+            ],
+            beforeEnter: function (to, from, next){
+                var that = this;
+                var ajaxargument = "";
+
+                var ajax = new XMLHttpRequest();
+                ajax.open('post','/node/admin/articleget');
+                ajax.send(ajaxargument);
+                ajax.onreadystatechange = function () {
+                    if (ajax.readyState==4 &&ajax.status==200) {
+                        var data = ajax.responseText;
+                        data = myparse(data);
+                        // console.log(data);//输入相应的内容
+                        if(data.status == 1){
+                            next();
+                        }else if(data.status == -1){
+                            layer.open({
+                                content: `${data.data}`,
+                                skin: 'msg',
+                                time: 2,
+                            });
+                            next('/login');
+                        }else if(data.status == -2){
+                            layer.open({
+                                content: `${data.data}`,
+                                skin: 'msg',
+                                time: 2,
+                            });
+                            next('/login');
+                        }else{
+                            next('/');
+                        }
+                    }
+                }
+            }
         },
         // {
         //     path: '/login',
