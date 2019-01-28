@@ -1,24 +1,26 @@
 <template>
-    <div class="indexwrap commonhead">
-        <div class="mainwrap mainhead">
-            <img @click="href('/')" class="logoimg" src="./../static/images/common/logo.png" alt="机智僧">
-            <ul class="headtag" v-if="!isshowheadtag">
-                <li v-for="(item, index) in $store.state.headtagarr" @click="href(item.url, item.newPage, item.fullurl, index)" :class="[item.isactive?'active':'']">
-                    {{item.cont}}
-                </li>
-            </ul>
-            <div class="headtoggle" @click="headtoggle">
-                <img src="./../static/images/icon/Hamburger_white.png" alt="汉堡包">
-            </div>
-            <transition name="headtagphone">
-                <ul class="headtagphone headtag" v-if="isshowheadtag">
-                    <li v-for="(item, index) in $store.state.headtagarr" @click="href(item.url, item.newPage, item.fullurl)" :class="[item.isactive?'active':'']">
+    <div class="indexwraptop">
+        <div class="indexwrap commonhead fixed">
+            <div class="mainwrap mainhead">
+                <img @click="href('/')" class="logoimg" src="./../static/images/common/logo.png" alt="机智僧">
+                <ul class="headtag" v-if="!isshowheadtag">
+                    <li v-for="(item, index) in $store.state.headtagarr" @click="href(item.url, item.newPage, item.fullurl, index)" :class="[item.isactive?'active':'']">
                         {{item.cont}}
                     </li>
                 </ul>
-            </transition>
+                <div class="headtoggle" @click="headtoggle">
+                    <img src="./../static/images/icon/Hamburger_white.png" alt="汉堡包">
+                </div>
+                <transition name="headtagphone">
+                    <ul class="headtagphone headtag" v-if="isshowheadtag">
+                        <li v-for="(item, index) in $store.state.headtagarr" @click="href(item.url, item.newPage, item.fullurl)" :class="[item.isactive?'active':'']">
+                            {{item.cont}}
+                        </li>
+                    </ul>
+                </transition>
+            </div>
+            <div class="tagwrap" v-if="isshowheadtag" @click="headtoggle"></div>
         </div>
-        <div class="tagwrap" v-if="isshowheadtag" @click="headtoggle"></div>
     </div>
 </template>
 
