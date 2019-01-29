@@ -2,7 +2,7 @@
     <div class="indexwraptop">
         <div class="indexwrap commonhead fixed">
             <div class="mainwrap mainhead">
-                <img @click="href('/')" class="logoimg" src="./../static/images/common/logo.png" alt="机智僧">
+                <img @click="href('/', false, false, 0)" class="logoimg" src="./../static/images/common/logo.png" alt="机智僧">
                 <ul class="headtag" v-if="!isshowheadtag">
                     <li v-for="(item, index) in $store.state.headtagarr" @click="href(item.url, item.newPage, item.fullurl, index)" :class="[item.isactive?'active':'']">
                         {{item.cont}}
@@ -45,6 +45,12 @@ export default {
         headtoggle:function(){
             this.isshowheadtag = !this.isshowheadtag;
         },
+        /**
+         * @param url 要跳转的地址
+         * @param newPage 是否新开一个页面
+         * @param fullurl 是否带有http://  的地址
+         * @param index 特有index，其他地方不需要
+         */
         href: function (url, newPage, fullurl, index){
             if(index != undefined){
                 // active
