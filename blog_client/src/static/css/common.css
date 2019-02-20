@@ -509,6 +509,28 @@ ul, li{
 
 
 
+
+/* 这里是评论组件通用样式 */
+.comment{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+}
+.commenttop{
+    width: 100%;
+    font-size: 16px;
+}
+.commenttop span{
+    line-height: 30px;
+    vertical-align: middle;
+}
+.commenttop img{
+    height: 25px;
+    width: 25px;
+    vertical-align: middle;
+}
+
+
 /* 这里是中部通用样式--内容、侧栏 */
 .mainbody{
     display: flex;

@@ -297,9 +297,9 @@ router.post('/articlecategoryget', function(req, res, next) {
             for(var i = 0 ; i <= data.length-1 ; i++){
                 categoryidarr.push(data[i].id);
             }
-            console.log(categoryidarr);
+            // console.log(categoryidarr);
             articlemodule(categoryidarr).then(function (data1){
-                console.log(data1);
+                // console.log(data1);
                 var articlecategorymodule = [];
                 for(var o = 0 ; o <= data.length-1 ; o++){
                     if(body['categoryid'] == data[o]['id']){

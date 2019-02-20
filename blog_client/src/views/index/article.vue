@@ -42,6 +42,7 @@
                         v-html="content"
                     >
                     </div>
+                    <!-- <comment></comment> -->
                 </div>
                 <bodyside
                     :categorylistarr="$store.state.categorylistarr"
@@ -62,6 +63,8 @@ import cutline from '@/components/cutline.vue';
 import commonarticle from '@/components/commonarticle.vue';
 import categorylist from '@/components/categorylist.vue';
 import bodyside from '@/components/bodyside.vue';
+
+import comment from '@/components/comment.vue';
 
 
 export default {
@@ -89,7 +92,8 @@ export default {
         cutline,
         commonarticle,
         categorylist,
-        bodyside
+        bodyside,
+        comment
     },
     watch:{
         content:function (){
