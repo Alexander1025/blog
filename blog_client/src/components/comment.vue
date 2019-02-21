@@ -72,6 +72,14 @@ export default {
             this.activeindex = index;
         },
         submit:function (){
+            if(this.author.trim() == "" || this.email.trim() == "" || this.cont.trim() == "" || this.url.trim() == "" ){
+                layer.open({
+                    content: `请填写完整留言信息`,
+                    skin: 'msg',
+                    time: 2,
+                });
+                return false;
+            }
             var url = location.search;
             url = url.replace("?","");
             var query = url.split("&");
