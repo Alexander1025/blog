@@ -72,6 +72,9 @@ export default {
             this.activeindex = index;
         },
         submit:function (){
+            if(this.author.trim() == ""){
+                this.author = "萌萌哒游客";
+            }
             if(this.author.trim() == "" || this.email.trim() == "" || this.cont.trim() == "" || this.url.trim() == "" ){
                 layer.open({
                     content: `请填写完整留言信息`,
