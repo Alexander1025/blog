@@ -172,6 +172,77 @@ const count = function (option){
 
 
 
+
+const submitcomment = function (option,userid){
+    console.log(option);
+    const promise = new Promise(function(resolve, reject){
+        var connection = mysql.createConnection({
+            host     : config.host,
+            user     : config.user,
+            password : config.password,
+            port: config.port,
+            database: config.database,
+        });
+
+        connection.connect();
+
+        var addSql = 'INSERT INTO comment(articleid,author,cont,email,createtime,status) VALUES(?,?,?,?,?,?)';
+        var addSqlParams = [option.articleid, option.author,option.cont, option.email,option.createtime, 1];
+        //增
+
+        connection.query(addSql,addSqlParams,function (err, result) {
+            if(err){
+                console.log('[INSERT ERROR] - ',err.message);
+                reject(err.message);
+            }
+            resolve(result);
+
+        });
+
+        connection.end();
+    });
+
+    return promise;
+
+}
+
+
+const getcomment = function (option){
+    console.log(option);
+    const promise = new Promise(function(resolve, reject){
+        var connection = mysql.createConnection({
+            host     : config.host,
+            user     : config.user,
+            password : config.password,
+            port: config.port,
+            database: config.database,
+        });
+
+        connection.connect();
+
+
+        var  sql = `SELECT * FROM comment WHERE articleid = ${option.articleid}`;
+        //查
+
+        connection.query(sql,function (err, result) {
+            if(err){
+                console.log('[INSERT ERROR] - ',err.message);
+                reject(err.message);
+            }
+            resolve(result);
+
+        });
+
+        connection.end();
+    });
+
+    return promise;
+}
+
+
+
+
+
 const addcount = function (flow, id){
     const promise = new Promise(function(resolve, reject){
         var connection = mysql.createConnection({
@@ -213,4 +284,8 @@ exports.articlemodule = articlemodule;
 exports.articleget = articleget;
 exports.count = count;
 exports.addcount = addcount;
+exports.submitcomment = submitcomment;
+exports.getcomment = getcomment;
+
+
 

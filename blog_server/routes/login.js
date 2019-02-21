@@ -138,8 +138,8 @@ router.post('/haveUserName', function (req, res) {
         body = querystring.parse(body);  //将一个字符串反序列化为一个对象
         // console.log("body:",body);
         Object.keys(body).forEach((element, index, array) => {
-            console.log(element);
-            console.log(body.username);
+            // console.log(element);
+            // console.log(body.username);
             // 循环传过来的参数，有username执行开始执行havethisname
             if(element == "username"){
 
@@ -236,7 +236,7 @@ router.post('/logout', function (req, res) {
     var body = "";
     req.on('data', function (chunk) {
         body += chunk;  //一定要使用+=，如果body=chunk，因为请求favicon.ico，body会等于{}
-        console.log("chunk:",chunk);
+        // console.log("chunk:",chunk);
     });
     req.on('end', function () {
         // 生成返回格式对象

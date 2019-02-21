@@ -799,8 +799,8 @@ router.post('/uploadfile', function (req, res, next) {
         var date =  new Date();
         var filename = `${date.getFullYear()}${(date.getMonth()+1)}${date.getDate()}-${Date.now()}.${body.imgtype}`;
 
-        console.log("文件名称:"+filename);
-        console.log("文件路径:"+imgdirname);
+        // console.log("文件名称:"+filename);
+        // console.log("文件路径:"+imgdirname);
 
         var filefinalname;
         if(process.env.NODE_ENV ==  'production'){

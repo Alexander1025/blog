@@ -42,7 +42,10 @@
                         v-html="content"
                     >
                     </div>
-                    <!-- <comment></comment> -->
+                    <comment
+                        :commentlist="commentlist"
+                        @getgetcomment="getgetcomment"
+                    ></comment>
                 </div>
                 <bodyside
                     :categorylistarr="$store.state.categorylistarr"
@@ -84,6 +87,14 @@ export default {
             category_id: 1,
             place: 1,
             status: 1,
+            commentlist:[
+                // {
+                //     img:"./../static/images/icon/comment_gray.png",
+                //     author:"asd",
+                //     cont:"qweqwe",
+                //     createtime:`${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}   ${new Date().getHours() > 12 ? new Date().getHours()-12 : new Date().getHours()}时${new Date().getMinutes()}分`,
+                // }
+            ],
         }
     },
     components:{
@@ -110,77 +121,11 @@ export default {
         for(var i = 0 ; i <= query.length-1 ; i++){
             var parameter = query[i].split("=")[0];
             if(parameter == "articleid"){
-
-                var that = this;
-
-                // 用于获取文章分类列表信息
-                var ajaxargument = `id=${query[i].split("=")[1]}`;
-                var ajax = new XMLHttpRequest();
-                ajax.open('post','/node/index/articleget');
-                ajax.send(ajaxargument);
-                ajax.onreadystatechange = function () {
-                    if (ajax.readyState==4 &&ajax.status==200) {
-                        var data = ajax.responseText;
-                        data = myparse(data);
-                        // console.log(data);//输入相应的内容
-                        if(data.status == 1){
-                            // that.$store.commit('setState',{attr:'categorylistarr',field:data.data.category});
-                            that.id = data.data[0]['id'];
-                            that.title = data.data[0]['title'];
-                            that.describe = data.data[0]['describe'];
-                            that.author = data.data[0]['author'];
-                            that.creat_time = data.data[0]['creat_time'];
-                            that.flow = data.data[0]['flow'];
-                            that.img = data.data[0]['img'];
-                            that.content = data.data[0]['content'];
-                            that.authorid = data.data[0]['authorid'];
-                            that.category_id = data.data[0]['category_id'];
-                            that.place = data.data[0]['place'];
-                            that.status = data.data[0]['status'];
-                        }else{
-                            layer.open({
-                                content: `获取文章失败`,
-                                skin: 'msg',
-                                time: 2,
-                            });
-                        }
-                    }
-                }
-
-
-
-
-
-                var that = this;
-
-                // 用于文章埋点
-                var ajaxargument2 = `id=${query[i].split("=")[1]}`;
-                var ajax2 = new XMLHttpRequest();
-                ajax2.open('post','/node/index/count');
-                ajax2.send(ajaxargument2);
-                ajax2.onreadystatechange = function () {
-                    if (ajax2.readyState==4 &&ajax2.status==200) {
-                        var data = ajax2.responseText;
-                        data = myparse(data);
-                        // console.log(data);//输入相应的内容
-                        if(data.status == 1){
-                            // that.$store.commit('setState',{attr:'categorylistarr',field:data.data.category});
-                            that.flow = data.data;
-                        }else{
-                            layer.open({
-                                content: `浏览量`,
-                                skin: 'msg',
-                                time: 2,
-                            });
-                        }
-                    }
-                }
-
-
-
+                this.getarticleget(query[i].split("=")[1]);
+                this.getgetcomment(query[i].split("=")[1]);
+                this.getcount(query[i].split("=")[1]);
             }
         }
-
 
         if(this.$store.state.categorylistarr.length == 0){
             var that = this;
@@ -214,7 +159,117 @@ export default {
 
     },
     methods:{
+        getarticleget:function (query){
+            var that = this;
 
+            // 用于获取文章分类列表信息
+            var ajaxargument = `id=${query}`;
+            var ajax = new XMLHttpRequest();
+            ajax.open('post','/node/index/articleget');
+            ajax.send(ajaxargument);
+            ajax.onreadystatechange = function () {
+                if (ajax.readyState==4 &&ajax.status==200) {
+                    var data = ajax.responseText;
+                    data = myparse(data);
+                    // console.log(data);//输入相应的内容
+                    if(data.status == 1){
+                        // that.$store.commit('setState',{attr:'categorylistarr',field:data.data.category});
+                        that.id = data.data[0]['id'];
+                        that.title = data.data[0]['title'];
+                        that.describe = data.data[0]['describe'];
+                        that.author = data.data[0]['author'];
+                        that.creat_time = data.data[0]['creat_time'];
+                        that.flow = data.data[0]['flow'];
+                        that.img = data.data[0]['img'];
+                        that.content = data.data[0]['content'];
+                        that.authorid = data.data[0]['authorid'];
+                        that.category_id = data.data[0]['category_id'];
+                        that.place = data.data[0]['place'];
+                        that.status = data.data[0]['status'];
+                    }else{
+                        layer.open({
+                            content: `获取文章失败`,
+                            skin: 'msg',
+                            time: 2,
+                        });
+                    }
+                }
+            }
+        },
+        getgetcomment:function (){
+            var url = location.search;
+            url = url.replace("?","");
+            var query = url.split("&");
+            for(var i = 0 ; i <= query.length-1 ; i++){
+                var parameter = query[i].split("=")[0];
+                if(parameter == "articleid"){
+                    var that = this;
+
+                    // 用于获取评论
+                    var ajaxargument3 = `articleid=${query}`;
+                    var ajax3 = new XMLHttpRequest();
+                    ajax3.open('post','/node/index/getcomment');
+                    ajax3.send(ajaxargument3);
+                    ajax3.onreadystatechange = function () {
+                        if (ajax3.readyState==4 &&ajax3.status==200) {
+                            var data = ajax3.responseText;
+                            data = myparse(data);
+                            // console.log(data);//输入相应的内容
+                            if(data.status == 1){
+                                that.commentlist = [];
+                                for(var i = 0 ; i <= data.data.length-1 ; i++){
+                                    var newObj = {};
+                                    newObj.author = data.data[i].author;
+                                    if(data.data[i].author == "zhoujizhi"){
+                                        newObj.img = "./../static/images/common/littlelogo.png";
+                                    }else{
+                                        newObj.img = "./../../static/images/icon/pig.png";
+                                    }
+                                    newObj.commentid = data.data[i].commentid;
+                                    newObj.cont = data.data[i].cont;
+                                    newObj.createtime = `${new Date(parseInt(data.data[i].createtime)).getFullYear()}-${new Date(parseInt(data.data[i].createtime)).getMonth()+1}-${new Date(parseInt(data.data[i].createtime)).getDate()}   ${new Date(parseInt(data.data[i].createtime)).getHours() > 12 ? new Date(parseInt(data.data[i].createtime)).getHours()-12 : new Date(parseInt(data.data[i].createtime)).getHours()}时${new Date(parseInt(data.data[i].createtime)).getMinutes()}分`;
+                                    newObj.email = data.data[i].email;
+                                    that.commentlist.push(newObj);
+                                }
+                            }else{
+                                layer.open({
+                                    content: `获取评论失败`,
+                                    skin: 'msg',
+                                    time: 2,
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+
+        },
+        getcount:function (query){
+            var that = this;
+
+            // 用于文章埋点
+            var ajaxargument2 = `id=${query}`;
+            var ajax2 = new XMLHttpRequest();
+            ajax2.open('post','/node/index/count');
+            ajax2.send(ajaxargument2);
+            ajax2.onreadystatechange = function () {
+                if (ajax2.readyState==4 &&ajax2.status==200) {
+                    var data = ajax2.responseText;
+                    data = myparse(data);
+                    // console.log(data);//输入相应的内容
+                    if(data.status == 1){
+                        // that.$store.commit('setState',{attr:'categorylistarr',field:data.data.category});
+                        that.flow = data.data;
+                    }else{
+                        layer.open({
+                            content: `获取浏览量失败`,
+                            skin: 'msg',
+                            time: 2,
+                        });
+                    }
+                }
+            }
+        }
     }
 }
 </script>

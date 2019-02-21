@@ -18,6 +18,14 @@ var articleget = indexmodel.articleget;
 var count = indexmodel.count;
 var addcount = indexmodel.addcount;
 
+// 评论功能
+// 提交评论
+var submitcomment = indexmodel.submitcomment;
+// 获取评论
+var getcomment = indexmodel.getcomment;
+
+
+
 
 
 
@@ -394,6 +402,100 @@ router.post('/articleget', function (req, res) {
 
 
 
+
+/**
+ *
+ 用于添加评论
+ *
+ @method submitcomment
+ *
+ @param { } 参数名 参数说明
+ *
+ *      {
+            status:0=>'失败',1=>'成功',
+            data:查询的category信息,
+        }
+*/
+
+router.post('/submitcomment', function (req, res) {
+    var body = "";
+    req.on('data', function (chunk) {
+        body += chunk;  //一定要使用+=，如果body=chunk，因为请求favicon.ico，body会等于{}
+        // console.log("chunk:",chunk);
+    });
+    req.on('end', function () {
+        // 生成返回格式对象
+        let resdata = {};
+        // 解析参数
+        body = querystring.parse(body);  //将一个字符串反序列化为一个对象
+        // console.log("body:",body);
+        // req.cookies['userid']
+
+        // 业务开始
+        submitcomment(body,req.cookies['userid']).then(function (data){
+            // console.log(data);
+            resdata['data'] = data;
+            resdata['status'] = 1;
+            res.send(resdata);
+            res.end();
+        },function (res){
+            resdata['data'] = res;
+            resdata['status'] = 0;
+            res.send(resdata);
+            res.end();
+        });
+
+    });
+});
+
+
+
+
+
+/**
+ *
+ 用于获取评论
+ *
+ @method getcomment
+ *
+ @param { } 参数名 参数说明
+ *
+ *      {
+            status:0=>'失败',1=>'成功',
+            data:查询的category信息,
+        }
+*/
+
+router.post('/getcomment', function (req, res) {
+    var body = "";
+    req.on('data', function (chunk) {
+        body += chunk;  //一定要使用+=，如果body=chunk，因为请求favicon.ico，body会等于{}
+        // console.log("chunk:",chunk);
+    });
+    req.on('end', function () {
+        // 生成返回格式对象
+        let resdata = {};
+        // 解析参数
+        body = querystring.parse(body);  //将一个字符串反序列化为一个对象
+        // console.log("body:",body);
+        // req.cookies['userid']
+
+        // 业务开始
+        getcomment(body).then(function (data){
+            // console.log(data);
+            resdata['data'] = data;
+            resdata['status'] = 1;
+            res.send(resdata);
+            res.end();
+        },function (res){
+            resdata['data'] = res;
+            resdata['status'] = 0;
+            res.send(resdata);
+            res.end();
+        });
+
+    });
+});
 
 
 
