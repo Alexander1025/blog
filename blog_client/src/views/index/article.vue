@@ -227,7 +227,7 @@ export default {
                                     }
                                     newObj.commentid = data.data[i].commentid;
                                     newObj.cont = data.data[i].cont;
-                                    newObj.createtime = `${new Date(parseInt(data.data[i].createtime)).getFullYear()}-${new Date(parseInt(data.data[i].createtime)).getMonth()+1}-${new Date(parseInt(data.data[i].createtime)).getDate()}   ${new Date(parseInt(data.data[i].createtime)).getHours() > 12 ? new Date(parseInt(data.data[i].createtime)).getHours()-12 : new Date(parseInt(data.data[i].createtime)).getHours()}时${new Date(parseInt(data.data[i].createtime)).getMinutes()}分`;
+                                    newObj.createtime = `${new Date(parseInt(data.data[i].createtime)).getFullYear()}-${new Date(parseInt(data.data[i].createtime)).getMonth()+1}-${new Date(parseInt(data.data[i].createtime)).getDate()}   ${new Date(parseInt(data.data[i].createtime)).getHours() > 12 ? new Date(parseInt(data.data[i].createtime)).getHours()-12 : new Date(parseInt(data.data[i].createtime)).getHours()}时${new Date(parseInt(data.data[i].createtime)).getMinutes()}分 ${new Date(parseInt(data.data[i].createtime)).getHours() > 12 ? '下午' : '上午'}`;
                                     newObj.email = data.data[i].email;
                                     that.commentlist.push(newObj);
                                 }
