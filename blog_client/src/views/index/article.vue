@@ -206,7 +206,7 @@ export default {
                     var that = this;
 
                     // 用于获取评论
-                    var ajaxargument3 = `articleid=${query}`;
+                    var ajaxargument3 = `articleid=${query[i].split("=")[1]}`;
                     var ajax3 = new XMLHttpRequest();
                     ajax3.open('post','/node/index/getcomment');
                     ajax3.send(ajaxargument3);
