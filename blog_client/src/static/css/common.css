@@ -876,6 +876,9 @@ ul, li{
     padding: 40px 10px;
     box-sizing: border-box;
 }
+.content img {
+    width: 100%;
+}
 @media screen and (min-width: 1280px){
     .article .articleimg{
         height: 600px;
