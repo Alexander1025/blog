@@ -751,6 +751,12 @@ ul, li{
 .articlearea .article_img, .articlearea .article_img img{
     width: 100%;
 }
+.article_img img:hover{
+    transform: scale(0.9,0.9);
+}
+.article_img img{
+    transition: all .2s!important;
+}
 .articlearea .article_cont{
     width: 100%;
 }
