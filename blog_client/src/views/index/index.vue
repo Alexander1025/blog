@@ -5,7 +5,6 @@
             :featured="$store.state.featured"
             :recommend="$store.state.recommend"
         ></indexTop>
-        {{$store.state.test}}
         <indexMain
             :articlemodule="$store.state.articlemodule"
             :categorylistarr="$store.state.categorylistarr"
