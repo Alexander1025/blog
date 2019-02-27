@@ -1,6 +1,5 @@
 <template>
     <div class="indexwrap article">
-        <commonHead></commonHead>
         <div class="indexwrap indextop">
             <div class="mainwrap articleimg">
                 <img :src="'/blog_server/myupload/'+img" alt="">
@@ -52,7 +51,6 @@
                 ></bodyside>
             </div>
         </div>
-        <commonFoot></commonFoot>
     </div>
 </template>
 
@@ -60,8 +58,6 @@
 import {trim,myparse} from './../../static/js/common.js';
 // import './../../static/css/article.css';
 
-import commonHead from '@/components/commonhead.vue';
-import commonFoot from '@/components/commonFoot.vue';
 import cutline from '@/components/cutline.vue';
 import commonarticle from '@/components/commonarticle.vue';
 import categorylist from '@/components/categorylist.vue';
@@ -98,8 +94,6 @@ export default {
         }
     },
     components:{
-        commonHead,
-        commonFoot,
         cutline,
         commonarticle,
         categorylist,

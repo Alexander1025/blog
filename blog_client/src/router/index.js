@@ -7,6 +7,7 @@ import Router from 'vue-router'
 // 导入相应的子组件
 // import Hello from './../components/Hello'
 // import index from './../views/index/index.vue';
+import indexcommon from '@/views/index/indexcommon.vue';
 import index from '@/views/index/index.vue';
 
 
@@ -43,20 +44,37 @@ var router = new Router({
     routes: [
         {
             path: '/',
-            component: index,
-            // component: loadView('index/index'),
+            component: indexcommon,
+            children: [
+                {
+                    path: '',
+                    component: index ,
+                    // component: loadView('index/index'),
+                },
+                {
+                    path: '/article',
+                    component: article,
+                    // component: loadView('index/article'),
+                },
+                {
+                    path: '/category',
+                    name: 'category',
+                    component: category,
+                    // component: loadView('index/category'),
+                },
+            ]
         },
-        {
-            path: '/article',
-            component: article,
-            // component: loadView('index/article'),
-        },
-        {
-            path: '/category',
-            name: 'category',
-            component: category,
-            // component: loadView('index/category'),
-        },
+        // {
+        //     path: '/article',
+        //     component: article,
+        //     // component: loadView('index/article'),
+        // },
+        // {
+        //     path: '/category',
+        //     name: 'category',
+        //     component: category,
+        //     // component: loadView('index/category'),
+        // },
         {
             path: '/login',
             // component: logincommon,

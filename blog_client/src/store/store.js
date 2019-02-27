@@ -67,11 +67,11 @@ const store = new Vuex.Store({
             //     cont: "关于",
             //     url: "/",
             // },
-            {
-                isactive: false,
-                cont: "后台管理",
-                url: "/admin"
-            },
+            // {
+            //     isactive: false,
+            //     cont: "后台管理",
+            //     url: "/admin"
+            // },
             // {
             //     isactive: false,
             //     cont: this.$store.state.test

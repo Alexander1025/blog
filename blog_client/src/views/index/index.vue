@@ -1,6 +1,5 @@
 <template>
-    <div class="indexwrap">
-        <commonHead></commonHead>
+    <div>
         <indexTop
             :featured="$store.state.featured"
             :recommend="$store.state.recommend"
@@ -9,7 +8,6 @@
             :articlemodule="$store.state.articlemodule"
             :categorylistarr="$store.state.categorylistarr"
         ></indexMain>
-        <commonFoot></commonFoot>
     </div>
 </template>
 

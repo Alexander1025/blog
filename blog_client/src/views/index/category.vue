@@ -1,20 +1,16 @@
 <template>
-    <div class="indexwrap">
-        <commonHead></commonHead>
+    <div>
         <indexMain
             :articlemodule="$store.state.articlecategorymodule"
             :categorylistarr="$store.state.categorylistarr"
         ></indexMain>
-        <commonFoot></commonFoot>
     </div>
 </template>
 
 <script>
 import {trim,myparse} from './../../static/js/common.js';
 
-import commonHead from '@/components/commonhead.vue';
 import indexMain from '@/components/indexMain.vue';
-import commonFoot from '@/components/commonFoot.vue';
 
 
 export default {
@@ -24,9 +20,7 @@ export default {
         }
     },
     components:{
-        commonHead,
         indexMain,
-        commonFoot,
     },
     mounted:function (){
         var url = location.search;
