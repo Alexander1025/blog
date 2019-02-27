@@ -890,7 +890,7 @@ ul, li{
     .article .articleimg{
         height: 600px;
     }
-    #iframe.active{
+    #iframewrap.active{
         transform: translate(-50%, 10%);
     }
 }
@@ -898,7 +898,7 @@ ul, li{
     .article .articleimg{
         height: 540px;
     }
-    #iframe.active{
+    #iframewrap.active{
         transform: translate(-50%, 8%);
     }
 }
@@ -906,7 +906,7 @@ ul, li{
     .article .articleimg{
         height: 440px;
     }
-    #iframe.active{
+    #iframewrap.active{
         transform: translate(-50%, 10%);
     }
 }
@@ -914,7 +914,7 @@ ul, li{
     .article .articleimg{
         height: 300px;
     }
-    #iframe.active{
+    #iframewrap.active{
         transform: translate(-50%, 2%);
     }
 }
@@ -922,7 +922,7 @@ ul, li{
     .article .articleimg{
         height: 190px;
     }
-    #iframe.active{
+    #iframewrap.active{
         transform: translate(-50%, -12%);
     }
 }
@@ -1077,7 +1077,7 @@ blockquote{
     color: #f8f8f2;
     overflow: visible;
 }
-#iframe{
+#iframewrap{
     position: fixed;
     top: 0%;
     left: 50%;

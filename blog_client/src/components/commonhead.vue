@@ -8,7 +8,8 @@
                         {{item.cont}}
                     </li>
                 </ul>
-                <iframe :class="[ isshowmusic? 'active' : '' ]" ref="iframe" id="iframe" frameborder="no" border="0" marginwidth="0" marginheight="0" width=260 height=52 src="//music.163.com/outchain/player?type=2&id=1308828278&auto=1&height=32"></iframe>
+                <div :class="[ isshowmusic? 'active' : '' ]" id="iframewrap" ref="iframewrap">
+                </div>
                 <div class="headtoggle" @click="headtoggle">
                     <img src="./../static/images/icon/Hamburger_white.png" alt="汉堡包">
                 </div>
@@ -42,12 +43,13 @@ export default {
         window.onresize = function(){
             that.isshowheadtag = false;
         }
-        this.$refs.iframe.onload = function (){
+        this.$refs.iframewrap.innerHTML = `<iframe id="iframe" frameborder="no" border="0" marginwidth="0" marginheight="0" width=260 height=52 src="//music.163.com/outchain/player?type=2&id=1308828278&auto=1&height=32"></iframe>`;
+        var iframe = document.getElementById("iframe");
+        iframe.onload = function (){
             var time = setTimeout(function (){
                 that.isshowmusic = true;
             },1500);
         }
-
     },
     methods:{
         headtoggle:function(){
