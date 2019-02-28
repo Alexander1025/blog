@@ -75,6 +75,7 @@ export default {
          * @param index 特有index，其他地方不需要
          */
         href: function (url, newPage, fullurl, index){
+            this.isshowheadtag = false;
             if(index != undefined){
                 // active
                 for(var i = 0 ; i <= this.$store.state.headtagarr.length-1 ; i++){
