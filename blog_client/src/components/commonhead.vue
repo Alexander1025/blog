@@ -43,7 +43,20 @@ export default {
         window.onresize = function(){
             that.isshowheadtag = false;
         }
-        this.$refs.iframewrap.innerHTML = `<iframe id="iframe" frameborder="no" border="0" marginwidth="0" marginheight="0" width=260 height=52 src="//music.163.com/outchain/player?type=2&id=1308828278&auto=1&height=32"></iframe>`;
+        var arr = [
+            '//music.163.com/outchain/player?type=2&id=1308828278',//是什么然我遇见这样的你
+            '//music.163.com/outchain/player?type=2&id=1335906877',//阴天快乐
+            '//music.163.com/outchain/player?type=2&id=27937875',//天上人间
+            '//music.163.com/outchain/player?type=2&id=415793539',//重来
+            '//music.163.com/outchain/player?type=2&id=31152396',//放心去飞
+            '//music.163.com/outchain/player?type=2&id=496869422',//打上火花
+            '//music.163.com/outchain/player?type=2&id=1323304621',//浪子回头
+            '//music.163.com/outchain/player?type=2&id=462523146',//电子纯音乐 IV
+        ];
+        var arrlen = arr.length;
+        var lucknumber = parseInt(Math.random()*arrlen);
+        var musicurl = arr[lucknumber];
+        this.$refs.iframewrap.innerHTML = `<iframe id="iframe" frameborder="no" border="0" marginwidth="0" marginheight="0" width=260 height=52 src="${musicurl}&auto=1&height=32"></iframe>`;
         var iframe = document.getElementById("iframe");
         iframe.onload = function (){
             var time = setTimeout(function (){
