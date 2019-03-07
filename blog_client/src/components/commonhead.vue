@@ -52,6 +52,7 @@ export default {
             '//music.163.com/outchain/player?type=2&id=496869422',//打上火花
             '//music.163.com/outchain/player?type=2&id=1323304621',//浪子回头
             '//music.163.com/outchain/player?type=2&id=462523146',//电子纯音乐 IV
+            '//music.163.com/outchain/player?type=2&id=490106148',//山下 - 方十一
         ];
         var arrlen = arr.length;
         var lucknumber = parseInt(Math.random()*arrlen);
