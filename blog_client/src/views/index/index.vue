@@ -8,6 +8,29 @@
             :articlemodule="$store.state.articlemodule"
             :categorylistarr="$store.state.categorylistarr"
         ></indexMain>
+        <div class="shade" v-show="close">
+            <div class="lefttop" v-show="close1">
+                <img src="./../../static/images/icon/lefttoparrow.png" alt="">
+                <p>
+                    点“应用”可以跳到小应用页面
+                </p>
+                <span @click="closeimg(1)">我知道了</span>
+            </div>
+            <div class="top" v-show="close2">
+                <img src="./../../static/images/icon/lefttoparrow.png" alt="">
+                <p>
+                    点这里可以播放音乐,<br>
+                    音乐是随机的，刷新页面看看
+                </p>
+                <span @click="closeimg(2)">我知道了</span>
+            </div>
+            <div class="center" v-show="close3">
+                <p>
+                    使用电脑食用效果更佳
+                </p>
+                <span @click="closeimg(3)">我知道了</span>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -25,6 +48,10 @@ export default {
     data () {
         return {
             message: '',
+            close1:false,
+            close2:false,
+            close3:false,
+            close:false,
         }
     },
     components:{
@@ -120,7 +147,49 @@ export default {
 
 
         }
+
+
+        // if(!getCookie("isfirst")){
+            setCookie("isfirst",1,5);
+            this.close1 = true;
+            this.close = true;
+        // }
+    },
+    methods:{
+        closeimg:function (index){
+            if(index == 1){
+                this.close1 = false;
+                this.close2 = true;
+            }else if(index == 2){
+                this.close2 = false;
+                this.close3 = true;
+            }else if(index == 3){
+                this.close3 = false;
+                this.close = false;
+            }
+        }
     }
+}
+
+//JS操作cookies方法!
+//获取cookie
+function getCookie(name) {
+  var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+  if (arr = document.cookie.match(reg))
+    return decodeURI(arr[2]);
+  else
+    return null;
+}
+
+//JS操作cookie方法!
+//写cookie
+function setCookie(c_name, value, expiredays) {
+  var exdate = new Date()
+  if (typeof expiredays == "undefined") {
+    expiredays = 365;
+  }
+  exdate.setTime(exdate.getTime() + expiredays * 86400000);
+  document.cookie = c_name + "=" + escape(value) + ";expires=" + exdate.toGMTString() + ";path=/;";
 }
 </script>
 
