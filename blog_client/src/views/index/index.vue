@@ -149,11 +149,11 @@ export default {
         }
 
 
-        // if(!getCookie("isfirst")){
+        if(!getCookie("isfirst")){
             setCookie("isfirst",1,5);
             this.close1 = true;
             this.close = true;
-        // }
+        }
     },
     methods:{
         closeimg:function (index){
