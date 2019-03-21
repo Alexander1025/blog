@@ -214,7 +214,7 @@ export default {
                                 for(var i = 0 ; i <= data.data.length-1 ; i++){
                                     var newObj = {};
                                     newObj.author = data.data[i].author;
-                                    if(data.data[i].author == "zhoujizhi"){
+                                    if(data.data[i].author == "机智僧"){
                                         newObj.img = "./../static/images/common/littlelogo.png";
                                     }else{
                                         newObj.img = "./../../static/images/icon/pig.png";
