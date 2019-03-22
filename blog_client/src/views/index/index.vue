@@ -130,7 +130,9 @@ export default {
                 if (ajax2.readyState==4 &&ajax2.status==200) {
                     var data = ajax2.responseText;
                     data = myparse(data);
-                    data.data.reverse();
+                    for(var i = 0 ; i <= data.data.article.length-1 ; i++){
+                        data.data.article[i].article.reverse();
+                    }
                     // console.log(data);//输入相应的内容
                     if(data.status == 1){
                         that.$store.commit('setState',{attr:'articlemodule',field:data.data.article});
