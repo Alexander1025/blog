@@ -46,7 +46,7 @@ const indextoplistget = function (){
         });
         connection.connect();
 
-        var sql = `SELECT * FROM article WHERE place = '1' AND status = '1' OR place = '2' AND status = '1'`;
+        var sql = `SELECT * FROM article WHERE place != '0' AND status = '1'`;
 
         connection.query(sql,function (err, result) {
             if(err){

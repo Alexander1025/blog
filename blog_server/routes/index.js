@@ -76,9 +76,10 @@ router.post('/indextoplistget', function(req, res, next) {
                     // newObj['img'] = `./../static/images/upload/${data[i]['img']}`;
                     newObj['img'] = `/blog_server/myupload/${data[i]['img']}`;
                     newObj['color'] = "white";
+
                     featured.push(newObj);
                 }
-                if(data[i].place == 2){
+                if(data[i].place != 1 && data[i].place != 0){
                     var newObj = {};
                     newObj['id'] = data[i]['id'];
                     newObj['tag'] = data[i]['category_id'];
@@ -87,6 +88,7 @@ router.post('/indextoplistget', function(req, res, next) {
                     newObj['author'] = data[i]['author'];
                     newObj['date'] = data[i]['creat_time'];
                     newObj['quantity'] = data[i]['flow'];
+                    newObj['rank'] = data[i]['place'];
                     newObj['img'] = `/blog_server/myupload/${data[i]['img']}`;
                     newObj['color'] = "white";
                     recommend.push(newObj);

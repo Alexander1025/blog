@@ -102,10 +102,13 @@ export default {
                 if (ajax1.readyState==4 &&ajax1.status==200) {
                     var data1 = ajax1.responseText;
                     data1 = myparse(data1);
-                    // console.log(data1);//输入相应的内容
+                    console.log(data1);//输入相应的内容
                     if(data1.status == 1){
 
                         that.$store.commit('setState',{attr:'featured',field:data1.data.featured});
+                        data1.data.recommend.sort(function(x, y){
+                            return x['rank'] - y['rank'];
+                        });
                         that.$store.commit('setState',{attr:'recommend',field:data1.data.recommend});
 
                     }else{
