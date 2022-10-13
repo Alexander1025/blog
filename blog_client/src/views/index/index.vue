@@ -10,14 +10,14 @@
         ></indexMain>
         <div class="shade" v-show="close">
             <div class="lefttop" v-show="close1">
-                <img src="./../../static/images/icon/lefttoparrow.png" alt="">
+                <img src="./../../static/images/icon/lefttoparrow.png" alt="" @error="setDefaultImage">
                 <p>
                     点“应用”可以跳到小应用页面
                 </p>
                 <span @click="closeimg(1)">我知道了</span>
             </div>
             <div class="top" v-show="close2">
-                <img src="./../../static/images/icon/lefttoparrow.png" alt="">
+                <img src="./../../static/images/icon/lefttoparrow.png" alt="" @error="setDefaultImage">
                 <p>
                     点这里可以播放音乐,<br>
                     音乐是随机的，刷新页面看看
@@ -162,6 +162,9 @@ export default {
         }
     },
     methods:{
+        setDefaultImage: function (e){
+            e.target.src = 'http://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a23405d42f1340b5ac8e9a38bea83438~tplv-k3u1fbpfcp-zoom-crop-mark:3024:3024:3024:1702.awebp?';
+        },
         closeimg:function (index){
             if(index == 1){
                 this.close1 = false;

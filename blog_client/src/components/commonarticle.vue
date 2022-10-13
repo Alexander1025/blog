@@ -18,19 +18,19 @@
             </div>
             <div class="article_bottom">
                 <div class="article_author">
-                    <img :src="`./../static/images/icon/figure_${color}.png`" alt="">
+                    <img :src="`./../static/images/icon/figure_${color}.png`" alt="" @error="setDefaultImage">
                     <span>
                         {{author}}
                     </span>
                 </div>
                 <div class="article_date">
-                    <img :src="`./../static/images/icon/time_${color}.png`" alt="">
+                    <img :src="`./../static/images/icon/time_${color}.png`" alt="" @error="setDefaultImage">
                     <span>
                         {{date}}
                     </span>
                 </div>
                 <div class="article_quantity">
-                    <img :src="`./../static/images/icon/footprint_${color}.png`" alt="">
+                    <img :src="`./../static/images/icon/footprint_${color}.png`" alt="" @error="setDefaultImage">
                     <span>
                         {{quantity}}
                     </span>
@@ -56,6 +56,9 @@ export default {
 
     },
     methods:{
+        setDefaultImage: function (e){
+            e.target.src = 'http://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a23405d42f1340b5ac8e9a38bea83438~tplv-k3u1fbpfcp-zoom-crop-mark:3024:3024:3024:1702.awebp?';
+        },
         skip: function (id){
             document.documentElement.scrollTop = 0;
             document.body.scrollTop = 0;

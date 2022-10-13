@@ -35,13 +35,13 @@ const store = new Vuex.Store({
                 newPage:false,
                 fullurl:false,
             },
-            {
-                isactive: false,
-                cont: "应用",
-                url: "http://todo.zhoujizhi.com/",
-                newPage:true,
-                fullurl:true,
-            },
+            // {
+            //     isactive: false,
+            //     cont: "应用",
+            //     url: "http://todo.zhoujizhi.com/",
+            //     newPage:true,
+            //     fullurl:true,
+            // },
             // {
             //     isactive: false,
             //     cont: "标签",
