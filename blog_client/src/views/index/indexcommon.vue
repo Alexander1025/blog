@@ -1,6 +1,5 @@
 <template>
     <div class="indexwrap" >
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <commonHead></commonHead>
             <router-view/>
         <commonFoot></commonFoot>
